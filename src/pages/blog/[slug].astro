@@ -1,5 +1,43 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import type { GetStaticPaths } from 'astro';
+
+// 1. The getStaticPaths function is required for dynamic routes.
+export const getStaticPaths: GetStaticPaths = async () => {
+  // 2. Fetch all your blog posts using Astro.glob()
+  // It returns an array of objects with metadata for each post.
+  const allPosts = await Astro.glob('../../content/blog/*.md');
+
+  // 3. Map over your posts to create the paths Astro needs.
+  return allPosts.map((post) => {
+    // The slug is derived from the filename.
+    // e.g., 'post-one.md' becomes 'post-one'
+    const slug = post.file.split('/').pop()?.replace('.md', '') || '';
+
+    return {
+      params: { slug: slug }, // The slug goes into params.
+      props: { post: post }, // The full post object goes into props.
+    };
+  });
+};
+
+// 4. Get the props for the current page from Astro.props.
+// This 'post' object is the one we passed in the props above.
+const { post } = Astro.props as { post: any };
+const { Content } = post;
 ---
 
-<Layout> Blog Post</Layout>
+<Layout>
+  <article>
+    <header>
+      <h1>{post.frontmatter.title}</h1>
+      <p>
+        By {post.frontmatter.author} on {
+          new Date(post.frontmatter.pubDate).toLocaleDateString()
+        }
+      </p>
+      <p>{post.frontmatter.description}</p>
+    </header>
+    <Content />
+  </article>
+</Layout>
