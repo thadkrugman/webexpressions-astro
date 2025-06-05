@@ -6,7 +6,7 @@ import type { GetStaticPaths } from 'astro';
 export const getStaticPaths: GetStaticPaths = async () => {
   // 2. Fetch all your blog posts using Astro.glob()
   // It returns an array of objects with metadata for each post.
-  const allPosts = await Astro.glob('../../content/blog/*.md');
+  const allPosts = await Astro.glob('../../content/*.md');
 
   // 3. Map over your posts to create the paths Astro needs.
   return allPosts.map((post) => {
