@@ -1,0 +1,65 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  className?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'xs' | 'sm' | 'default' | 'lg' | 'xl';
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  href?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  rel?: string;
+}
+
+const {
+  className = '',
+  variant = 'primary',
+  size = 'default',
+  type = 'button',
+  disabled = false,
+  href,
+  target,
+  rel,
+  ...rest
+}: Props = Astro.props;
+
+const isLink = !!href;
+const Element = isLink ? 'a' : 'button';
+
+const baseStyles =
+  'inline-flex items-center justify-center font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer hover:scale-105 transition-all duration-300';
+
+const variants = {
+  primary:
+    'bg-primary text-white hover:opacity-75 focus-visible:outline-primary',
+  secondary:
+    'bg-secondary text-secondary-foreground hover:opacity-75 focus-visible:outline-secondary',
+  accent:
+    'bg-accent text-accent-foreground hover:opacity-75 focus-visible:outline-accent',
+  outline:
+    'border border-primary bg-transparent hover:bg-primary/10 focus-visible:outline-primary',
+  ghost: 'hover:bg-primary hover:text-white focus-visible:outline-primary',
+};
+
+const sizes = {
+  xs: 'rounded-md px-2 py-1 text-xs',
+  sm: 'rounded-md px-2.5 py-1.5 text-sm',
+  default: 'rounded-lg px-3 py-2 text-sm',
+  lg: 'rounded-lg px-3.5 py-2.5 text-sm',
+  xl: 'rounded-lg px-4 py-3 text-sm',
+};
+
+const elementProps =
+  isLink ?
+    { href, target, rel: target === '_blank' ? 'noopener noreferrer' : rel }
+  : { type, disabled };
+---
+
+<Element
+  class={cn(baseStyles, variants[variant], sizes[size], className)}
+  {...elementProps}
+  {...rest}
+>
+  <slot />
+</Element>

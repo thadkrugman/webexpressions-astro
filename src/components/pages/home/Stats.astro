@@ -1,0 +1,33 @@
+---
+import Container from '@/components/shared/Container.astro';
+
+const stats = [
+  {
+    label: 'Perfect Google Rating',
+    value: '5.0',
+  },
+  {
+    label: 'Client Satisfaction Rate',
+    value: '100%',
+  },
+  {
+    label: 'Years of Modern Expertise',
+    value: '4+',
+  },
+];
+---
+
+<Container as='section'>
+  <dl class='grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3'>
+    {
+      stats.map((stat) => (
+        <div class='mx-auto flex max-w-xs flex-col gap-y-4'>
+          <dt class='text-base/7 text-muted-foreground'>{stat.label}</dt>
+          <dd class='order-first text-3xl font-bold tracking-tight text-foreground sm:text-5xl'>
+            {stat.value}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+</Container>

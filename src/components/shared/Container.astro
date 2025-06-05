@@ -1,0 +1,32 @@
+---
+import { cn } from '@/lib/utils';
+
+type HTMLTag =
+  | 'div'
+  | 'header'
+  | 'main'
+  | 'section'
+  | 'article'
+  | 'aside'
+  | 'footer'
+  | 'nav';
+
+interface Props {
+  className?: string;
+  as?: HTMLTag;
+}
+
+const { className = '', as = 'div', ...rest } = Astro.props;
+// IMPORTANT: Variable names must be capitalized for dynamic tags
+const Element = as;
+---
+
+<Element
+  class={cn(
+    'flex flex-col px-6 lg:px-8 max-w-2xl lg:max-w-7xl mx-auto w-full mt-24 lg:mt-36',
+    className,
+  )}
+  {...rest}
+>
+  <slot />
+</Element>

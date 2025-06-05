@@ -1,0 +1,74 @@
+---
+import Container from '@/components/shared/Container.astro';
+import MessagesSquare from '@lucide/astro/icons/messages-square';
+import Rocket from '@lucide/astro/icons/rocket';
+import Target from '@lucide/astro/icons/target';
+
+const features = [
+  {
+    title: 'Direct 1-on-1 Collaboration',
+    description:
+      "You'll work directly with me, the expert, from start to finish. This means no project managers or mixed messages. You get clear, efficient communication and a single point of contact dedicated to your project.",
+    icon: MessagesSquare,
+  },
+  {
+    title: 'Versatile & Modern Development"',
+    description:
+      'Whether you need a lightning-fast marketing site or a complex web application, I use the appropriate modern technologies, including leading frameworks like Astro, Svelte, and React, to deliver a secure, SEO-optimized, and high-performance solution tailored to your specific goals.',
+    icon: Rocket,
+  },
+  {
+    title: 'A Focus on Quality & Results',
+    description:
+      "I'm committed to delivering a final product that your customers will love and that drives real success for your business. This focus on quality and results is why I maintain a 100% client satisfaction rate.",
+    icon: Target,
+  },
+];
+---
+
+<Container as='section' className='mb-36'>
+  <div
+    class='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2'
+  >
+    <div class='lg:pr-8 lg:pt-4'>
+      <div class='lg:max-w-xl'>
+        <h2 class='text-base/7 font-semibold text-secondary-accent'>
+          The webexpressions Difference
+        </h2>
+        <p
+          class='mt-2 text-pretty text-4xl font-bold tracking-tight text-foreground sm:text-5xl'
+        >
+          Dedicated Partnership, Tangible Results
+        </p>
+        <p class='mt-6 text-lg/8 text-gray-600'>
+          Hi, I'm Thad, the founder and developer behind webexpressions. I
+          partner directly with you to understand your goals and translate them
+          into modern, high-performance digital experiences that deliver real
+          results for your business.
+        </p>
+        <dl
+          class='mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none'
+        >
+          {
+            features.map((feature) => (
+              <div class='relative pl-9'>
+                <dt class='inline font-semibold text-gray-900'>
+                  <feature.icon class='absolute left-1 top-1 size-5 text-secondary-accent' />
+                  {feature.title}
+                </dt>
+                <dd class='inline'>{feature.description}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+    <img
+      src='https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png'
+      alt='Product screenshot'
+      class='w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0'
+      width='2432'
+      height='1442'
+    />
+  </div>
+</Container>

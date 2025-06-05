@@ -1,0 +1,33 @@
+---
+import { Picture } from 'astro:assets';
+---
+
+<div class='flex w-full pl-2 pr-3 overflow-visible mt-16 max-w-6xl mx-auto'>
+  <div
+    class='relative flex items-center justify-center overflow-visible w-full'
+  >
+    <div class='w-3/5 aspect-video opacity-0 mb-22 pointer-events-none'></div>
+    <div
+      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[-2deg] translate-y-6 z-30 rounded-lg border border-gray-200 shadow-xl hover:scale-125 hover:rotate-[0deg] hover:z-50 transition-all duration-300'
+      style='left: 0;'
+    >
+      <Picture
+        src='https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png'
+        alt='Project 2'
+        width={800}
+        height={500}
+      />
+    </div>
+    <div
+      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-125 hover:rotate-[0deg] hover:z-50 transition-all duration-300'
+      style='right: 0;'
+    >
+      <Picture
+        src='https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png'
+        alt='Project 3'
+        width={800}
+        height={500}
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+---
+import Container from '@/components/shared/Container.astro';
+import Button from '@/components/ui/Button.astro';
+import PartyPopper from '@lucide/astro/icons/party-popper';
+import MousePointerClick from '@lucide/astro/icons/mouse-pointer-click';
+import Figma from '@lucide/astro/icons/figma';
+import Code from '@lucide/astro/icons/code';
+import TabletSmartphone from '@lucide/astro/icons/tablet-smartphone';
+import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro';
+---
+
+<Container as='section' className='items-center justify-center'>
+  <div class='mx-auto max-w-3xl flex flex-col items-center text-center'>
+    <div class='flex flex-row rounded-full border items-center p-1'>
+      <div
+        class='flex bg-foreground px-3 py-1.5 rounded-full items-center gap-2'
+      >
+        <span class='text-background text-xs font-medium'>New</span>
+        <PartyPopper class='size-3.5 text-background' />
+      </div>
+      <div class='px-3 items-center flex'>
+        <a
+          href='/blog/is-your-current-website-costing-you-customers'
+          class='cursor-pointer hover:underline'
+        >
+          <span class='text-sm font-medium'>
+            Is Your Current Website Costing You Customers?
+          </span>
+        </a>
+      </div>
+    </div>
+    <h1 class='heading-hero mt-5 hero-heading'>
+      Crafting Digital Experiences That
+      <span
+        class='inline-flex align-middle bg-linear-to-br from-lime-300 to-accent rounded-xl mx-1 p-4.5 mb-4 shadow-md mouse-click-icon-wrapper'
+      >
+        <MousePointerClick
+          class='size-12 text-accent-foreground mouse-click-icon'
+        />
+      </span>
+      Convert
+    </h1>
+    <div class='flex flex-row gap-8 mt-5'>
+      <div class='flex flex-row gap-2 items-center'>
+        <Figma class='size-4' />
+        <span class='text-base font-medium'>Intuitive Web Design</span>
+      </div>
+      <div class='flex flex-row gap-2 items-center'>
+        <Code class='size-4' />
+        <span class='text-base font-medium'>Modern Web Development</span>
+      </div>
+      <div class='flex flex-row gap-2 items-center'>
+        <TabletSmartphone class='size-4' />
+        <span class='text-base font-medium'>Engaging Mobile Apps</span>
+      </div>
+    </div>
+    <div class='mt-8'>
+      <Button size='xl' href='/contact'> Kickstart Your Project </Button>
+    </div>
+  </div>
+  <ProjectShowcase />
+</Container>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulseClick {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .hero-heading {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .mouse-click-icon-wrapper .mouse-click-icon {
+    display: inline-block;
+    animation: pulseClick 0.5s ease-in-out 1s 1 forwards;
+  }
+</style>
