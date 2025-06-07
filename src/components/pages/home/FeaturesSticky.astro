@@ -1,0 +1,85 @@
+---
+import Container from '@/components/shared/Container.astro';
+import MessagesSquare from '@lucide/astro/icons/messages-square';
+import Rocket from '@lucide/astro/icons/rocket';
+import Target from '@lucide/astro/icons/target';
+import Code from '@/assets/images/home/code.svg';
+
+const features = [
+  {
+    title: 'Direct 1-on-1 Collaboration',
+    description:
+      "You'll work directly with me, the expert, from start to finish. This means no project managers or mixed messages. You get clear, efficient communication and a single point of contact dedicated to your project.",
+    icon: MessagesSquare,
+  },
+  {
+    title: 'Versatile & Modern Development"',
+    description:
+      'Whether you need a lightning-fast marketing site or a complex web application, I use the appropriate modern technologies, including leading frameworks like Astro, Svelte, and React, to deliver a secure, SEO-optimized, and high-performance solution tailored to your specific goals.',
+    icon: Rocket,
+  },
+  {
+    title: 'A Focus on Quality & Results',
+    description:
+      "I'm committed to delivering a final product that your customers will love and that drives real success for your business. This focus on quality and results is why I maintain a 100% client satisfaction rate.",
+    icon: Target,
+  },
+];
+---
+
+<Container className='relative isolate lg:overflow-visible'>
+  <div
+    class='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10'
+  >
+    <div
+      class='lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8'
+    >
+      <div class='lg:pr-4'>
+        <div class='lg:max-w-xl'>
+          <p class='text-base/7 font-semibold text-secondary-accent'>
+            The webexpressions Difference
+          </p>
+          <h2
+            class='mt-2 text-pretty text-4xl font-bold tracking-tight text-foreground sm:text-5xl'
+          >
+            Dedicated Partnership, Tangible Results
+          </h2>
+          <p class='mt-6 text-lg/8 text-foreground'>
+            Hi, I'm Thad, the founder and developer behind webexpressions. I
+            partner directly with you to understand your goals and translate
+            them into modern, high-performance digital experiences that deliver
+            real results for your business.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class='-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1'
+    >
+      <Code
+        class='w-[48rem] max-w-none rounded-xl shadow-xl sm:w-[57rem] h-auto'
+      />
+    </div>
+    <div
+      class='lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8'
+    >
+      <div class='lg:pr-4'>
+        <div class='max-w-xl text-base/7 text-gray-700 lg:max-w-lg'>
+          <div class='space-y-8 text-gray-600'>
+            {
+              features.map((feature) => (
+                <div class='relative pl-9'>
+                  <dt class='inline font-semibold text-gray-900'>
+                    <feature.icon class='absolute left-1 top-1 size-5 text-secondary-accent' />
+                    {feature.title}
+                  </dt>
+                  <dd class='inline'>{feature.description}</dd>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Container>
