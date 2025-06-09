@@ -17,10 +17,8 @@
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(84.1% 0.238 128.85);
-  --accent-foreground: oklch(0 0 0);
-  --secondary-accent: oklch(54.1% 0.281 293.009);
-  --secondary-accent-foreground: oklch(1 0 0);
+  --accent: oklch(54.1% 0.281 293.009);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
@@ -44,8 +42,6 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-secondary-accent: var(--secondary-accent);
-  --color-secondary-accent-foreground: var(--secondary-accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -70,11 +66,11 @@
   }
 
   .heading-1 {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+    @apply text-5xl font-bold tracking-tight text-foreground sm:text-7xl;
   }
 
   .heading-2 {
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    @apply text-pretty text-4xl font-bold tracking-tight text-foreground sm:text-5xl;
   }
 
   .heading-3 {

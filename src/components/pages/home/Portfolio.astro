@@ -1,0 +1,128 @@
+---
+import Container from '@/components/shared/Container.astro';
+---
+
+<Container as='section'>
+  <div class='mx-auto text-center max-w-2xl'>
+    <p class='text-base/7 font-semibold text-accent'>Featured Projects</p>
+    <h2 class='mt-2 heading-1'>From Concept to Conversion</h2>
+    <p
+      class='mt-8 text-pretty text-lg font-medium text-foreground sm:text-xl/8'
+    >
+      A brief selection of my work showcasing my skills and experience.
+    </p>
+  </div>
+  <!-- grid container -->
+  <div
+    class='mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2'
+  >
+    <!-- First item -->
+    <div
+      class='relative lg:col-span-3 rounded-lg overflow-hidden group border border-secondary shadow-md'
+    >
+      <div class='relative flex h-full flex-col'>
+        <img
+          class='h-full object-cover object-left transition-all duration-300'
+          src='https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png'
+          alt=''
+        />
+        <div
+          class='bg-linear-to-b from-transparent from-0% to-25% to-background flex flex-col absolute left-0 right-0 bottom-0 justify-end h-fit p-8 transition-all duration-300'
+        >
+          <h3 class='text-sm/4 font-semibold text-accent'>View Live Site</h3>
+          <p class='mt-2 text-xl font-extrabold tracking-tight text-foreground'>
+            Project Name
+          </p>
+          <p
+            class='hidden group-hover:block mt-2 max-w-lg text-sm/6 text-foreground'
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida
+            justo et nulla efficitur, maximus egestas sem pellentesque.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Second item -->
+    <div
+      class='relative lg:col-span-3 rounded-lg bg-yellow-500 overflow-hidden'
+    >
+      <div class='relative flex h-full flex-col overflow-hidden'>
+        <img
+          class='h-80 object-cover object-left lg:object-right'
+          src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply'
+          alt=''
+        />
+        <div class='p-10 pt-4'>
+          <h3 class='text-sm/4 font-semibold text-indigo-600'>Releases</h3>
+          <p class='mt-2 text-lg font-medium tracking-tight text-gray-950'>
+            Push to deploy
+          </p>
+          <p class='mt-2 max-w-lg text-sm/6 text-gray-600'>
+            Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa,
+            laoreet dapibus ex elit vitae odio.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Third item -->
+    <div class='relative lg:col-span-2 rounded-lg bg-green-500 overflow-hidden'>
+      <div class='relative flex h-full flex-col overflow-hidden'>
+        <img
+          class='h-80 object-cover object-left'
+          src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply'
+          alt=''
+        />
+        <div class='p-10 pt-4'>
+          <h3 class='text-sm/4 font-semibold text-indigo-600'>Speed</h3>
+          <p class='mt-2 text-lg font-medium tracking-tight text-gray-950'>
+            Built for power users
+          </p>
+          <p class='mt-2 max-w-lg text-sm/6 text-gray-600'>
+            Sed congue eros non finibus molestie. Vestibulum euismod augue.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Fourth item -->
+    <div class='relative lg:col-span-2 rounded-lg bg-blue-500 overflow-hidden'>
+      <div class='relative flex h-full flex-col overflow-hidden'>
+        <img
+          class='h-80 object-cover'
+          src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply'
+          alt=''
+        />
+        <div class='p-10 pt-4'>
+          <h3 class='text-sm/4 font-semibold text-indigo-600'>Integrations</h3>
+          <p class='mt-2 text-lg font-medium tracking-tight text-gray-950'>
+            Connect your favorite tools
+          </p>
+          <p class='mt-2 max-w-lg text-sm/6 text-gray-600'>
+            Maecenas at augue sed elit dictum vulputate, in nisi aliquam maximus
+            arcu.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Fifth item -->
+    <div
+      class='relative lg:col-span-2 rounded-lg bg-purple-500 overflow-hidden'
+    >
+      <div class='relative flex h-full flex-col overflow-hidden'>
+        <img
+          class='h-80 object-cover'
+          src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply'
+          alt=''
+        />
+        <div class='p-10 pt-4'>
+          <h3 class='text-sm/4 font-semibold text-indigo-600'>Network</h3>
+          <p class='mt-2 text-lg font-medium tracking-tight text-gray-950'>
+            Globally distributed CDN
+          </p>
+          <p class='mt-2 max-w-lg text-sm/6 text-gray-600'>
+            Aenean vulputate justo commodo auctor vehicula in malesuada semper.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Container>

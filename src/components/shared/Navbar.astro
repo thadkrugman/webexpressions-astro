@@ -2,7 +2,7 @@
 import Container from '@/components/shared/Container.astro';
 import { NAV_ITEMS } from '@/constants/nav-items';
 import Button from '@/components/ui/Button.astro';
-import MousePointerClick from '@lucide/astro/icons/mouse-pointer-click';
+import Terminal from '@lucide/astro/icons/terminal';
 ---
 
 <Container
@@ -14,14 +14,14 @@ import MousePointerClick from '@lucide/astro/icons/mouse-pointer-click';
     class='hover:opacity-75 hover:scale-105 transition-all duration-300'
     aria-label='Home'
   >
-    <MousePointerClick class='size-9 text-accent-foreground mouse-click-icon' />
+    <Terminal stroke-width={2.1} class='size-11 text-foreground' />
   </a>
-  <div class='flex space-x-12 items-center'>
+  <div class='hidden lg:flex space-x-12 items-center'>
     <nav>
       <ul class='flex space-x-8 items-center'>
         {
           NAV_ITEMS.map((item) => (
-            <li class='font-medium hover:opacity-75 hover:scale-105 transition-all duration-300'>
+            <li class='font-semibold hover:opacity-75 hover:scale-105 transition-all duration-300 text-base'>
               <a href={item.href}>{item.label}</a>
             </li>
           ))

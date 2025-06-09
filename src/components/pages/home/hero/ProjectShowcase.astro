@@ -8,7 +8,7 @@ import { Picture } from 'astro:assets';
   >
     <div class='w-3/5 aspect-video opacity-0 mb-22 pointer-events-none'></div>
     <div
-      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[-2deg] translate-y-6 z-30 rounded-lg border border-gray-200 shadow-xl hover:scale-125 hover:rotate-[0deg] hover:z-50 transition-all duration-300'
+      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[-2deg] translate-y-6 z-30 rounded-lg border border-gray-200 shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
       style='left: 0;'
     >
       <Picture
@@ -19,7 +19,7 @@ import { Picture } from 'astro:assets';
       />
     </div>
     <div
-      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-125 hover:rotate-[0deg] hover:z-50 transition-all duration-300'
+      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
       style='right: 0;'
     >
       <Picture
@@ -31,3 +31,29 @@ import { Picture } from 'astro:assets';
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(60px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .project-showcase {
+    opacity: 0;
+    animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .project-showcase:first-child {
+    animation-delay: 0.2s;
+  }
+
+  .project-showcase:last-child {
+    animation-delay: 0.5s;
+  }
+</style>

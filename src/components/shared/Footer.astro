@@ -1,15 +1,18 @@
 ---
 import Container from '@/components/shared/Container.astro';
+import Terminal from '@lucide/astro/icons/terminal';
 ---
 
 <Container className='pb-8'>
   <div class='xl:grid xl:grid-cols-3 xl:gap-8'>
     <div class='space-y-8'>
-      <img
-        class='h-9'
-        src='https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600'
-        alt='Company name'
-      />
+      <a
+        href='/'
+        class='hover:opacity-75 hover:scale-105 transition-all duration-300 flex items-end w-fit'
+        aria-label='Home'
+      >
+        <Terminal stroke-width={2.1} class='size-16 text-foreground' />
+      </a>
       <p class='text-balance text-sm/6 text-gray-600'>
         Making the world a better place through constructing elegant
         hierarchies.
