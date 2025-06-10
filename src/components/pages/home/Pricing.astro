@@ -24,8 +24,8 @@ const plans = [
     description:
       'A complete, multi-page website to establish your brand and drive growth.',
     priceSubtext: 'Our most popular package',
-    buttonText: 'Kickstart Your Project',
-    isMostPopular: true, // Added a flag for styling the "Most Popular" badge
+    buttonText: 'Select Plan',
+    isMostPopular: true,
     features: [
       'Up to 5 Custom-Designed Pages',
       'Everything in Landing Page, plus...',
@@ -91,7 +91,7 @@ const plans = [
               </span>
             </p>
             <p class='mt-3 text-sm/6 text-foreground'>{plan.priceSubtext}</p>
-            <Button size='lg' href='#' className='w-full mt-10'>
+            <Button size='lg' href='/contact' className='w-full mt-10'>
               {plan.buttonText}
             </Button>
             <p class='mt-10 text-sm/6 font-semibold text-foreground'>
