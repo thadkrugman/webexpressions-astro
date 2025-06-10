@@ -3,16 +3,27 @@ import Container from '@/components/shared/Container.astro';
 import Button from '@/components/ui/Button.astro';
 ---
 
-<Container as='section'>
-  <h2 class='heading-2 max-w-xl'>
-    Boost your productivity. Start using our app today.
-  </h2>
-  <div class='mt-10 flex items-center gap-x-6'>
-    <Button size='lg' href='#'> Get started </Button>
-    <a
-      href='#'
-      class='text-sm/6 font-semibold text-foreground hover:opacity-75 hover:translate-x-1 hover:scale-105 transition-all duration-300'
-      >Learn more <span aria-hidden='true'>→</span></a
-    >
-  </div>
-</Container>
+<div class='bg-primary mt-24 sm:mt-32 lg:mt-36 mb-24'>
+  <Container
+    as='section'
+    className='lg:flex-row lg:items-center lg:justify-between mt-0 sm:mt-0 lg:mt-0 py-24 sm:py-32'
+  >
+    <div>
+      <p class='text-base/7 font-semibold text-lime-400'>Let's Connect</p>
+      <h2 class='heading-2 text-accent-foreground mt-2'>
+        Have a Project in Mind? <br />
+        Let's Bring It To Life.
+      </h2>
+    </div>
+    <div class='mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0'>
+      <Button size='lg' href='#' className='bg-background text-foreground'
+        >Get started</Button
+      >
+      <a
+        href='#'
+        class='text-sm/6 font-semibold text-accent-foreground hover:opacity-75 hover:translate-x-1 hover:scale-105 transition-all duration-300'
+        >Learn more <span aria-hidden='true'>→</span></a
+      >
+    </div>
+  </Container>
+</div>

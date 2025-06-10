@@ -1,10 +1,11 @@
 ---
 import Container from '@/components/shared/Container.astro';
+import Terminal from '@lucide/astro/icons/terminal';
 import MessagesSquare from '@lucide/astro/icons/messages-square';
 import Rocket from '@lucide/astro/icons/rocket';
+import Layers from '@lucide/astro/icons/layers';
 import Target from '@lucide/astro/icons/target';
 import Code from '@/assets/images/home/code-2.svg';
-import Terminal from '@lucide/astro/icons/terminal';
 
 const features = [
   {
@@ -18,6 +19,12 @@ const features = [
     description:
       'Whether you need a lightning-fast marketing site or a complex web application, I use the appropriate modern technologies, including leading frameworks like Astro, Svelte, and React, to deliver a secure, SEO-optimized, and high-performance solution tailored to your specific goals.',
     icon: Rocket,
+  },
+  {
+    title: 'Design & Development, Unified',
+    description:
+      'I handle both the visual design and the technical development, ensuring a seamless process from the first sketch to the final line of code. This unified approach leads to a more cohesive product and a more efficient workflow for your project.',
+    icon: Layers,
   },
   {
     title: 'A Focus on Quality & Results',
@@ -50,7 +57,7 @@ const features = [
           <h2 class='heading-2 mt-2'>
             Dedicated Partnership, Tangible Results
           </h2>
-          <p class='mt-6 text-lg/8 text-foreground'>
+          <p class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium'>
             Hi, I'm Thad, the founder and developer behind webexpressions. I
             partner directly with you to understand your goals and translate
             them into modern, high-performance digital experiences that deliver
@@ -75,7 +82,7 @@ const features = [
             {
               features.map((feature) => (
                 <div class='relative pl-9'>
-                  <dt class='inline font-bold text-foreground'>
+                  <dt class='inline font-extrabold text-foreground'>
                     <feature.icon class='absolute left-1 top-1 size-5 text-primary' />
                     {feature.title}
                   </dt>
