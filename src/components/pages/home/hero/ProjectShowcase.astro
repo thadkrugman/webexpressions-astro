@@ -1,33 +1,26 @@
 ---
 import { Picture } from 'astro:assets';
+import project1 from '@/assets/images/home/project-showcase/project-1.png';
+import project2 from '@/assets/images/home/project-showcase/project-2.png';
+import project3 from '@/assets/images/home/project-showcase/project-3.png';
 ---
 
 <div class='flex w-full pl-2 pr-3 overflow-visible mt-16 max-w-6xl mx-auto'>
   <div
     class='relative flex items-center justify-center overflow-visible w-full'
   >
-    <div class='w-3/5 aspect-video opacity-0 mb-22 pointer-events-none'></div>
+    <div class='w-3/5 aspect-video opacity-0 mb-31 pointer-events-none'></div>
     <div
-      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[-2deg] translate-y-6 z-30 rounded-lg border border-gray-200 shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
+      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
       style='left: 0;'
     >
-      <Picture
-        src='https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png'
-        alt='Project 2'
-        width={800}
-        height={500}
-      />
+      <Picture src={project2} alt='Project 2' width={1600} height={1000} />
     </div>
     <div
-      class='absolute bg-gray-100 overflow-hidden w-3/5 h-auto aspect-video transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
+      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
       style='right: 0;'
     >
-      <Picture
-        src='https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png'
-        alt='Project 3'
-        width={800}
-        height={500}
-      />
+      <Picture src={project1} alt='Project 3' width={1600} height={1000} />
     </div>
   </div>
 </div>
