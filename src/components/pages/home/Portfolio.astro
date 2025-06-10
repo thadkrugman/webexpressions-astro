@@ -1,5 +1,6 @@
 ---
 import Container from '@/components/shared/Container.astro';
+import project1 from '@/assets/images/home/portfolio/project-1.png';
 ---
 
 <Container as='section'>
@@ -23,7 +24,7 @@ import Container from '@/components/shared/Container.astro';
       <div class='relative flex h-full flex-col'>
         <img
           class='h-full object-cover object-left transition-all duration-300'
-          src='https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png'
+          src={project1.src}
           alt=''
         />
         <div
