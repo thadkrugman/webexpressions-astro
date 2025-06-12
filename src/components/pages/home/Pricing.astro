@@ -38,7 +38,7 @@ const plans = [
     name: 'Custom Solution',
     price: "Let's Talk",
     description:
-      'For complex web applications, mobile apps, or large-scale projects with unique requirements.',
+      'For complex web applications, mobile apps, or large-scale projects.',
     priceSubtext: 'Tailored to your unique needs',
     buttonText: 'Request a Custom Quote',
     features: [
@@ -97,7 +97,7 @@ const plans = [
               {plan.buttonText}
             </Button>
             <p class='mt-10 text-sm/6 font-semibold text-foreground'>
-              Everything necessary to get started.
+              {plan.description}
             </p>
             <ul role='list' class='mt-6 space-y-3 text-sm/6 text-foreground'>
               {plan.features.map((feature) => (
