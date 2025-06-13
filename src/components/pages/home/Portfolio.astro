@@ -6,6 +6,49 @@ import project3 from '@/assets/images/home/portfolio/project-3.png';
 import project4 from '@/assets/images/home/portfolio/project-4.png';
 import project5 from '@/assets/images/home/portfolio/project-5.png';
 import { Picture } from 'astro:assets';
+
+const projects = [
+  {
+    src: project1,
+    alt: 'Elegant flooring website',
+    aspectRatio: 'aspect-[16/10]',
+    colSpan: 'lg:col-span-3',
+    width: 1200,
+    height: 750,
+  },
+  {
+    src: project2,
+    alt: 'Industrial style website for Spectre Corp',
+    aspectRatio: 'aspect-[16/10]',
+    colSpan: 'lg:col-span-3',
+    width: 1200,
+    height: 750,
+  },
+  {
+    src: project3,
+    alt: 'Service-based website for a local business',
+    aspectRatio: 'aspect-[6/7]',
+    colSpan: 'lg:col-span-2',
+    width: 1000,
+    height: 1167,
+  },
+  {
+    src: project4,
+    alt: 'Bold and modern website for a local auto detailing business',
+    aspectRatio: 'aspect-[6/7]',
+    colSpan: 'lg:col-span-2',
+    width: 1000,
+    height: 1167,
+  },
+  {
+    src: project5,
+    alt: 'Bright and modern website for an educational startup',
+    aspectRatio: 'aspect-[6/7]',
+    colSpan: 'lg:col-span-2',
+    width: 1000,
+    height: 1167,
+  },
+];
 ---
 
 <Container as='section'>
@@ -21,65 +64,28 @@ import { Picture } from 'astro:assets';
         href='/portfolio'
         class='font-semibold text-accent underline hover:text-accent/75 transition-colors duration-300'
         >Explore my full portfolio</a
-      > for a more detailed look.
+      > to see the full story behind each project, from concept to conversion.
     </p>
   </div>
   <!-- grid container -->
   <div class='mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6'>
-    <div
-      class='bg-gray-100 aspect-[16/10] rounded-lg w-full col-span-1 row-span-1 lg:col-span-3 overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200'
-    >
-      <Picture
-        src={project1}
-        alt='Project 1'
-        width={1000}
-        height={1000}
-        class='w-full h-full object-cover'
-      />
-    </div>
-    <div
-      class='bg-gray-100 aspect-[16/10] rounded-lg w-full col-span-1 row-span-1 lg:col-span-3 overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200'
-    >
-      <Picture
-        src={project2}
-        alt='Project 2'
-        width={1000}
-        height={1000}
-        class='w-full h-full object-cover'
-      />
-    </div>
-    <div
-      class='bg-gray-100 aspect-[6/7] rounded-lg w-full col-span-1 row-span-1 lg:col-span-2 overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200'
-    >
-      <Picture
-        src={project3}
-        alt='Project 3'
-        width={1000}
-        height={1000}
-        class='w-full h-full object-cover'
-      />
-    </div>
-    <div
-      class='bg-gray-100 aspect-[6/7] rounded-lg w-full col-span-1 row-span-1 lg:col-span-2 overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200'
-    >
-      <Picture
-        src={project4}
-        alt='Project 4'
-        width={1000}
-        height={1000}
-        class='w-full h-full object-cover'
-      />
-    </div>
-    <div
-      class='bg-gray-100 aspect-[6/7] rounded-lg w-full col-span-1 row-span-1 lg:col-span-2 overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200'
-    >
-      <Picture
-        src={project5}
-        alt='Project 5'
-        width={1000}
-        height={1000}
-        class='w-full h-full object-cover'
-      />
-    </div>
+    {
+      projects.map((project) => (
+        <div
+          class={`bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200`}
+        >
+          <Picture
+            src={project.src}
+            alt={project.alt}
+            width={project.width}
+            height={project.height}
+            widths={[400, 800, 1200, 1600]}
+            sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+            formats={['avif', 'webp']}
+            class='w-full h-full object-cover'
+          />
+        </div>
+      ))
+    }
   </div>
 </Container>

@@ -13,13 +13,31 @@ import project2 from '@/assets/images/home/project-showcase/project-2.png';
       class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
       style='left: 0;'
     >
-      <Picture src={project1} alt='Project 2' width={1600} height={1000} />
+      <Picture
+        src={project1}
+        alt='Modern Real Estate Website'
+        width={1200}
+        height={750}
+        widths={[480, 768, 1024, 1536]}
+        sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
+        formats={['avif', 'webp']}
+        class='w-full h-full object-cover'
+      />
     </div>
     <div
       class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
       style='right: 0;'
     >
-      <Picture src={project2} alt='Project 3' width={1600} height={1000} />
+      <Picture
+        src={project2}
+        alt='Bold and modern website for a local auto detailing business'
+        width={1200}
+        height={750}
+        widths={[480, 768, 1024, 1536]}
+        sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
+        formats={['avif', 'webp']}
+        class='w-full h-full object-cover'
+      />
     </div>
   </div>
 </div>

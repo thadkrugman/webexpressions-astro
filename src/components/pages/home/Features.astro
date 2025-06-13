@@ -5,7 +5,8 @@ import MessagesSquare from '@lucide/astro/icons/messages-square';
 import Rocket from '@lucide/astro/icons/rocket';
 import Layers from '@lucide/astro/icons/layers';
 import Target from '@lucide/astro/icons/target';
-import Code from '@/assets/images/home/code-2.svg';
+import Code from '@/assets/images/home/features/code.png';
+import { Picture } from 'astro:assets';
 
 const features = [
   {
@@ -69,7 +70,14 @@ const features = [
     <div
       class='-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'
     >
-      <Code
+      <Picture
+        src={Code}
+        alt='Typescript code'
+        width={1200}
+        height={940}
+        widths={[640, 960, 1200, 1800]}
+        sizes='(max-width: 640px) 200vw, (max-width: 768px) 150vw, (max-width: 1024px) 120vw, 60vw'
+        formats={['avif', 'webp']}
         class='w-[40rem] max-w-none rounded-xl shadow-xl sm:w-[48rem] md:w-[57rem] h-fit'
       />
     </div>
