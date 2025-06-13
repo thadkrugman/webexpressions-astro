@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets';
+
 export interface Props {
   testimonial: {
     body: string;
@@ -17,13 +19,28 @@ const { testimonial } = Astro.props;
     <p>{testimonial.body}</p>
   </blockquote>
   <figcaption class='mt-6 flex items-center gap-x-4'>
-    <img
-      class='size-10 rounded-full bg-gray-50'
-      src={typeof testimonial.author.imageUrl === 'string' ?
-        testimonial.author.imageUrl
-      : testimonial.author.imageUrl.src}
-      alt={testimonial.author.name}
-    />
+    {
+      typeof testimonial.author.imageUrl === 'string' ?
+        <img
+          class='size-10 rounded-full bg-gray-50'
+          src={testimonial.author.imageUrl}
+          alt={testimonial.author.name}
+          width='40'
+          height='40'
+          loading='lazy'
+        />
+      : <Picture
+          src={testimonial.author.imageUrl}
+          alt={testimonial.author.name}
+          width={40}
+          height={40}
+          widths={[40, 80]}
+          sizes='40px'
+          formats={['avif', 'webp']}
+          class='size-10 rounded-full bg-gray-50'
+          loading='lazy'
+        />
+    }
     <div>
       <div class='font-semibold'>{testimonial.author.name}</div>
     </div>
