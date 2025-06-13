@@ -15,6 +15,7 @@ const projects = [
     colSpan: 'lg:col-span-3',
     width: 1200,
     height: 750,
+    href: '/portfolio/#rockwood-flooring',
   },
   {
     src: project2,
@@ -23,6 +24,7 @@ const projects = [
     colSpan: 'lg:col-span-3',
     width: 1200,
     height: 750,
+    href: '/portfolio/#spectre-corp',
   },
   {
     src: project3,
@@ -31,6 +33,7 @@ const projects = [
     colSpan: 'lg:col-span-2',
     width: 1000,
     height: 1167,
+    href: '/portfolio/#alm-junk-removal',
   },
   {
     src: project4,
@@ -39,6 +42,7 @@ const projects = [
     colSpan: 'lg:col-span-2',
     width: 1000,
     height: 1167,
+    href: '/portfolio/#ms-auto-detailing',
   },
   {
     src: project5,
@@ -47,6 +51,7 @@ const projects = [
     colSpan: 'lg:col-span-2',
     width: 1000,
     height: 1167,
+    href: '/portfolio#polaris-education',
   },
 ];
 ---
@@ -72,18 +77,21 @@ const projects = [
     {
       projects.map((project) => (
         <div
-          class={`bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200`}
+          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200`}
         >
-          <Picture
-            src={project.src}
-            alt={project.alt}
-            width={project.width}
-            height={project.height}
-            widths={[400, 800, 1200, 1600]}
-            sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
-            formats={['avif', 'webp']}
-            class='w-full h-full object-cover'
-          />
+          <a href=''>
+            <Picture
+              src={project.src}
+              alt={project.alt}
+              width={project.width}
+              height={project.height}
+              widths={[400, 800, 1200, 1600]}
+              sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
+              formats={['avif', 'webp']}
+              class='w-full h-full object-cover'
+            />
+            <div class='hidden absolute inset-0 bg-white/25 sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+          </a>
         </div>
       ))
     }
