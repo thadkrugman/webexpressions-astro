@@ -6,6 +6,7 @@ import project3 from '@/assets/images/home/portfolio/project-3.png';
 import project4 from '@/assets/images/home/portfolio/project-4.png';
 import project5 from '@/assets/images/home/portfolio/project-5.png';
 import { Picture } from 'astro:assets';
+import ArrowUpRight from '@lucide/astro/icons/arrow-up-right';
 
 const projects = [
   {
@@ -77,9 +78,9 @@ const projects = [
     {
       projects.map((project) => (
         <div
-          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200`}
+          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200 sm:hover:scale-105 ease-in-out duration-300`}
         >
-          <a href=''>
+          <a href={project.href}>
             <Picture
               src={project.src}
               alt={project.alt}
@@ -90,8 +91,11 @@ const projects = [
               formats={['avif', 'webp']}
               class='w-full h-full object-cover'
             />
-            <div class='hidden absolute inset-0 bg-white/25 sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+            <div class='hidden absolute inset-0 bg-white/30 sm:flex items-center justify-center opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300' />
           </a>
+          <div class='absolute opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 top-4 right-4 bg-lime-400 rounded-full p-1.5'>
+            <ArrowUpRight stroke-width={3.5} class='size-4.5 text-background' />
+          </div>
         </div>
       ))
     }

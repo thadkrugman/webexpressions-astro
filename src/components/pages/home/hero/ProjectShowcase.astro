@@ -2,6 +2,8 @@
 import { Picture } from 'astro:assets';
 import project1 from '@/assets/images/home/project-showcase/project-1.png';
 import project2 from '@/assets/images/home/project-showcase/project-2.png';
+import SpectreCorpHero from '@/assets/images/home/project-showcase/spectre-corp-hero.png';
+import RockwoodFlooringHero from '@/assets/images/home/project-showcase/rockwood-flooring-hero.png';
 ---
 
 <div class='flex w-full pl-2 pr-4 overflow-visible mt-16 max-w-6xl mx-auto'>
@@ -10,11 +12,11 @@ import project2 from '@/assets/images/home/project-showcase/project-2.png';
   >
     <div class='w-3/5 aspect-video opacity-0 mb-31 pointer-events-none'></div>
     <div
-      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
+      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 project-showcase'
       style='left: 0;'
     >
       <Picture
-        src={project1}
+        src={RockwoodFlooringHero}
         alt='Modern Real Estate Website'
         width={1200}
         height={750}
@@ -25,11 +27,11 @@ import project2 from '@/assets/images/home/project-showcase/project-2.png';
       />
     </div>
     <div
-      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-115 hover:rotate-[0deg] hover:z-50 transition-all duration-300 project-showcase'
+      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 project-showcase border border-gray-200'
       style='right: 0;'
     >
       <Picture
-        src={project2}
+        src={SpectreCorpHero}
         alt='Bold and modern website for a local auto detailing business'
         width={1200}
         height={750}
