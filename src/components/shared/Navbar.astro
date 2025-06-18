@@ -3,11 +3,13 @@ import Container from '@/components/shared/Container.astro';
 import { NAV_ITEMS } from '@/constants/nav-items';
 import Button from '@/components/ui/Button.astro';
 import Terminal from '@lucide/astro/icons/terminal';
+import Menu from '@lucide/astro/icons/menu';
+import X from '@lucide/astro/icons/x';
 ---
 
 <Container
   as='header'
-  className='flex-row justify-between items-center pt-6 mt-0 lg:mt-0'
+  className='flex-row justify-between items-center pt-6 mt-0 sm:mt-0 lg:mt-0'
 >
   <a
     href='/'
@@ -16,6 +18,20 @@ import Terminal from '@lucide/astro/icons/terminal';
   >
     <Terminal stroke-width={2.1} class='size-11 text-foreground' />
   </a>
+
+  <!-- Mobile menu button -->
+  <button
+    id='mobile-menu-button'
+    class='lg:hidden flex items-center justify-center text-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-0 focus:ring-offset-0'
+    aria-expanded='false'
+    aria-label='Toggle navigation menu'
+    aria-controls='mobile-menu'
+  >
+    <Menu id='menu-icon' class='size-8' stroke-width={2.5} />
+    <X id='close-icon' class='size-8 hidden' stroke-width={2.5} />
+  </button>
+
+  <!-- Desktop navigation -->
   <div class='hidden lg:flex space-x-12 items-center'>
     <nav>
       <ul class='flex space-x-8 items-center'>
@@ -42,3 +58,239 @@ import Terminal from '@lucide/astro/icons/terminal';
     </div>
   </div>
 </Container>
+
+<!-- Mobile menu overlay -->
+<div
+  id='mobile-menu'
+  class='lg:hidden fixed inset-0 z-50 hidden'
+  role='dialog'
+  aria-modal='true'
+  aria-label='Mobile navigation menu'
+>
+  <!-- Backdrop -->
+  <div
+    id='mobile-menu-backdrop'
+    class='fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300'
+    aria-hidden='true'
+  >
+  </div>
+
+  <!-- Menu panel -->
+  <div
+    id='mobile-menu-panel'
+    class='fixed flex flex-col top-0 right-0 h-full min-h-dvh w-full max-w-sm bg-background shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out'
+  >
+    <!-- Menu header -->
+    <div class='flex items-center justify-between p-8'>
+      <a
+        href='/'
+        class='hover:opacity-75 hover:scale-105 transition-all duration-300'
+        aria-label='Home'
+      >
+        <Terminal stroke-width={2.1} class='size-10 text-foreground' />
+      </a>
+      <button
+        id='mobile-menu-close'
+        class='flex items-center justify-center text-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-0 focus:ring-offset-0'
+        aria-label='Close navigation menu'
+      >
+        <X class='size-8' stroke-width={2.5} />
+      </button>
+    </div>
+    <!-- Menu content -->
+    <div class='flex flex-col flex-1'>
+      <!-- Navigation links -->
+      <nav class='flex-1 px-6'>
+        <ul class='space-y-6'>
+          {
+            NAV_ITEMS.map((item, index) => (
+              <li class='flex flex-col space-y-8'>
+                <a
+                  href={item.href}
+                  class={`group block px-4 text-2xl font-bold text-foreground hover:text-primary hover:bg-secondary/30 rounded-lg transition-all duration-300 animate-fade-in-right animate-delay-${(index + 1) * 100} scroll-trigger`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- CTA section -->
+      <div class='px-6 pt-8 pb-6'>
+        <Button
+          size='xl'
+          href='/contact'
+          className='w-full justify-center animate-fade-in-up animate-delay-600 scroll-trigger'
+        >
+          Get in Touch
+        </Button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu functionality
+  function initMobileMenu() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const closeButton = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuPanel = document.getElementById('mobile-menu-panel');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const menuLinks = mobileMenu?.querySelectorAll('nav a');
+
+    if (!menuButton || !mobileMenu || !menuPanel || !backdrop) return;
+
+    let isOpen = false;
+    let focusableElements: HTMLElement[] = [];
+
+    // Get all focusable elements in the menu
+    function updateFocusableElements() {
+      focusableElements = Array.from(
+        mobileMenu!.querySelectorAll(
+          'a[href], button, [tabindex]:not([tabindex="-1"])',
+        ),
+      ) as HTMLElement[];
+    }
+
+    // Trap focus within the menu
+    function trapFocus(e: KeyboardEvent) {
+      if (!isOpen || focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    }
+
+    // Open menu
+    function openMenu() {
+      isOpen = true;
+      mobileMenu!.classList.remove('hidden');
+      menuButton!.setAttribute('aria-expanded', 'true');
+
+      // Show icons
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+
+      // Trigger animations
+      requestAnimationFrame(() => {
+        backdrop!.classList.remove('opacity-0');
+        backdrop!.classList.add('opacity-100');
+        menuPanel!.classList.remove('translate-x-full');
+        menuPanel!.classList.add('translate-x-0');
+
+        // Trigger scroll animations for menu items
+        const scrollTriggers = mobileMenu!.querySelectorAll('.scroll-trigger');
+        scrollTriggers.forEach((el) => el.classList.add('animate'));
+      });
+
+      // Focus management
+      updateFocusableElements();
+      if (closeButton) closeButton.focus();
+
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+
+      // Add event listeners
+      document.addEventListener('keydown', trapFocus);
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    // Close menu
+    function closeMenu() {
+      isOpen = false;
+      menuButton!.setAttribute('aria-expanded', 'false');
+
+      // Show icons
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+
+      // Trigger close animations
+      backdrop!.classList.remove('opacity-100');
+      backdrop!.classList.add('opacity-0');
+      menuPanel!.classList.remove('translate-x-0');
+      menuPanel!.classList.add('translate-x-full');
+
+      // Remove scroll animations
+      const scrollTriggers = mobileMenu!.querySelectorAll('.scroll-trigger');
+      scrollTriggers.forEach((el) => el.classList.remove('animate'));
+
+      // Hide menu after animation
+      setTimeout(() => {
+        if (!isOpen) {
+          mobileMenu!.classList.add('hidden');
+        }
+      }, 300);
+
+      // Restore body scroll
+      document.body.style.overflow = '';
+
+      // Return focus to menu button
+      menuButton!.focus();
+
+      // Remove event listeners
+      document.removeEventListener('keydown', trapFocus);
+      document.removeEventListener('keydown', handleEscapeKey);
+    }
+
+    // Handle escape key
+    function handleEscapeKey(e: KeyboardEvent) {
+      if (e.key === 'Escape' && isOpen) {
+        closeMenu();
+      }
+    }
+
+    // Event listeners
+    menuButton!.addEventListener('click', () => {
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    closeButton?.addEventListener('click', closeMenu);
+
+    // Close menu when clicking backdrop
+    backdrop.addEventListener('click', closeMenu);
+
+    // Close menu when clicking menu links
+    menuLinks?.forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && isOpen) {
+        closeMenu();
+      }
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+
+  // Re-initialize on navigation (for SPAs)
+  document.addEventListener('astro:page-load', initMobileMenu);
+</script>
