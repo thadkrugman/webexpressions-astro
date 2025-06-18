@@ -4,38 +4,34 @@ import Terminal from '@lucide/astro/icons/terminal';
 
 const footerSections = [
   {
-    title: 'Solutions',
+    title: 'Explore',
     links: [
-      { name: 'Marketing', href: '#' },
-      { name: 'Analytics', href: '#' },
-      { name: 'Automation', href: '#' },
-      { name: 'Commerce', href: '#' },
-      { name: 'Insights', href: '#' },
+      { name: 'Portfolio', href: '/portfolio' },
+      { name: 'About', href: '/about' },
+      { name: 'Blog', href: '/blog' },
     ],
   },
   {
-    title: 'Support',
+    title: 'Services',
     links: [
-      { name: 'Submit ticket', href: '#' },
-      { name: 'Documentation', href: '#' },
-      { name: 'Guides', href: '#' },
+      { name: 'Web Development', href: '/contact' },
+      { name: 'Web Design', href: '/contact' },
+      { name: 'App Development', href: '/contact' },
+      { name: 'Consultation', href: '/contact' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Get Started',
     links: [
-      { name: 'About', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Jobs', href: '#' },
-      { name: 'Press', href: '#' },
+      { name: 'Contact Us', href: '/contact' },
+      { name: 'View Our Work', href: '/portfolio' },
     ],
   },
   {
-    title: 'Legal',
+    title: 'Stay Updated',
     links: [
-      { name: 'Terms of service', href: '#' },
-      { name: 'Privacy policy', href: '#' },
-      { name: 'License', href: '#' },
+      { name: 'Latest Posts', href: '/blog' },
+      { name: 'Follow Progress', href: '/blog' },
     ],
   },
 ];
@@ -122,7 +118,7 @@ const socialLinks = [
         {
           footerSections.slice(2, 4).map((section, index) => (
             <div class={index === 1 ? 'mt-10 md:mt-0' : ''}>
-              <h3 class='text-base/6 font-bold text-gray-900'>
+              <h3 class='text-base/6 font-bold text-foreground'>
                 {section.title}
               </h3>
               <ul role='list' class='mt-6 space-y-4'>
