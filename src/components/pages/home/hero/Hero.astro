@@ -35,24 +35,30 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
       Crafting Digital Experiences That
       <span
         class='inline-flex align-middle bg-lime-400 rounded-xl mx-1 p-4.5 mb-4 shadow-md mouse-click-icon-wrapper group'
+        aria-label='Click icon representing user interaction'
       >
         <MousePointerClick
           class='size-12 text-foreground mouse-click-icon group-hover:scale-110 transition-transform duration-300'
+          aria-hidden='true'
         />
       </span>
       Convert
     </h1>
-    <div class='flex flex-row gap-8 mt-5 animate-fade-in-up scroll-trigger'>
-      <div class='flex flex-row gap-2 items-center'>
-        <Figma class='size-4' />
+    <div
+      class='flex flex-row gap-8 mt-5 animate-fade-in-up scroll-trigger'
+      role='list'
+      aria-label='Services offered'
+    >
+      <div class='flex flex-row gap-2 items-center' role='listitem'>
+        <Figma class='size-4' aria-hidden='true' />
         <span class='text-base font-medium'>Intuitive Web Design</span>
       </div>
-      <div class='flex flex-row gap-2 items-center'>
-        <Code class='size-4' />
+      <div class='flex flex-row gap-2 items-center' role='listitem'>
+        <Code class='size-4' aria-hidden='true' />
         <span class='text-base font-medium'>Modern Web Development</span>
       </div>
-      <div class='flex flex-row gap-2 items-center'>
-        <TabletSmartphone class='size-4' />
+      <div class='flex flex-row gap-2 items-center' role='listitem'>
+        <TabletSmartphone class='size-4' aria-hidden='true' />
         <span class='text-base font-medium'>Engaging Mobile Apps</span>
       </div>
     </div>

@@ -175,6 +175,30 @@
     animation: scale-in 0.8s ease-out forwards;
   }
 
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-scale-in {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .animate-fade-in.animate,
+    .animate-fade-in-up.animate,
+    .animate-fade-in-left.animate,
+    .animate-fade-in-right.animate,
+    .animate-scale-in.animate {
+      animation: none !important;
+    }
+
+    .hover-lift:hover {
+      transform: none !important;
+    }
+  }
+
   /* Animation delays - these need to work with the .animate class */
   .animate-delay-100.animate {
     animation-delay: 0.1s;
