@@ -30,7 +30,7 @@ const { Content } = post;
 <Layout>
   <article>
     <header>
-      <h1>{post.frontmatter.title}</h1>
+      <h1 class='text-4xl font-bold'>{post.frontmatter.title}</h1>
       <p>
         By {post.frontmatter.author} on {
           new Date(post.frontmatter.pubDate).toLocaleDateString()
