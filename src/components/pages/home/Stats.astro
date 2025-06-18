@@ -37,7 +37,7 @@ const stats = [
           class={`relative w-full rounded-lg bg-gray-50 p-6 lg:p-8 lg:px-4 animate-fade-in-up lg:animate-delay-${(index + 2) * 100} scroll-trigger`}
         >
           <div class='flex flex-col items-center text-center gap-y-3'>
-            <dd class='text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl'>
+            <div class='text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl'>
               <span
                 class='stat-number'
                 data-target={stat.numericValue}
@@ -46,10 +46,10 @@ const stats = [
               >
                 0{stat.suffix}
               </span>
-            </dd>
-            <dt class='text-sm font-semibold uppercase tracking-wide'>
+            </div>
+            <div class='text-sm font-semibold uppercase tracking-wide'>
               {stat.label}
-            </dt>
+            </div>
           </div>
           {/* Animated brand accent dot */}
           <div
