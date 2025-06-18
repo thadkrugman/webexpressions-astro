@@ -137,6 +137,13 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
 
   .mouse-click-icon-wrapper .mouse-click-icon {
     display: inline-block;
-    animation: pulseClick 0.5s ease-in-out 1.8s 1 forwards;
+    animation: pulseClick 0.5s ease-in-out 1.2s 1 forwards;
+  }
+
+  /* Longer delay for larger screens where images fade in separately */
+  @media (min-width: 1024px) {
+    .mouse-click-icon-wrapper .mouse-click-icon {
+      animation: pulseClick 0.5s ease-in-out 1.8s 1 forwards;
+    }
   }
 </style>
