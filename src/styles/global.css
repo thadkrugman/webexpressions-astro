@@ -61,10 +61,6 @@
     @apply bg-background text-foreground;
   }
 
-  .heading-hero {
-    @apply text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-foreground text-pretty leading-28;
-  }
-
   .heading-1 {
     @apply text-5xl font-extrabold tracking-tight text-foreground sm:text-7xl;
   }

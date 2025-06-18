@@ -31,14 +31,17 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         </a>
       </div>
     </div>
-    <h1 class='heading-hero mt-5'>
-      Crafting Digital Experiences That
+    <h1
+      class='[@media(max-width:439px)]:text-4xl text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-foreground text-pretty [@media(max-width:439px)]:leading-12 leading-15 md:leading-21 lg:leading-28 mt-5'
+    >
+      Crafting Digital<br />
+      Experiences That<br />
       <span
-        class='inline-flex align-middle bg-lime-400 rounded-xl mx-1 p-4.5 mb-4 shadow-md mouse-click-icon-wrapper group'
+        class='inline-flex align-middle bg-lime-400 rounded-md lg:rounded-xl mx-1 [@media(max-width:439px)]:p-1.5 p-2 md:p-3.5 lg:p-4.5 [@media(max-width:439px)]:mb-1.5 mb-2 md:mb-3 lg:mb-4 shadow-md mouse-click-icon-wrapper group'
         aria-label='Click icon representing user interaction'
       >
         <MousePointerClick
-          class='size-12 text-foreground mouse-click-icon group-hover:scale-110 transition-transform duration-300'
+          class='[@media(max-width:439px)]:size-5.5 size-7 md:size-9 lg:size-12 text-foreground mouse-click-icon group-hover:scale-110 transition-transform duration-300'
           aria-hidden='true'
         />
       </span>
