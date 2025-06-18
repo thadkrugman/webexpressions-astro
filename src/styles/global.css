@@ -140,7 +140,7 @@
   }
 
   .animate-fade-in.animate {
-    animation: fade-in 0.6s ease-out forwards;
+    animation: fade-in 0.8s ease-out forwards;
   }
 
   .animate-fade-in-up {
@@ -148,7 +148,7 @@
   }
 
   .animate-fade-in-up.animate {
-    animation: fade-in-up 0.6s ease-out forwards;
+    animation: fade-in-up 0.8s ease-out forwards;
   }
 
   .animate-fade-in-left {
@@ -156,7 +156,7 @@
   }
 
   .animate-fade-in-left.animate {
-    animation: fade-in-left 0.6s ease-out forwards;
+    animation: fade-in-left 0.8s ease-out forwards;
   }
 
   .animate-fade-in-right {
@@ -164,7 +164,7 @@
   }
 
   .animate-fade-in-right.animate {
-    animation: fade-in-right 0.6s ease-out forwards;
+    animation: fade-in-right 0.8s ease-out forwards;
   }
 
   .animate-scale-in {
@@ -172,7 +172,7 @@
   }
 
   .animate-scale-in.animate {
-    animation: scale-in 0.6s ease-out forwards;
+    animation: scale-in 0.8s ease-out forwards;
   }
 
   /* Animation delays - these need to work with the .animate class */
