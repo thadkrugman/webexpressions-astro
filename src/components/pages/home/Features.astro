@@ -90,7 +90,7 @@ const features = [
             {
               features.map((feature, index) => (
                 <div
-                  class={`relative pl-9 animate-fade-in-up animate-delay-${(index + 3) * 100} scroll-trigger`}
+                  class={`relative pl-9 animate-fade-in-up animate-delay-${Math.min((index + 1) * 100, 400)} scroll-trigger`}
                 >
                   <dt class='inline font-extrabold text-foreground'>
                     <feature.icon class='absolute left-1 top-1 size-5 text-primary' />

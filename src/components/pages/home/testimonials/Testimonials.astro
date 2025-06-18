@@ -140,7 +140,7 @@ const testimonials = [
         {
           testimonials[0][0].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${(index + 4) * 100} scroll-trigger`}
+              class={`animate-fade-in-up animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
@@ -152,7 +152,7 @@ const testimonials = [
         {
           testimonials[0][1].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${(index + 6) * 100} scroll-trigger`}
+              class={`animate-fade-in-up animate-delay-${Math.min((index + 3) * 100, 500)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
@@ -166,7 +166,7 @@ const testimonials = [
         {
           testimonials[1][0].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${(index + 5) * 100} scroll-trigger`}
+              class={`animate-fade-in-up animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
@@ -178,7 +178,7 @@ const testimonials = [
         {
           testimonials[1][1].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${(index + 7) * 100} scroll-trigger`}
+              class={`animate-fade-in-up animate-delay-${Math.min((index + 3) * 100, 600)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
