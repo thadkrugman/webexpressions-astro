@@ -13,19 +13,21 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
   <div
     class='mx-auto max-w-3xl flex flex-col items-center text-center animate-fade-in-up scroll-trigger'
   >
-    <div class='flex flex-row rounded-full border items-center p-1'>
+    <div class='flex flex-row rounded-full border items-center p-1 max-w-full'>
       <div
-        class='flex bg-foreground px-3 py-1.5 rounded-full items-center gap-2'
+        class='flex bg-foreground px-3 py-1.5 rounded-full items-center gap-2 flex-shrink-0'
       >
         <span class='text-background text-xs font-medium'>New</span>
         <PartyPopper class='size-3.5 text-background' />
       </div>
-      <div class='px-3 items-center flex'>
+      <div class='px-3 items-center flex min-w-0 flex-1'>
         <a
           href='/blog/is-your-current-website-costing-you-customers'
-          class='cursor-pointer hover:underline'
+          class='cursor-pointer hover:underline block w-full'
         >
-          <span class='text-sm font-medium'>
+          <span
+            class='text-sm font-medium line-clamp-1 [@media(max-width:639px)]:text-xs'
+          >
             Is Your Current Website Costing You Customers?
           </span>
         </a>
@@ -48,21 +50,36 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
       Convert
     </h1>
     <div
-      class='flex flex-row gap-8 mt-5'
+      class='flex flex-col lg:flex-row gap-4 lg:gap-8 mt-5 w-full max-w-2xl'
       role='list'
       aria-label='Services offered'
     >
-      <div class='flex flex-row gap-2 items-center' role='listitem'>
-        <Figma class='size-4' aria-hidden='true' />
-        <span class='text-base font-medium'>Intuitive Web Design</span>
+      <div
+        class='flex flex-row gap-2 items-center justify-center lg:justify-start'
+        role='listitem'
+      >
+        <Figma class='size-4 flex-shrink-0' aria-hidden='true' />
+        <span class='text-sm md:text-base font-medium'
+          >Intuitive Web Design</span
+        >
       </div>
-      <div class='flex flex-row gap-2 items-center' role='listitem'>
-        <Code class='size-4' aria-hidden='true' />
-        <span class='text-base font-medium'>Modern Web Development</span>
+      <div
+        class='flex flex-row gap-2 items-center justify-center lg:justify-start'
+        role='listitem'
+      >
+        <Code class='size-4 flex-shrink-0' aria-hidden='true' />
+        <span class='text-sm md:text-base font-medium'
+          >Modern Web Development</span
+        >
       </div>
-      <div class='flex flex-row gap-2 items-center' role='listitem'>
-        <TabletSmartphone class='size-4' aria-hidden='true' />
-        <span class='text-base font-medium'>Engaging Mobile Apps</span>
+      <div
+        class='flex flex-row gap-2 items-center justify-center lg:justify-start'
+        role='listitem'
+      >
+        <TabletSmartphone class='size-4 flex-shrink-0' aria-hidden='true' />
+        <span class='text-sm md:text-base font-medium'
+          >Engaging Mobile Apps</span
+        >
       </div>
     </div>
     <div class='mt-8'>

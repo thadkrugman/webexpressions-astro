@@ -5,41 +5,76 @@ import MS from '@/assets/images/home/project-showcase/m-s.png';
 ---
 
 <div
-  class='flex w-full pl-2 pr-4 overflow-visible mt-16 max-w-6xl mx-auto animate-fade-in-up animate-delay-400 scroll-trigger'
+  class='flex w-full px-4 overflow-visible mt-16 max-w-6xl mx-auto animate-fade-in-up animate-delay-400 scroll-trigger'
 >
   <div
     class='relative flex items-center justify-center overflow-visible w-full'
   >
-    <div class='w-3/5 aspect-video opacity-0 mb-31 pointer-events-none'></div>
-    <div
-      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 border border-gray-200'
-      style='left: 0;'
-    >
-      <Picture
-        src={SpectreCorpHero}
-        alt='Modern corporate website for a pressure sensor manufacturer'
-        width={1200}
-        height={750}
-        widths={[480, 768, 1024, 1536]}
-        sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
-        formats={['avif', 'webp']}
-        class='w-full h-full object-cover'
-      />
+    <!-- Mobile to MD: Stack with overlap effect -->
+    <div class='lg:hidden relative w-full'>
+      <div
+        class='bg-gray-50 overflow-hidden w-full h-auto aspect-[16/10] transform rotate-[-1deg] z-30 rounded-lg shadow-xl border border-gray-200'
+      >
+        <Picture
+          src={SpectreCorpHero}
+          alt='Modern corporate website for a pressure sensor manufacturer'
+          width={1200}
+          height={750}
+          widths={[480, 768, 1024, 1536]}
+          sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
+          formats={['avif', 'webp']}
+          class='w-full h-full object-cover'
+        />
+      </div>
+      <div
+        class='bg-gray-50 overflow-hidden w-full h-auto aspect-[16/10] transform rotate-[1deg] translate-y-[-20px] md:translate-y-[-40px] z-40 rounded-lg shadow-xl border border-gray-200'
+      >
+        <Picture
+          src={MS}
+          alt='Bold and modern website for a local auto detailing business'
+          width={1200}
+          height={750}
+          widths={[480, 768, 1024, 1536]}
+          sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
+          formats={['avif', 'webp']}
+          class='w-full h-full object-cover'
+        />
+      </div>
     </div>
-    <div
-      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 border border-gray-200'
-      style='right: 0;'
-    >
-      <Picture
-        src={MS}
-        alt='Bold and modern website for a local auto detailing business'
-        width={1200}
-        height={750}
-        widths={[480, 768, 1024, 1536]}
-        sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
-        formats={['avif', 'webp']}
-        class='w-full h-full object-cover'
-      />
+
+    <!-- LG and up: Full overlapping effect -->
+    <div class='hidden lg:block relative w-full'>
+      <div class='w-3/5 aspect-video opacity-0 mb-31 pointer-events-none'></div>
+      <div
+        class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl hover:scale-110 hover:rotate-[0deg] hover:z-50 transition-all duration-300 border border-gray-200'
+        style='left: 0;'
+      >
+        <Picture
+          src={SpectreCorpHero}
+          alt='Modern corporate website for a pressure sensor manufacturer'
+          width={1200}
+          height={750}
+          widths={[480, 768, 1024, 1536]}
+          sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
+          formats={['avif', 'webp']}
+          class='w-full h-full object-cover'
+        />
+      </div>
+      <div
+        class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl hover:scale-110 hover:rotate-[0deg] hover:z-50 transition-all duration-300 border border-gray-200'
+        style='right: 0;'
+      >
+        <Picture
+          src={MS}
+          alt='Bold and modern website for a local auto detailing business'
+          width={1200}
+          height={750}
+          widths={[480, 768, 1024, 1536]}
+          sizes='(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw'
+          formats={['avif', 'webp']}
+          class='w-full h-full object-cover'
+        />
+      </div>
     </div>
   </div>
 </div>
