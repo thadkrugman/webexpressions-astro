@@ -70,7 +70,7 @@ import X from '@lucide/astro/icons/x';
   <!-- Backdrop -->
   <div
     id='mobile-menu-backdrop'
-    class='fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300'
+    class='fixed inset-0 bg-primary/10 backdrop-blur-sm opacity-0 transition-opacity duration-300'
     aria-hidden='true'
   >
   </div>
@@ -81,7 +81,7 @@ import X from '@lucide/astro/icons/x';
     class='fixed flex flex-col top-0 right-0 h-full min-h-dvh w-full max-w-sm bg-background shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out'
   >
     <!-- Menu header -->
-    <div class='flex items-center justify-between p-8'>
+    <div class='flex items-center justify-between px-6 pt-6 pb-8'>
       <a
         href='/'
         class='hover:opacity-75 hover:scale-105 transition-all duration-300'
@@ -107,7 +107,7 @@ import X from '@lucide/astro/icons/x';
               <li class='flex flex-col space-y-8'>
                 <a
                   href={item.href}
-                  class={`group block px-4 text-2xl font-bold text-foreground hover:text-primary hover:bg-secondary/30 rounded-lg transition-all duration-300 animate-fade-in-right animate-delay-${(index + 1) * 100} scroll-trigger`}
+                  class={`group block px-4 text-xl font-bold text-foreground hover:text-primary hover:bg-secondary/30 rounded-lg transition-all duration-300 animate-fade-in-right animate-delay-${(index + 1) * 100} scroll-trigger`}
                 >
                   {item.label}
                 </a>
@@ -118,7 +118,7 @@ import X from '@lucide/astro/icons/x';
       </nav>
 
       <!-- CTA section -->
-      <div class='px-6 pt-8 pb-6'>
+      <div class='p-6 pb-6 pt-8'>
         <Button
           size='xl'
           href='/contact'
