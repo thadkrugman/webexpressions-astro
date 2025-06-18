@@ -65,14 +65,14 @@ const features = [
         <div
           class={`relative pl-9 animate-fade-in-up lg:animate-delay-${Math.min((index + 1) * 100, 400)} scroll-trigger`}
         >
-          <div class='inline font-extrabold text-foreground'>
+          <div class='inline font-extrabold text-foreground text-base/7 lg:text-lg/7'>
             <feature.icon
               class='absolute left-1 top-1 size-5 text-primary'
               aria-hidden='true'
             />
             {feature.title}
           </div>
-          <p class='inline'>{feature.description}</p>
+          <p class='inline text-base/7 lg:text-lg/7'>{feature.description}</p>
         </div>
       ))
     }
