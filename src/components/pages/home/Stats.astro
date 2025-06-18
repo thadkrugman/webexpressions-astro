@@ -34,7 +34,7 @@ const stats = [
     {
       stats.map((stat, index) => (
         <div
-          class={`relative w-full rounded-lg bg-gray-50 p-6 lg:p-8 lg:px-4 animate-fade-in-up lg:animate-delay-${(index + 2) * 100} scroll-trigger`}
+          class={`w-full rounded-lg bg-gray-50 p-6 lg:p-8 lg:px-4 animate-fade-in-up lg:animate-delay-${(index + 2) * 100} scroll-trigger`}
         >
           <div class='flex flex-col items-center text-center gap-y-3'>
             <div class='text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl'>
@@ -47,19 +47,19 @@ const stats = [
                 0{stat.suffix}
               </span>
             </div>
-            <div class='text-sm font-semibold uppercase tracking-wide'>
+            <div class='text-sm font-semibold uppercase tracking-wide flex items-center gap-x-2'>
+              {/* Animated brand accent dot */}
+              <div
+                class='relative w-2.5 h-2.5 bg-lime-400 rounded-full animate-pulse'
+                aria-hidden='true'
+              >
+                <div
+                  class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
+                  aria-hidden='true'
+                />
+              </div>
               {stat.label}
             </div>
-          </div>
-          {/* Animated brand accent dot */}
-          <div
-            class='absolute top-3 right-3 w-2 h-2 bg-lime-400 rounded-full animate-pulse'
-            aria-hidden='true'
-          >
-            <div
-              class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
-              aria-hidden='true'
-            />
           </div>
         </div>
       ))
