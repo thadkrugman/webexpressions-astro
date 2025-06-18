@@ -90,58 +90,35 @@ const socialLinks = [
         }
       </div>
     </div>
-    <div class='mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0'>
-      <div class='md:grid md:grid-cols-2 md:gap-8'>
-        {
-          footerSections.slice(0, 2).map((section, index) => (
-            <div class={index === 1 ? 'mt-10 md:mt-0' : ''}>
-              <h3 class='text-base/6 font-bold text-foreground'>
-                {section.title}
-              </h3>
-              <ul role='list' class='mt-6 space-y-4'>
-                {section.links.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      class='text-sm/6 text-foreground font-medium hover:text-foreground/75'
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
-      <div class='md:grid md:grid-cols-2 md:gap-8'>
-        {
-          footerSections.slice(2, 4).map((section, index) => (
-            <div class={index === 1 ? 'mt-10 md:mt-0' : ''}>
-              <h3 class='text-base/6 font-bold text-foreground'>
-                {section.title}
-              </h3>
-              <ul role='list' class='mt-6 space-y-4'>
-                {section.links.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      class='text-sm/6 text-foreground font-medium hover:text-foreground/75'
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
+    <div
+      class='mt-16 grid grid-cols-2 gap-x-8 md:grid-cols-4 xl:col-span-2 xl:mt-0'
+    >
+      {
+        footerSections.map((section, index) => (
+          <div class={index >= 2 ? 'mt-10 md:mt-0' : ''}>
+            <h3 class='text-base/6 font-bold text-foreground'>
+              {section.title}
+            </h3>
+            <ul role='list' class='mt-6 space-y-4'>
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class='text-sm/6 text-foreground font-medium hover:text-foreground/75'
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
   </div>
   <!-- Bottom Section -->
   <div class='mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24'>
-    <p class='text-sm/6 text-foreground font-medium text-left mt-5 md:mt-0'>
+    <p class='text-sm/6 text-foreground font-medium text-left'>
       &copy; {new Date().getFullYear()} webexpressions. All rights reserved.
     </p>
   </div>
