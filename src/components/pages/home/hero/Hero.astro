@@ -50,7 +50,7 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
       Convert
     </h1>
     <div
-      class='flex flex-col lg:flex-row gap-4 lg:gap-8 mt-5 w-full max-w-2xl'
+      class='flex flex-col lg:flex-row gap-4 lg:gap-8 mt-5 w-full max-w-3xl mx-auto'
       role='list'
       aria-label='Services offered'
     >
@@ -62,6 +62,17 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         <span class='[@media(max-width:439px)]:text-sm text-base font-medium'
           >Intuitive Web Design</span
         >
+        {/* Animated brand accent dot */}
+        <div
+          class='relative w-2 h-2 bg-lime-400 rounded-full animate-pulse ml-1'
+          aria-hidden='true'
+        >
+          <div
+            class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
+            aria-hidden='true'
+          >
+          </div>
+        </div>
       </div>
       <div
         class='flex flex-row gap-2 items-center justify-center lg:justify-start'
@@ -71,6 +82,17 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         <span class='[@media(max-width:439px)]:text-sm text-base font-medium'
           >Modern Web Development</span
         >
+        {/* Animated brand accent dot */}
+        <div
+          class='relative w-2 h-2 bg-lime-400 rounded-full animate-pulse ml-1'
+          aria-hidden='true'
+        >
+          <div
+            class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
+            aria-hidden='true'
+          >
+          </div>
+        </div>
       </div>
       <div
         class='flex flex-row gap-2 items-center justify-center lg:justify-start'
@@ -80,6 +102,17 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         <span class='[@media(max-width:439px)]:text-sm text-base font-medium'
           >Engaging Mobile Apps</span
         >
+        {/* Animated brand accent dot */}
+        <div
+          class='relative w-2 h-2 bg-lime-400 rounded-full animate-pulse ml-1'
+          aria-hidden='true'
+        >
+          <div
+            class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
+            aria-hidden='true'
+          >
+          </div>
+        </div>
       </div>
     </div>
     <div class='mt-8'>
