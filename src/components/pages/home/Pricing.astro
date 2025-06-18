@@ -53,26 +53,30 @@ const plans = [
 ---
 
 <Container as='section'>
-  <div class='mx-auto max-w-4xl sm:text-center'>
+  <div
+    class='mx-auto max-w-4xl sm:text-center animate-fade-in-up scroll-trigger'
+  >
     <p class='text-base/7 font-semibold text-accent'>Transparent Pricing</p>
     <h2 class='mt-2 heading-1 max-w-2xl'>
       Find the Right Plan for Your Project
     </h2>
   </div>
   <p
-    class='mx-auto mt-6 max-w-2xl text-pretty text-lg font-medium text-foreground sm:text-center sm:text-xl/8'
+    class='mx-auto mt-6 max-w-2xl text-pretty text-lg font-medium text-foreground sm:text-center sm:text-xl/8 animate-fade-in-up animate-delay-200 scroll-trigger'
   >
     A clear investment for tangible results. Below are my most popular packages.
     Don't see what you need? Let's create a custom plan.
   </p>
-  <div class='mt-20 flow-root'>
+  <div
+    class='mt-20 flow-root animate-fade-in-up animate-delay-300 scroll-trigger'
+  >
     <div
       class='isolate -mt-16 grid max-w-sm grid-cols-1 gap-y-0 divide-y divide-gray-100 sm:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 lg:divide-x lg:divide-y-0 xl:-mx-14'
     >
       {
         plans.map((plan, index) => (
           <div
-            class={`pt-16 ${index !== plans.length - 1 ? 'max-lg:pb-16' : ''} lg:px-8 lg:pt-0 xl:px-14`}
+            class={`pt-16 ${index !== plans.length - 1 ? 'max-lg:pb-16' : ''} lg:px-8 lg:pt-0 xl:px-14 animate-scale-in animate-delay-${(index + 4) * 100} scroll-trigger`}
           >
             <div class='flex items-center justify-between gap-x-4'>
               <h3

@@ -7,9 +7,20 @@ import Portfolio from '@/components/pages/home/Portfolio.astro';
 import Testimonials from '@/components/pages/home/testimonials/Testimonials.astro';
 import Pricing from '@/components/pages/home/Pricing.astro';
 import CTA from '@/components/pages/home/CTA.astro';
+
+const seo = {
+  title: 'webexpressions - Custom Web Development & Design by Thad',
+  description:
+    'Transform your business with modern web solutions. Professional web development using React, Astro, Svelte & more. Direct 1-on-1 collaboration with 100% client satisfaction. Get your high-performance website today.',
+  ogTitle: 'WebExpressions - Professional Web Development Services',
+  ogDescription:
+    'Partner with Thad for custom web development and design. Specializing in React, Astro, Svelte, and React Native. 100% satisfaction rate, lightning-fast delivery, and direct collaboration.',
+  keywords:
+    'web development, web design, React developer, Astro development, Svelte development, React Native, custom websites, web applications, freelance web developer, modern web development, responsive design, SEO optimization, performance optimization, business websites',
+};
 ---
 
-<Layout>
+<Layout {...seo}>
   <Hero />
   <Stats />
   <Features />

@@ -3,20 +3,122 @@ import '@/styles/global.css';
 import '@fontsource-variable/plus-jakarta-sans';
 import Navbar from '@/components/shared/Navbar.astro';
 import Footer from '@/components/shared/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+  keywords?: string;
+}
+
+const {
+  title = 'webexpressions - Custom Web Development & Design by Thad',
+  description = 'Professional web development and design services by Thad. Specializing in modern, high-performance websites and web applications using React, Astro, Svelte, React Native, and more. Direct 1-on-1 collaboration with 100% client satisfaction rate.',
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = '/og-image.jpg',
+  canonicalURL = Astro.url.href,
+  noindex = false,
+  keywords = 'web development, web design, React, Astro, Svelte, React Native, website development, custom websites, web applications, SEO optimization, responsive design, modern web development, freelance web developer'
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
-    <meta
-      name='description'
-      content='WebExpressions is a web development agency that builds custom websites and web applications for businesses.'
-    />
-    <title>Astro Basics</title>
+    
+    {/* Primary SEO Meta Tags */}
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta name='keywords' content={keywords} />
+    <link rel='canonical' href={canonicalURL} />
+    {noindex && <meta name='robots' content='noindex, nofollow' />}
+    
+    {/* Open Graph / Facebook */}
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={ogTitle} />
+    <meta property='og:description' content={ogDescription} />
+    <meta property='og:image' content={ogImage} />
+    <meta property='og:url' content={canonicalURL} />
+    <meta property='og:site_name' content='WebExpressions' />
+    <meta property='og:locale' content='en_US' />
+    
+    {/* Twitter Card */}
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={ogTitle} />
+    <meta name='twitter:description' content={ogDescription} />
+    <meta name='twitter:image' content={ogImage} />
+    <meta name='twitter:creator' content='@webexpressions' />
+    
+    {/* Additional Meta Tags for Business */}
+    <meta name='author' content='Thad - WebExpressions' />
+    <meta name='theme-color' content='#84cc16' />
+    <meta name='msapplication-TileColor' content='#84cc16' />
+    <meta name='format-detection' content='telephone=no' />
+    
+    {/* Business Schema.org structured data */}
+    <script type='application/ld+json'>
+      {
+        JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "WebExpressions",
+          "description": "Professional web development and design services specializing in modern, high-performance websites and web applications.",
+          "url": "https://webexpressions.dev",
+          "founder": {
+            "@type": "Person",
+            "name": "Thad",
+            "jobTitle": "Web Developer & Designer"
+          },
+          "serviceType": ["Web Development", "Web Design", "React Development", "Astro Development", "Svelte Development", "Mobile App Development"],
+          "areaServed": "Worldwide",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Landing Page Development",
+                  "description": "Single-page custom design with high-performance build"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Business Website Development",
+                  "description": "Complete multi-page website with CMS and SEO optimization"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Web Applications",
+                  "description": "Complex web and mobile applications with modern frameworks"
+                }
+              }
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "50+",
+            "bestRating": "5"
+          }
+        })
+      }
+    </script>
   </head>
   <body class='flex flex-col min-h-dvh'>
     <Navbar />
@@ -24,6 +126,46 @@ import Footer from '@/components/shared/Footer.astro';
       <slot />
     </main>
     <Footer />
+    
+    {/* Global scroll animations */}
+    <script>
+      // Global intersection observer for scroll animations
+      function initScrollAnimations() {
+        const observeElements = () => {
+          const elements = document.querySelectorAll('.scroll-trigger');
+          
+          if (elements.length === 0) return;
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Get the animation class from the element
+                const animationClass = entry.target.classList.toString().match(/animate-[\w-]+/)?.[0];
+                if (animationClass) {
+                  entry.target.classList.add(animationClass);
+                }
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          });
+
+          elements.forEach((el) => observer.observe(el));
+        };
+
+        // Initialize on DOM ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', observeElements);
+        } else {
+          observeElements();
+        }
+      }
+
+      // Initialize animations
+      initScrollAnimations();
+    </script>
   </body>
 </html>
 

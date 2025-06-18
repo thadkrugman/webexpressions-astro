@@ -28,7 +28,7 @@ const isLink = !!href;
 const Element = isLink ? 'a' : 'button';
 
 const baseStyles =
-  'inline-flex items-center justify-center font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer transition-all duration-300';
+  'inline-flex items-center justify-center font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer hover-lift';
 
 const variants = {
   primary:

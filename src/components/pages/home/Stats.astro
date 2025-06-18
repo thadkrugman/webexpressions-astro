@@ -18,10 +18,14 @@ const stats = [
 ---
 
 <Container as='section'>
-  <dl class='grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3'>
+  <dl
+    class='grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3 animate-fade-in-up scroll-trigger'
+  >
     {
-      stats.map((stat) => (
-        <div class='mx-auto flex max-w-xs flex-col gap-y-4'>
+      stats.map((stat, index) => (
+        <div
+          class={`mx-auto flex max-w-xs flex-col gap-y-4 animate-fade-in-up animate-delay-${(index + 2) * 100} scroll-trigger`}
+        >
           <dt class='text-base/7 text-foreground font-medium'>{stat.label}</dt>
           <dd class='order-first text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl'>
             {stat.value}
