@@ -140,7 +140,7 @@
   }
 
   .animate-fade-in.animate {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 0.6s ease-out forwards;
   }
 
   .animate-fade-in-up {
@@ -148,7 +148,7 @@
   }
 
   .animate-fade-in-up.animate {
-    animation: fade-in-up 0.8s ease-out forwards;
+    animation: fade-in-up 0.6s ease-out forwards;
   }
 
   .animate-fade-in-left {
@@ -156,7 +156,7 @@
   }
 
   .animate-fade-in-left.animate {
-    animation: fade-in-left 0.8s ease-out forwards;
+    animation: fade-in-left 0.6s ease-out forwards;
   }
 
   .animate-fade-in-right {
@@ -164,7 +164,7 @@
   }
 
   .animate-fade-in-right.animate {
-    animation: fade-in-right 0.8s ease-out forwards;
+    animation: fade-in-right 0.6s ease-out forwards;
   }
 
   .animate-scale-in {
@@ -172,39 +172,51 @@
   }
 
   .animate-scale-in.animate {
-    animation: scale-in 0.8s ease-out forwards;
+    animation: scale-in 0.6s ease-out forwards;
   }
 
-  /* Animation delays */
-  .animate-delay-100 {
+  /* Animation delays - these need to work with the .animate class */
+  .animate-delay-100.animate {
     animation-delay: 0.1s;
   }
-  .animate-delay-200 {
+  .animate-delay-200.animate {
     animation-delay: 0.2s;
   }
-  .animate-delay-300 {
+  .animate-delay-300.animate {
     animation-delay: 0.3s;
   }
-  .animate-delay-400 {
+  .animate-delay-400.animate {
     animation-delay: 0.4s;
   }
-  .animate-delay-500 {
+  .animate-delay-500.animate {
     animation-delay: 0.5s;
   }
-  .animate-delay-600 {
+  .animate-delay-600.animate {
     animation-delay: 0.6s;
   }
-  .animate-delay-700 {
+  .animate-delay-700.animate {
     animation-delay: 0.7s;
   }
-  .animate-delay-800 {
+  .animate-delay-800.animate {
     animation-delay: 0.8s;
   }
-  .animate-delay-900 {
+  .animate-delay-900.animate {
     animation-delay: 0.9s;
   }
-  .animate-delay-1000 {
+  .animate-delay-1000.animate {
     animation-delay: 1s;
+  }
+  .animate-delay-1200.animate {
+    animation-delay: 1.2s;
+  }
+  .animate-delay-1600.animate {
+    animation-delay: 1.6s;
+  }
+  .animate-delay-2000.animate {
+    animation-delay: 2s;
+  }
+  .animate-delay-2400.animate {
+    animation-delay: 2.4s;
   }
 
   /* Hover effects */
