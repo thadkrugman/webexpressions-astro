@@ -11,7 +11,9 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
 
 <Container as='section' className='items-center justify-center'>
   <div class='mx-auto max-w-3xl flex flex-col items-center text-center'>
-    <div class='flex flex-row rounded-full border items-center p-1'>
+    <div
+      class='flex flex-row rounded-full border items-center p-1 animate-fade-in-up scroll-trigger'
+    >
       <div
         class='flex bg-foreground px-3 py-1.5 rounded-full items-center gap-2'
       >
@@ -29,7 +31,9 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         </a>
       </div>
     </div>
-    <h1 class='heading-hero mt-5 hero-heading'>
+    <h1
+      class='heading-hero mt-5 animate-fade-in-up animate-delay-200 scroll-trigger'
+    >
       Crafting Digital Experiences That
       <span
         class='inline-flex align-middle bg-lime-400 rounded-xl mx-1 p-4.5 mb-4 shadow-md mouse-click-icon-wrapper'
@@ -38,7 +42,9 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
       </span>
       Convert
     </h1>
-    <div class='flex flex-row gap-8 mt-5'>
+    <div
+      class='flex flex-row gap-8 mt-5 animate-fade-in-up animate-delay-300 scroll-trigger'
+    >
       <div class='flex flex-row gap-2 items-center'>
         <Figma class='size-4' />
         <span class='text-base font-medium'>Intuitive Web Design</span>
@@ -52,7 +58,7 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         <span class='text-base font-medium'>Engaging Mobile Apps</span>
       </div>
     </div>
-    <div class='mt-8'>
+    <div class='mt-8 animate-fade-in-up animate-delay-400 scroll-trigger'>
       <Button size='xl' href='/contact'> Kickstart Your Project </Button>
     </div>
   </div>
@@ -60,15 +66,6 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
 </Container>
 
 <style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   @keyframes pulseClick {
     0% {
       transform: scale(1);
@@ -79,11 +76,6 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
     100% {
       transform: scale(1);
     }
-  }
-
-  .hero-heading {
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
   }
 
   .mouse-click-icon-wrapper .mouse-click-icon {

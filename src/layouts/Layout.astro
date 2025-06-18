@@ -139,11 +139,8 @@ const {
           const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                // Get the animation class from the element
-                const animationClass = entry.target.classList.toString().match(/animate-[\w-]+/)?.[0];
-                if (animationClass) {
-                  entry.target.classList.add(animationClass);
-                }
+                // Add the 'animate' class to trigger the animation
+                entry.target.classList.add('animate');
                 observer.unobserve(entry.target);
               }
             });

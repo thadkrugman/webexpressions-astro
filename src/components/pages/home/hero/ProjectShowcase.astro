@@ -1,7 +1,5 @@
 ---
 import { Picture } from 'astro:assets';
-import project1 from '@/assets/images/home/project-showcase/project-1.png';
-import project2 from '@/assets/images/home/project-showcase/project-2.png';
 import SpectreCorpHero from '@/assets/images/home/project-showcase/spectre-corp-hero.png';
 import RockwoodFlooringHero from '@/assets/images/home/project-showcase/rockwood-flooring-hero.png';
 ---
@@ -12,7 +10,7 @@ import RockwoodFlooringHero from '@/assets/images/home/project-showcase/rockwood
   >
     <div class='w-3/5 aspect-video opacity-0 mb-31 pointer-events-none'></div>
     <div
-      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 project-showcase'
+      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[-2deg] translate-y-6 z-30 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 animate-fade-in-up animate-delay-200 scroll-trigger'
       style='left: 0;'
     >
       <Picture
@@ -27,7 +25,7 @@ import RockwoodFlooringHero from '@/assets/images/home/project-showcase/rockwood
       />
     </div>
     <div
-      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 project-showcase border border-gray-200'
+      class='absolute bg-gray-50 overflow-hidden w-3/5 h-auto aspect-[16/10] transform rotate-[5deg] translate-y-[-12px] z-40 rounded-lg shadow-xl sm:hover:scale-110 sm:hover:rotate-[0deg] sm:hover:z-50 transition-all duration-300 border border-gray-200 animate-fade-in-up animate-delay-400 scroll-trigger'
       style='right: 0;'
     >
       <Picture
@@ -43,29 +41,3 @@ import RockwoodFlooringHero from '@/assets/images/home/project-showcase/rockwood
     </div>
   </div>
 </div>
-
-<style>
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(60px) scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .project-showcase {
-    opacity: 0;
-    animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  .project-showcase:first-child {
-    animation-delay: 0.2s;
-  }
-
-  .project-showcase:last-child {
-    animation-delay: 0.5s;
-  }
-</style>

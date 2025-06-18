@@ -8,14 +8,16 @@ import Button from '@/components/ui/Button.astro';
     as='section'
     className='lg:flex-row lg:items-center lg:justify-between mt-0 sm:mt-0 lg:mt-0 py-24 sm:py-32'
   >
-    <div>
+    <div class='animate-fade-in-up scroll-trigger'>
       <p class='heading-3 text-lime-400'>Let's Connect</p>
       <h2 class='heading-2 text-accent-foreground mt-2'>
         Have a Project in Mind? <br />
         Let's Bring It To Life.
       </h2>
     </div>
-    <div class='mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0'>
+    <div
+      class='mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0 animate-fade-in-up animate-delay-200 scroll-trigger'
+    >
       <Button
         size='lg'
         href='/contact'

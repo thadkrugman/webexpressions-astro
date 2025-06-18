@@ -47,7 +47,7 @@ const features = [
       class='max-w-2xl lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'
     >
       <div class='lg:pr-4'>
-        <div class='lg:max-w-xl'>
+        <div class='lg:max-w-xl animate-fade-in-up scroll-trigger'>
           <p class='heading-3'>
             The <span class='font-extrabold'>
               <span
@@ -68,7 +68,7 @@ const features = [
       </div>
     </div>
     <div
-      class='-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'
+      class='-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden animate-fade-in-up animate-delay-200 scroll-trigger'
     >
       <Picture
         src={Code}
@@ -88,8 +88,10 @@ const features = [
         <div class='max-w-xl text-base/7 text-foreground lg:max-w-lg'>
           <dl class='space-y-8 text-foreground'>
             {
-              features.map((feature) => (
-                <div class='relative pl-9'>
+              features.map((feature, index) => (
+                <div
+                  class={`relative pl-9 animate-fade-in-up animate-delay-${(index + 3) * 100} scroll-trigger`}
+                >
                   <dt class='inline font-extrabold text-foreground'>
                     <feature.icon class='absolute left-1 top-1 size-5 text-primary' />
                     {feature.title}

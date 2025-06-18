@@ -138,16 +138,24 @@ const testimonials = [
     <div class='space-y-8 xl:contents xl:space-y-0'>
       <div class='space-y-8 xl:row-span-2'>
         {
-          testimonials[0][0].map((testimonial) => (
-            <Card testimonial={testimonial} />
+          testimonials[0][0].map((testimonial, index) => (
+            <div
+              class={`animate-fade-in-up animate-delay-${(index + 4) * 100} scroll-trigger`}
+            >
+              <Card testimonial={testimonial} />
+            </div>
           ))
         }
         <!-- More testimonials... -->
       </div>
       <div class='space-y-8 xl:row-start-1'>
         {
-          testimonials[0][1].map((testimonial) => (
-            <Card testimonial={testimonial} />
+          testimonials[0][1].map((testimonial, index) => (
+            <div
+              class={`animate-fade-in-up animate-delay-${(index + 6) * 100} scroll-trigger`}
+            >
+              <Card testimonial={testimonial} />
+            </div>
           ))
         }
         <!-- More testimonials... -->
@@ -156,16 +164,24 @@ const testimonials = [
     <div class='space-y-8 xl:contents xl:space-y-0'>
       <div class='space-y-8 xl:row-start-1'>
         {
-          testimonials[1][0].map((testimonial) => (
-            <Card testimonial={testimonial} />
+          testimonials[1][0].map((testimonial, index) => (
+            <div
+              class={`animate-fade-in-up animate-delay-${(index + 5) * 100} scroll-trigger`}
+            >
+              <Card testimonial={testimonial} />
+            </div>
           ))
         }
         <!-- More testimonials... -->
       </div>
       <div class='space-y-8 xl:row-span-2'>
         {
-          testimonials[1][1].map((testimonial) => (
-            <Card testimonial={testimonial} />
+          testimonials[1][1].map((testimonial, index) => (
+            <div
+              class={`animate-fade-in-up animate-delay-${(index + 7) * 100} scroll-trigger`}
+            >
+              <Card testimonial={testimonial} />
+            </div>
           ))
         }
       </div>

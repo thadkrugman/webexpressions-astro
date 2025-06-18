@@ -58,7 +58,7 @@ const projects = [
 ---
 
 <Container as='section'>
-  <div class='mx-auto text-center max-w-2xl'>
+  <div class='mx-auto text-center max-w-2xl animate-fade-in-up scroll-trigger'>
     <p class='heading-3'>Featured Projects</p>
     <h2 class='mt-2 heading-1'>From Concept to Conversion</h2>
     <p
@@ -74,11 +74,13 @@ const projects = [
     </p>
   </div>
   <!-- grid container -->
-  <div class='mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6'>
+  <div
+    class='mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 animate-fade-in-up animate-delay-200 scroll-trigger'
+  >
     {
-      projects.map((project) => (
+      projects.map((project, index) => (
         <div
-          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200 sm:hover:scale-105 ease-in-out duration-300`}
+          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200 sm:hover:scale-105 ease-in-out duration-300 animate-scale-in animate-delay-${(index + 3) * 100} scroll-trigger`}
         >
           <a href={project.href}>
             <Picture
