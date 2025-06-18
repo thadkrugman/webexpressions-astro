@@ -95,7 +95,7 @@ const testimonials = [
     <h2 class='mt-2 heading-1'>What My Clients Are Saying</h2>
   </div>
   <div
-    class='mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-foreground sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4 animate-fade-in-up animate-delay-200 scroll-trigger'
+    class='mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-foreground sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
     role='region'
     aria-label='Client testimonials'
   >
@@ -142,7 +142,7 @@ const testimonials = [
         {
           testimonials[0][0].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
+              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
@@ -154,7 +154,7 @@ const testimonials = [
         {
           testimonials[0][1].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${Math.min((index + 3) * 100, 500)} scroll-trigger`}
+              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 3) * 100, 500)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
@@ -168,7 +168,7 @@ const testimonials = [
         {
           testimonials[1][0].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
+              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
@@ -180,7 +180,7 @@ const testimonials = [
         {
           testimonials[1][1].map((testimonial, index) => (
             <div
-              class={`animate-fade-in-up animate-delay-${Math.min((index + 3) * 100, 600)} scroll-trigger`}
+              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 3) * 100, 600)} scroll-trigger`}
             >
               <Card testimonial={testimonial} />
             </div>
