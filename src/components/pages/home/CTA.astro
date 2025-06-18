@@ -6,11 +6,11 @@ import Button from '@/components/ui/Button.astro';
 <div class='bg-primary mt-24 sm:mt-32 lg:mt-36 mb-24'>
   <Container
     as='section'
-    className='lg:flex-row lg:items-center lg:justify-between mt-0 sm:mt-0 lg:mt-0 py-24 sm:py-32'
+    className='lg:flex-row lg:items-center lg:justify-between mt-0 sm:mt-0 lg:mt-0 py-24 sm:py-32 lg:py-40'
   >
     <div class='animate-fade-in-up scroll-trigger'>
       <p class='heading-3 text-lime-400'>Let's Connect</p>
-      <h2 class='heading-2 text-accent-foreground mt-2'>
+      <h2 class='heading-2 text-accent-foreground mt-2 lg:text-6xl'>
         Have a Project in Mind? <br />
         Let's Bring It To Life.
       </h2>
@@ -19,13 +19,13 @@ import Button from '@/components/ui/Button.astro';
       class='mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
     >
       <Button
-        size='lg'
+        size='xl'
         href='/contact'
         className='bg-background text-foreground'>Get Started</Button
       >
       <a
         href='/about'
-        class='text-sm/6 font-semibold text-accent-foreground hover:opacity-90 hover:translate-x-1 hover:scale-105 transition-all duration-300'
+        class='text-base/6 font-semibold text-accent-foreground hover:opacity-90 hover:translate-x-1 hover:scale-105 transition-all duration-300'
         >Learn more <span aria-hidden='true'>→</span></a
       >
     </div>
