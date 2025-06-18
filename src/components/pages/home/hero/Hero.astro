@@ -10,10 +10,10 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
 ---
 
 <Container as='section' className='items-center justify-center'>
-  <div class='mx-auto max-w-3xl flex flex-col items-center text-center'>
-    <div
-      class='flex flex-row rounded-full border items-center p-1 animate-fade-in-up scroll-trigger'
-    >
+  <div
+    class='mx-auto max-w-3xl flex flex-col items-center text-center animate-fade-in-up scroll-trigger'
+  >
+    <div class='flex flex-row rounded-full border items-center p-1'>
       <div
         class='flex bg-foreground px-3 py-1.5 rounded-full items-center gap-2'
       >
@@ -31,7 +31,7 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         </a>
       </div>
     </div>
-    <h1 class='heading-hero mt-5 animate-fade-in-up scroll-trigger'>
+    <h1 class='heading-hero mt-5'>
       Crafting Digital Experiences That
       <span
         class='inline-flex align-middle bg-lime-400 rounded-xl mx-1 p-4.5 mb-4 shadow-md mouse-click-icon-wrapper group'
@@ -45,7 +45,7 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
       Convert
     </h1>
     <div
-      class='flex flex-row gap-8 mt-5 animate-fade-in-up scroll-trigger'
+      class='flex flex-row gap-8 mt-5'
       role='list'
       aria-label='Services offered'
     >
@@ -62,7 +62,7 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
         <span class='text-base font-medium'>Engaging Mobile Apps</span>
       </div>
     </div>
-    <div class='mt-8 animate-fade-in-up scroll-trigger'>
+    <div class='mt-8'>
       <Button size='xl' href='/contact'> Kickstart Your Project </Button>
     </div>
   </div>
@@ -84,6 +84,6 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
 
   .mouse-click-icon-wrapper .mouse-click-icon {
     display: inline-block;
-    animation: pulseClick 0.5s ease-in-out 1.6s 1 forwards;
+    animation: pulseClick 0.5s ease-in-out 1.8s 1 forwards;
   }
 </style>
