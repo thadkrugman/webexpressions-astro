@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/shared/Container.astro';
 import Button from '@/components/ui/Button.astro';
+import MoveRight from '@lucide/astro/icons/move-right';
 ---
 
 <div class='bg-primary mt-24 sm:mt-32 lg:mt-36 mb-24'>
@@ -21,12 +22,23 @@ import Button from '@/components/ui/Button.astro';
       <Button
         size='xl'
         href='/contact'
-        className='bg-background text-foreground'>Get Started</Button
+        className='bg-background text-foreground group flex items-center justify-center'
+        >Get Started <MoveRight
+          class='size-4 ml-2 group-hover:translate-x-1 transition-transform duration-300'
+          stroke-width={3}
+          aria-hidden='true'
+        /></Button
       >
-      <a
+      <Button
+        size='xl'
+        variant='outline'
         href='/about'
-        class='text-base/6 font-semibold text-accent-foreground hover:opacity-90 hover:translate-x-1 hover:scale-105 transition-all duration-300'
-        >Learn more <span aria-hidden='true'>→</span></a
+        className='border-background text-background group flex items-center justify-center hover:bg-background hover:text-foreground'
+        >Learn More <MoveRight
+          class='size-4 ml-2 group-hover:translate-x-1 transition-transform duration-300'
+          stroke-width={3}
+          aria-hidden='true'
+        /></Button
       >
     </div>
   </Container>
