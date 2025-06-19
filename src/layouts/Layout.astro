@@ -16,14 +16,14 @@ export interface Props {
 }
 
 const {
-  title = 'webexpressions - Custom Web Development & Design by Thad',
+  title = 'webexpressions - Professional Web Development Services',
   description = 'Professional web development and design services by Thad. Specializing in modern, high-performance websites and web applications using React, Astro, Svelte, React Native, and more. Direct 1-on-1 collaboration with 100% client satisfaction rate.',
   ogTitle = title,
   ogDescription = description,
-  ogImage = '/og-image.png',
+  ogImage = '/og.png',
   canonicalURL = Astro.url.href,
   noindex = false,
-  keywords = 'web development, web design, React, Astro, Svelte, React Native, expo, website development, custom websites, web applications, SEO optimization, responsive design, modern web development, freelance web developer, mobile app development'
+  keywords = 'web development, React developer, Astro development, Svelte development, React Native, mobile app development, custom websites, freelance web developer, responsive design, SEO optimization, modern web applications'
 } = Astro.props;
 ---
 
@@ -32,7 +32,10 @@ const {
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name='generator' content={Astro.generator} />
     
     {/* Primary SEO Meta Tags */}
