@@ -7,6 +7,7 @@ import Figma from '@lucide/astro/icons/figma';
 import Code from '@lucide/astro/icons/code';
 import TabletSmartphone from '@lucide/astro/icons/tablet-smartphone';
 import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro';
+import Rocket from '@lucide/astro/icons/rocket';
 ---
 
 <Container as='section' className='items-center justify-center'>
@@ -113,7 +114,17 @@ import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro'
       </div>
     </div>
     <div class='mt-8'>
-      <Button size='xl' href='/contact'> Kickstart Your Project </Button>
+      <Button
+        size='xl'
+        href='/contact'
+        className='flex items-center justify-center group'
+      >
+        Kickstart Your Project
+        <Rocket
+          class='size-4 ml-2 group-hover:-translate-y-10 group-hover:translate-x-10 transition-transform duration-500'
+          stroke-width={3}
+        />
+      </Button>
     </div>
   </div>
   <ProjectShowcase />
