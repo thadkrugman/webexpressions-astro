@@ -96,14 +96,19 @@ const plans = [
                 {plan.price}
               </span>
             </p>
-            <p class='mt-3 text-sm/6 text-foreground'>{plan.priceSubtext}</p>
+            <p class='mt-3 text-sm/6 text-foreground font-semibold'>
+              {plan.priceSubtext}
+            </p>
             <Button size='lg' href='/contact' className='w-full mt-10'>
               {plan.buttonText}
             </Button>
             <p class='mt-10 text-sm/6 font-semibold text-foreground'>
               {plan.description}
             </p>
-            <ul role='list' class='mt-6 space-y-3 text-sm/6 text-foreground'>
+            <ul
+              role='list'
+              class='mt-6 space-y-3 text-sm/6 text-foreground font-medium'
+            >
               {plan.features.map((feature) => (
                 <li class='flex gap-x-3'>
                   <svg

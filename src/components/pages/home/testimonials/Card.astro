@@ -1,12 +1,9 @@
 ---
-import { Picture } from 'astro:assets';
-
 export interface Props {
   testimonial: {
     body: string;
     author: {
       name: string;
-      imageUrl: string | ImageMetadata;
     };
   };
 }
@@ -15,32 +12,24 @@ const { testimonial } = Astro.props;
 ---
 
 <figure class='rounded-lg bg-gray-50 p-6'>
-  <blockquote class='text-foreground text-sm/6'>
+  <blockquote class='text-foreground text-sm/6 font-medium'>
     <p>{testimonial.body}</p>
   </blockquote>
   <figcaption class='mt-6 flex items-center gap-x-4'>
-    {
-      typeof testimonial.author.imageUrl === 'string' ?
-        <img
-          class='size-10 rounded-full bg-gray-50'
-          src={testimonial.author.imageUrl}
-          alt={testimonial.author.name}
-          width='40'
-          height='40'
-          loading='lazy'
-        />
-      : <Picture
-          src={testimonial.author.imageUrl}
-          alt={testimonial.author.name}
-          width={40}
-          height={40}
-          widths={[40, 80]}
-          sizes='40px'
-          formats={['avif', 'webp']}
-          class='size-10 rounded-full bg-gray-50'
-          loading='lazy'
-        />
-    }
+    <div
+      class='size-9 rounded-full bg-lime-400 flex items-center justify-center uppercase text-background text-xs font-bold tracking-widest'
+    >
+      {
+        (() => {
+          const nameParts = testimonial.author.name.trim().split(' ');
+          if (nameParts.length > 1) {
+            return `${nameParts[0].slice(0, 1)}${nameParts[nameParts.length - 1].slice(0, 1)}`;
+          } else {
+            return testimonial.author.name.slice(0, 2);
+          }
+        })()
+      }
+    </div>
     <div>
       <div class='font-semibold'>{testimonial.author.name}</div>
     </div>
