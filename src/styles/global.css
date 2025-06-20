@@ -65,12 +65,24 @@
     @apply text-5xl font-extrabold tracking-tight text-foreground sm:text-7xl;
   }
 
+  @media (max-width: 439px) {
+    .heading-1 {
+      @apply text-4xl;
+    }
+  }
+
   .heading-2 {
     @apply text-pretty text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl;
   }
 
   .heading-3 {
     @apply text-lg/7 font-bold text-accent;
+  }
+
+  @media (max-width: 439px) {
+    .heading-3 {
+      @apply text-base;
+    }
   }
 }
 

@@ -8,11 +8,24 @@ import Code from '@lucide/astro/icons/code';
 import TabletSmartphone from '@lucide/astro/icons/tablet-smartphone';
 import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro';
 import Rocket from '@lucide/astro/icons/rocket';
+
+const services = [
+  'Intuitive Web Design',
+  'Modern Web Development',
+  'Engaging Mobile Apps',
+];
 ---
 
-<Container as='section' className='items-center justify-center'>
+<Container as='section' className='items-center justify-center mt-16'>
   <div
-    class='mx-auto max-w-3xl flex flex-col items-center text-center animate-fade-in-up scroll-trigger'
+    class='mx-auto
+  max-w-3xl
+  flex
+  flex-col
+  items-center
+  text-center
+  animate-fade-in-up
+  scroll-trigger'
   >
     <div class='flex flex-row rounded-full border items-center p-1 max-w-full'>
       <div
@@ -55,63 +68,27 @@ import Rocket from '@lucide/astro/icons/rocket';
       role='list'
       aria-label='Services offered'
     >
-      <div
-        class='flex flex-row gap-2 items-center justify-center lg:justify-start'
-        role='listitem'
-      >
-        {/* Animated brand accent dot */}
-        <div
-          class='relative [@media(max-width:439px)]:size-2.25 size-2.5 bg-lime-400 rounded-full animate-pulse flex-shrink-0'
-          aria-hidden='true'
-        >
+      {
+        services.map((service) => (
           <div
-            class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
-            aria-hidden='true'
+            class='flex flex-row gap-2 items-center justify-center lg:justify-start'
+            role='listitem'
           >
+            <div
+              class='relative [@media(max-width:439px)]:size-2.25 size-2.5 bg-lime-400 rounded-full animate-pulse flex-shrink-0'
+              aria-hidden='true'
+            >
+              <div
+                class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
+                aria-hidden='true'
+              />
+            </div>
+            <span class='[@media(max-width:439px)]:text-sm text-base font-semibold'>
+              {service}
+            </span>
           </div>
-        </div>
-        <span class='[@media(max-width:439px)]:text-sm text-base font-semibold'
-          >Intuitive Web Design</span
-        >
-      </div>
-      <div
-        class='flex flex-row gap-2 items-center justify-center lg:justify-start'
-        role='listitem'
-      >
-        {/* Animated brand accent dot */}
-        <div
-          class='relative [@media(max-width:439px)]:size-2.25 size-2.5 bg-lime-400 rounded-full animate-pulse flex-shrink-0'
-          aria-hidden='true'
-        >
-          <div
-            class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
-            aria-hidden='true'
-          >
-          </div>
-        </div>
-        <span class='[@media(max-width:439px)]:text-sm text-base font-semibold'
-          >Modern Web Development</span
-        >
-      </div>
-      <div
-        class='flex flex-row gap-2 items-center justify-center lg:justify-start'
-        role='listitem'
-      >
-        {/* Animated brand accent dot */}
-        <div
-          class='relative [@media(max-width:439px)]:size-2.25 size-2.5 bg-lime-400 rounded-full animate-pulse flex-shrink-0'
-          aria-hidden='true'
-        >
-          <div
-            class='absolute inset-0 bg-lime-400 rounded-full animate-ping opacity-75'
-            aria-hidden='true'
-          >
-          </div>
-        </div>
-        <span class='[@media(max-width:439px)]:text-sm text-base font-semibold'
-          >Engaging Mobile Apps</span
-        >
-      </div>
+        ))
+      }
     </div>
     <div class='mt-8'>
       <Button
@@ -128,30 +105,30 @@ import Rocket from '@lucide/astro/icons/rocket';
     </div>
   </div>
   <ProjectShowcase />
-</Container>
 
-<style>
-  @keyframes pulseClick {
-    0% {
-      transform: scale(1);
+  <style>
+    @keyframes pulseClick {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 
-  .mouse-click-icon-wrapper .mouse-click-icon {
-    display: inline-block;
-    animation: pulseClick 0.5s ease-in-out 1s 1 forwards;
-  }
-
-  /* Longer delay for larger screens where images fade in separately */
-  @media (min-width: 1024px) {
     .mouse-click-icon-wrapper .mouse-click-icon {
-      animation: pulseClick 0.5s ease-in-out 1.8s 1 forwards;
+      display: inline-block;
+      animation: pulseClick 0.5s ease-in-out 1s 1 forwards;
     }
-  }
-</style>
+
+    /* Longer delay for larger screens where images fade in separately */
+    @media (min-width: 1024px) {
+      .mouse-click-icon-wrapper .mouse-click-icon {
+        animation: pulseClick 0.5s ease-in-out 1.8s 1 forwards;
+      }
+    }
+  </style>
+</Container>
