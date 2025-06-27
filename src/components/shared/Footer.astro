@@ -55,81 +55,75 @@ const socialLinks = [
 ];
 ---
 
-<footer class='flex flex-col w-full'>
-  <Container className='py-20 sm:py-20 lg:py-20'>
-    <div class='xl:grid xl:grid-cols-3 xl:gap-8'>
-      <div class='space-y-8'>
-        <a
-          href='/'
-          class='hover:opacity-75 hover:scale-105 transition-all duration-300 flex items-end w-fit'
-          aria-label='Home'
-        >
-          <Layers2 stroke-width={2.1} class='size-14 text-foreground' />
-        </a>
-        <p
-          class='text-pretty text-sm/6 text-foreground font-medium lg:pr-10 md:max-w-lg'
-        >
-          Crafting exceptional web experiences through innovative design and
-          cutting-edge development. Let's bring your digital vision to life.
-        </p>
-        <div class='flex gap-x-6'>
-          {
-            socialLinks.map((social) => (
-              <a
-                href={social.href}
-                class='text-foreground font-medium hover:text-foreground/75'
-              >
-                <span class='sr-only'>{social.name}</span>
-                <svg
-                  class='size-6'
-                  fill='currentColor'
-                  viewBox='0 0 24 24'
-                  aria-hidden='true'
-                >
-                  <path
-                    fill-rule='evenodd'
-                    d={social.icon}
-                    clip-rule='evenodd'
-                  />
-                </svg>
-              </a>
-            ))
-          }
-        </div>
-      </div>
-      <div
-        class='mt-16 grid grid-cols-2 gap-x-8 md:grid-cols-4 xl:col-span-2 xl:mt-0'
+<Container className='pt-20 sm:pt-20 lg:pt-20 pb-8 sm:pb-8 lg:pb-8'>
+  <div class='xl:grid xl:grid-cols-3 xl:gap-8'>
+    <div class='space-y-8'>
+      <a
+        href='/'
+        class='hover:opacity-75 hover:scale-105 transition-all duration-300 flex items-end w-fit'
+        aria-label='Home'
       >
+        <Layers2 stroke-width={2.1} class='size-14 text-foreground' />
+      </a>
+      <p
+        class='text-pretty text-sm/6 text-foreground font-medium lg:pr-10 md:max-w-lg'
+      >
+        Crafting exceptional web experiences through innovative design and
+        cutting-edge development. Let's bring your digital vision to life.
+      </p>
+      <div class='flex gap-x-6'>
         {
-          footerSections.map((section, index) => (
-            <div class={index >= 2 ? 'mt-10 md:mt-0' : ''}>
-              <h3 class='text-base/6 font-bold text-foreground'>
-                {section.title}
-              </h3>
-              <ul role='list' class='mt-6 space-y-4'>
-                {section.links.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      class='text-sm/6 text-foreground font-medium hover:text-foreground/75'
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          socialLinks.map((social) => (
+            <a
+              href={social.href}
+              class='text-foreground font-medium hover:text-foreground/75'
+            >
+              <span class='sr-only'>{social.name}</span>
+              <svg
+                class='size-6'
+                fill='currentColor'
+                viewBox='0 0 24 24'
+                aria-hidden='true'
+              >
+                <path fill-rule='evenodd' d={social.icon} clip-rule='evenodd' />
+              </svg>
+            </a>
           ))
         }
       </div>
     </div>
-  </Container>
+    <div
+      class='mt-16 grid grid-cols-2 gap-x-8 md:grid-cols-4 xl:col-span-2 xl:mt-0'
+    >
+      {
+        footerSections.map((section, index) => (
+          <div class={index >= 2 ? 'mt-10 md:mt-0' : ''}>
+            <h3 class='text-base/6 font-bold text-foreground'>
+              {section.title}
+            </h3>
+            <ul role='list' class='mt-6 space-y-4'>
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='text-sm/6 text-foreground font-medium hover:text-foreground/75'
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
   <!-- Bottom Section -->
-  <Container className='py-8 sm:py-8 lg:py-8'>
+  <div class='pt-8 border-t border-border mt-16'>
     <p class='text-sm/6 text-foreground font-medium text-left'>
       &copy; {new Date().getFullYear()} webexpressions. All rights reserved.
     </p>
-  </Container>
-</footer>
+  </div>
+</Container>
