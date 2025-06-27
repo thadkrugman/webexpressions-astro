@@ -14,18 +14,41 @@ type HTMLTag =
 interface Props {
   className?: string;
   as?: HTMLTag;
+  id?: string;
+  showSideBorders?: boolean;
+  showTopBorder?: boolean;
+  showBottomBorder?: boolean;
 }
 
-const { className = '', as = 'div', ...rest } = Astro.props;
+const {
+  className = '',
+  as = 'div',
+  id,
+  showTopBorder = false,
+  showBottomBorder = true,
+  showSideBorders = true,
+  ...rest
+} = Astro.props;
 const Element = as;
 ---
 
-<Element
+<div
   class={cn(
-    'flex flex-col px-6 lg:px-8 max-w-2xl lg:max-w-7xl mx-auto w-full mt-24 sm:mt-32 lg:mt-36',
-    className,
+    'flex flex-row justify-center w-full',
+    showTopBorder && 'border-t border-gray-100',
+    showBottomBorder && 'border-b border-gray-100',
   )}
-  {...rest}
 >
-  <slot />
-</Element>
+  <div class='w-3 sm:w-6 lg:w-8 xl:w-12 flex-shrink-0 bg-transparent'></div>
+  <Element
+    class={cn(
+      'flex flex-col px-3 sm:px-6 lg:px-8 xl:px-12 max-w-2xl lg:max-w-7xl mx-auto w-full py-20 sm:py-24 lg:py-28',
+      showSideBorders && 'border-x border-gray-100',
+      className,
+    )}
+    {...rest}
+  >
+    <slot />
+  </Element>
+  <div class='w-3 sm:w-6 lg:w-8 xl:w-12 flex-shrink-0 bg-transparent'></div>
+</div>
