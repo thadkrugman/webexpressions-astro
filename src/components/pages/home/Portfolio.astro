@@ -82,7 +82,7 @@ const projects = [
     {
       projects.map((project, index) => (
         <div
-          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden border-2 border-gray-100 shadow-lg shadow-gray-200 sm:hover:scale-[1.03] ease-in-out duration-300 animate-scale-in lg:animate-delay-${Math.min((index + 1) * 100, 500)} scroll-trigger`}
+          class={`relative group bg-gray-100 ${project.aspectRatio} rounded-lg w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden sm:hover:scale-[1.03] ease-in-out duration-300 animate-scale-in lg:animate-delay-${Math.min((index + 1) * 100, 500)} scroll-trigger border border-black/[.04] shadow-[0_8px_24px_rgba(0,0,0,0.08)]`}
         >
           <a
             href={project.href}
@@ -106,7 +106,7 @@ const projects = [
           >
             <SquareArrowOutUpRight
               stroke-width={2.5}
-              class='size-4 text-foreground'
+              class='size-4 text-accent'
             />
           </div>
         </div>
