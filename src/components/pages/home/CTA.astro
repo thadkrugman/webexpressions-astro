@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/shared/Container.astro';
 import Button from '@/components/ui/Button.astro';
+import { Layers2 } from '@lucide/astro';
 import MoveRight from '@lucide/astro/icons/move-right';
 ---
 
@@ -9,39 +10,56 @@ import MoveRight from '@lucide/astro/icons/move-right';
     as='section'
     showBottomBorder={false}
     showSideBorders={false}
-    className='xl:flex-row xl:items-center xl:justify-between py-24 sm:py-32 lg:py-36 lg:space-y-12'
+    className='lg:flex-row lg:items-center lg:justify-between py-24 sm:py-32 lg:py-36'
   >
-    <div class='animate-fade-in-up scroll-trigger'>
-      <p class='heading-3 text-lime-400'>Let's Connect</p>
-      <h2 class='heading-2 text-accent-foreground mt-2 lg:text-6xl'>
-        Have a Project in Mind? <br class='max-[439px]:hidden' />
-        Let's Bring It To Life.
-      </h2>
+    <div class='flex-shrink-0'>
+      <div class='animate-fade-in-up scroll-trigger'>
+        <Layers2
+          stroke-width={2.1}
+          class='size-12 sm:size-14 mb-5 text-primary-foreground lg:hidden'
+        />
+        <p class='heading-3 text-lime-400'>Let's Connect</p>
+        <h2 class='heading-2 text-accent-foreground mt-2 lg:text-6xl'>
+          Have a Project in Mind? <br class='max-[439px]:hidden' />
+          Let's Bring It To Life.
+        </h2>
+      </div>
+      <div
+        class='mt-10 flex max-[440px]:flex-col max-[440px]:gap-y-4 min-[440px]:items-center min-[440px]:gap-x-6 lg:mt-12 lg:shrink-0 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
+      >
+        <Button
+          size='xl'
+          href='/contact'
+          className='bg-background text-foreground group flex items-center justify-center'
+          >Get Started <MoveRight
+            class='size-4 ml-2 group-hover:translate-x-1 transition-transform duration-300'
+            stroke-width={3}
+            aria-hidden='true'
+          /></Button
+        >
+        <Button
+          size='xl'
+          variant='outline'
+          href='/about'
+          className='border-background text-background group flex items-center justify-center hover:bg-background hover:text-foreground'
+          >Learn More <MoveRight
+            class='size-4 ml-2 group-hover:translate-x-1 transition-transform duration-300'
+            stroke-width={3}
+            aria-hidden='true'
+          /></Button
+        >
+      </div>
     </div>
     <div
-      class='mt-10 flex max-[440px]:flex-col max-[440px]:gap-y-4 min-[440px]:items-center min-[440px]:gap-x-6 lg:mt-0 lg:shrink-0 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
+      class='hidden lg:flex flex-col flex-1 h-64 items-center justify-center'
     >
-      <Button
-        size='xl'
-        href='/contact'
-        className='bg-background text-foreground group flex items-center justify-center'
-        >Get Started <MoveRight
-          class='size-4 ml-2 group-hover:translate-x-1 transition-transform duration-300'
-          stroke-width={3}
-          aria-hidden='true'
-        /></Button
-      >
-      <Button
-        size='xl'
-        variant='outline'
-        href='/about'
-        className='border-background text-background group flex items-center justify-center hover:bg-background hover:text-foreground'
-        >Learn More <MoveRight
-          class='size-4 ml-2 group-hover:translate-x-1 transition-transform duration-300'
-          stroke-width={3}
-          aria-hidden='true'
-        /></Button
-      >
+      <Layers2
+        stroke-width={2.1}
+        class='h-full w-auto aspect-square text-primary-foreground'
+      />
+      <p class='text-primary-foreground font-black text-4xl mt-6'>
+        webexpressions
+      </p>
     </div>
   </Container>
 </div>
