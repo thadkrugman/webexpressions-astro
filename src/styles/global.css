@@ -249,6 +249,14 @@
       0 4px 6px -2px rgb(0 0 0 / 0.1);
   }
 
+  .hover-lift-logo {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift-logo:hover {
+    transform: translateY(-2px);
+  }
+
   /* Line clamp utilities */
   .line-clamp-1 {
     overflow: hidden;
