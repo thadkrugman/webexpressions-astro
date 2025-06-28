@@ -3,7 +3,15 @@ import { cn } from '@/lib/utils';
 
 interface Props {
   className?: string;
-  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'accent'
+    | 'outline'
+    | 'outline-secondary'
+    | 'outline-accent'
+    | 'outline-accent-secondary'
+    | 'ghost';
   size?: 'xs' | 'sm' | 'default' | 'lg' | 'xl';
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
@@ -31,14 +39,18 @@ const baseStyles =
   'inline-flex items-center justify-center font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer hover-lift';
 
 const variants = {
-  primary:
-    'bg-primary text-white hover:opacity-90 focus-visible:outline-primary',
+  primary: 'bg-primary text-white focus-visible:outline-primary',
   secondary:
-    'bg-secondary text-secondary-foreground hover:opacity-90 focus-visible:outline-secondary',
+    'bg-secondary text-secondary-foreground focus-visible:outline-secondary',
   accent:
     'bg-accent text-accent-foreground hover:opacity-90 focus-visible:outline-accent',
-  outline:
-    'border border-primary bg-transparent hover:bg-primary/10 focus-visible:outline-primary',
+  outline: 'border border-primary bg-transparent focus-visible:outline-primary',
+  'outline-secondary':
+    'border border-secondary text-secondary bg-transparent focus-visible:outline-secondary',
+  'outline-accent':
+    'border border-accent text-accent bg-transparent focus-visible:outline-accent',
+  'outline-accent-secondary':
+    'border border-accent-secondary text-accent-secondary bg-transparent focus-visible:outline-accent-secondary',
   ghost: 'hover:bg-primary hover:text-white focus-visible:outline-primary',
 };
 

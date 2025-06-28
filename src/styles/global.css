@@ -13,12 +13,14 @@
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: oklch(0 0 0);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(1 0 0);
+  --secondary-foreground: oklch(0 0 0);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(54.1% 0.281 293.009);
-  --accent-foreground: oklch(1 0 0);
+  --accent: oklch(84.1% 0.238 128.85);
+  --accent-foreground: oklch(0 0 0);
+  --accent-secondary: oklch(54.1% 0.281 293.009);
+  --accent-secondary-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
@@ -42,6 +44,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-foreground: var(--accent-secondary-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -76,7 +80,7 @@
   }
 
   .heading-3 {
-    @apply text-lg/7 font-bold text-accent;
+    @apply text-lg/7 font-bold text-accent-secondary;
   }
 
   @media (max-width: 439px) {
