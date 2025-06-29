@@ -80,17 +80,11 @@
   }
 
   .heading-3 {
-    @apply text-pretty text-3xl font-extrabold text-foreground sm:text-4xl;
-  }
-
-  @media (max-width: 439px) {
-    .heading-3 {
-      @apply text-2xl;
-    }
+    @apply text-pretty text-2xl font-extrabold text-foreground sm:text-3xl;
   }
 
   .kicker {
-    @apply text-lg/7 font-bold text-accent-secondary;
+    @apply text-lg/7 sm:text-xl/8 font-bold text-accent-secondary;
   }
 
   @media (max-width: 439px) {

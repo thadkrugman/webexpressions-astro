@@ -15,15 +15,23 @@ interface Props {
   className?: string;
   as?: HTMLTag;
   id?: string;
+  isFirstSection?: boolean;
 }
 
-const { className = '', as = 'div', id, ...rest } = Astro.props;
+const {
+  className = '',
+  as = 'div',
+  id,
+  isFirstSection = false,
+  ...rest
+} = Astro.props;
 const Element = as;
 ---
 
 <Element
   class={cn(
-    'flex flex-col px-6 sm:px-8 lg:px-10 xl:px-12 max-w-2xl lg:max-w-7xl mx-auto w-full pt-24 sm:pt-32 lg:pt-36',
+    'flex flex-col px-6 sm:px-8 lg:px-10 xl:px-12 max-w-2xl lg:max-w-7xl mx-auto w-full',
+    isFirstSection ? 'pt-16 sm:pt-32 lg:pt-36' : 'pt-24 sm:pt-32 lg:pt-36',
     className,
   )}
   {...rest}

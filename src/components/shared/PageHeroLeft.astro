@@ -46,10 +46,14 @@ const {
 } = Astro.props;
 ---
 
-<Container as='header' className='pt-20 animate-fade-in-up scroll-trigger'>
+<Container
+  as='header'
+  isFirstSection={true}
+  className='animate-fade-in-up scroll-trigger'
+>
   <p
     class={cn(
-      'text-lg/7 lg:text-[21px]/7 font-bold text-accent-secondary',
+      'text-xl/8 sm:text-2xl/8 font-bold text-accent-secondary animate-fade-in-up scroll-trigger',
       kickerClassName,
     )}
   >
@@ -57,7 +61,7 @@ const {
   </p>
   <h2
     class={cn(
-      '[@media(max-width:439px)]:text-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-tight text-foreground text-pretty mt-3 max-w-2xl',
+      '[@media(max-width:439px)]:text-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-tight text-foreground text-pretty mt-3 max-w-2xl animate-fade-in-up animate-delay-100 scroll-trigger',
       headingClassName,
     )}
   >
@@ -65,13 +69,15 @@ const {
   </h2>
   <p
     class={cn(
-      'mt-8 text-lg lg:text-xl/8 text-foreground font-medium max-w-2xl',
+      'mt-8 text-lg lg:text-xl/8 text-foreground font-medium max-w-2xl animate-fade-in-up animate-delay-200 scroll-trigger',
       descriptionClassName,
     )}
   >
     {description}
   </p>
-  <div class='flex flex-row gap-4 mt-12'>
+  <div
+    class='flex flex-row gap-4 mt-12 animate-fade-in-up animate-delay-300 scroll-trigger'
+  >
     <Button size='xl' href={buttonHref} className={cn(buttonClassName)}>
       {button}{
         buttonIcon && (
