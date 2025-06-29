@@ -66,7 +66,7 @@
   }
 
   .heading-1 {
-    @apply text-5xl font-extrabold tracking-tight text-foreground sm:text-7xl;
+    @apply text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl;
   }
 
   @media (max-width: 439px) {
