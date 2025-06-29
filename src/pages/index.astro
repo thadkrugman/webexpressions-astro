@@ -6,7 +6,7 @@ import Features from '@/components/pages/home/Features.astro';
 import Portfolio from '@/components/pages/home/Portfolio.astro';
 import Testimonials from '@/components/pages/home/testimonials/Testimonials.astro';
 import Pricing from '@/components/pages/home/Pricing.astro';
-import CTA from '@/components/pages/home/CTA.astro';
+import CallToAction from '@/components/shared/CallToAction.astro';
 
 const seo = {
   title: 'webexpressions - Professional Web Development Services',
@@ -27,5 +27,14 @@ const seo = {
   <Portfolio />
   <Pricing />
   <Testimonials />
-  <CTA />
+  <CallToAction
+    kicker="Let's Connect"
+    heading='Have a Project in Mind?'
+    includeBreak={true}
+    heading2="Let's Bring It To Life."
+    button='Get Started'
+    buttonHref='/contact'
+    button2='Learn More'
+    button2Href='/about'
+  />
 </Layout>

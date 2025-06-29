@@ -4,33 +4,51 @@ import Button from '@/components/ui/Button.astro';
 import { cn } from '@/lib/utils';
 import { Layers2 } from '@lucide/astro';
 
-interface props {
+interface Props {
   wrapperClassName?: string;
   containerClassName?: string;
   kicker: string;
   kickerClassName?: string;
-  title: string;
-  titleClassName?: string;
+  heading: string;
+  headingClassName?: string;
   includeBreak?: boolean;
-  title2?: string;
-  title2ClassName?: string;
-  button1: string;
-  button1Href: string;
-  button1ClassName?: string;
+  heading2?: string;
+  heading2ClassName?: string;
+  button: string;
+  buttonHref: string;
+  buttonClassName?: string;
   button2: string;
   button2Href: string;
   button2ClassName?: string;
-  icon: string;
-  iconClassName?: string;
 }
+
+const {
+  wrapperClassName,
+  containerClassName,
+  kicker,
+  kickerClassName,
+  heading,
+  headingClassName,
+  includeBreak,
+  heading2,
+  button,
+  buttonHref,
+  buttonClassName,
+  button2,
+  button2Href,
+  button2ClassName,
+} = Astro.props;
 ---
 
-<div class='bg-primary mt-24 sm:mt-32 lg:mt-36'>
+<div class={cn('bg-primary mt-24 sm:mt-32 lg:mt-36', wrapperClassName)}>
   <Container
     as='section'
     showBottomBorder={false}
     showSideBorders={false}
-    className='lg:flex-row lg:items-center lg:justify-between py-24 sm:py-32 lg:py-36'
+    className={cn(
+      'lg:flex-row lg:items-center lg:justify-between py-24 sm:py-32 lg:py-36',
+      containerClassName,
+    )}
   >
     <div class='flex-shrink-0'>
       <div class='animate-fade-in-up scroll-trigger'>
@@ -38,20 +56,33 @@ interface props {
           stroke-width={2.1}
           class='size-12 sm:size-14 mb-5 text-primary-foreground lg:hidden'
         />
-        <p class='heading-3 text-accent'>Let's Connect</p>
-        <h2 class='heading-2 text-primary-foreground mt-2 lg:text-6xl'>
-          Have a Project in Mind? <br class='max-[439px]:hidden' />
-          Let's Bring It To Life.
+
+        <p class={cn('heading-3 text-accent', kickerClassName)}>{kicker}</p>
+        <h2
+          class={cn(
+            'heading-2 text-primary-foreground mt-2 lg:text-6xl max-w-[645px]',
+            headingClassName,
+          )}
+        >
+          {heading}
+          {includeBreak && <br class='max-[439px]:hidden' />}
+          {heading2 && heading2}
         </h2>
       </div>
       <div
         class='mt-10 flex max-[440px]:flex-col max-[440px]:gap-y-4 min-[440px]:items-center min-[440px]:gap-x-6 lg:mt-12 lg:shrink-0 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
       >
-        <Button size='xl' variant='secondary' href='/contact'
-          >Get Started
-        </Button>
-        <Button size='xl' variant='outline-secondary' href='/about'
-          >Learn More</Button
+        <Button
+          size='xl'
+          variant='secondary'
+          href={buttonHref}
+          className={cn(buttonClassName)}>{button}</Button
+        >
+        <Button
+          size='xl'
+          variant='outline-secondary'
+          href={button2Href}
+          className={cn(button2ClassName)}>{button2}</Button
         >
       </div>
     </div>
@@ -60,11 +91,10 @@ interface props {
     >
       <Layers2
         stroke-width={2.1}
-        class='h-full w-auto aspect-square text-primary-foreground hover-lift-logo'
+        class={cn(
+          'h-full w-auto aspect-square text-primary-foreground hover-lift-logo',
+        )}
       />
-      <!-- <p class='text-primary-foreground font-black text-4xl mt-6'>
-        webexpressions
-      </p> -->
     </div>
   </Container>
 </div>
