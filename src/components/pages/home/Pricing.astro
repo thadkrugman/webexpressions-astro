@@ -79,10 +79,7 @@ const plans = [
             class={`pt-16 ${index !== plans.length - 1 ? 'max-lg:pb-16' : ''} lg:px-8 lg:pt-0 xl:px-14 animate-scale-in lg:animate-delay-${(index + 4) * 100} scroll-trigger`}
           >
             <div class='flex items-center justify-between gap-x-4'>
-              <h3
-                id='tier-basic'
-                class='text-base/7 font-semibold text-foreground'
-              >
+              <h3 id='tier-basic' class='text-base/7 font-bold text-foreground'>
                 {plan.name}
               </h3>
               {plan.isMostPopular && (
