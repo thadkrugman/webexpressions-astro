@@ -1,25 +1,107 @@
 ---
 import Container from '@/components/shared/Container.astro';
 import Button from '@/components/ui/Button.astro';
+import { cn } from '@/lib/utils';
+
+interface Props {
+  kicker: string;
+  kickerClassName?: string;
+  heading: string;
+  headingClassName?: string;
+  description: string;
+  descriptionClassName?: string;
+  button: string;
+  buttonHref: string;
+  buttonIcon?: any;
+  buttonIconClassName?: string;
+  buttonIconStrokeWidth?: number;
+  buttonClassName?: string;
+  button2: string;
+  button2Href: string;
+  button2Icon?: any;
+  button2IconClassName?: string;
+  button2IconStrokeWidth?: number;
+  button2ClassName?: string;
+}
+
+const {
+  kicker,
+  kickerClassName,
+  heading,
+  headingClassName,
+  description,
+  descriptionClassName,
+  button,
+  buttonHref,
+  buttonIcon,
+  buttonIconClassName,
+  buttonIconStrokeWidth = 3,
+  buttonClassName,
+  button2,
+  button2Href,
+  button2Icon,
+  button2IconClassName,
+  button2IconStrokeWidth = 3,
+  button2ClassName,
+} = Astro.props;
 ---
 
 <Container as='header' className='pt-20 animate-fade-in-up scroll-trigger'>
-  <p class='text-lg/7 lg:text-[21px]/7 font-bold text-accent-secondary'>
-    Meet Your Developer
+  <p
+    class={cn(
+      'text-lg/7 lg:text-[21px]/7 font-bold text-accent-secondary',
+      kickerClassName,
+    )}
+  >
+    {kicker}
   </p>
   <h2
-    class='[@media(max-width:439px)]:text-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-tight text-foreground text-pretty mt-2 max-w-2xl'
+    class={cn(
+      '[@media(max-width:439px)]:text-4xl text-5xl sm:text-6xl md:text-7xl lg:text-[84px] font-black tracking-tight text-foreground text-pretty mt-3 max-w-2xl',
+      headingClassName,
+    )}
   >
-    Building digital experiences that matter
+    {heading}
   </h2>
-  <p class='mt-5 text-lg lg:text-xl/8 text-foreground font-medium max-w-2xl'>
-    I'm a full-stack developer passionate about creating beautiful, functional
-    websites that help businesses grow. With years of experience in modern web
-    technologies, I focus on delivering solutions that are both user-friendly
-    and performance-optimized.
+  <p
+    class={cn(
+      'mt-8 text-lg lg:text-xl/8 text-foreground font-medium max-w-2xl',
+      descriptionClassName,
+    )}
+  >
+    {description}
   </p>
-  <div class='flex flex-row gap-4 mt-9'>
-    <Button size='xl'>Start Your Project</Button>
-    <Button size='xl' variant='outline'>View Portfolio</Button>
+  <div class='flex flex-row gap-4 mt-12'>
+    <Button size='xl' href={buttonHref} className={cn(buttonClassName)}>
+      {button}{
+        buttonIcon && (
+          <buttonIcon
+            class={cn(
+              'size-4 ml-2 group-hover:-translate-x-2 transition-transform duration-300',
+              buttonIconClassName,
+            )}
+            stroke-width={buttonIconStrokeWidth}
+          />
+        )
+      }
+    </Button>
+    <Button
+      size='xl'
+      variant='outline'
+      href={button2Href}
+      className={cn(button2ClassName)}
+    >
+      {button2}{
+        button2Icon && (
+          <button2Icon
+            class={cn(
+              'size-4 ml-2 group-hover:-translate-x-2 transition-transform duration-300',
+              button2IconClassName,
+            )}
+            stroke-width={button2IconStrokeWidth}
+          />
+        )
+      }
+    </Button>
   </div>
 </Container>
