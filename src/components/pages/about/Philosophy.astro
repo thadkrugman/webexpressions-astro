@@ -6,7 +6,12 @@ import Layers from '@lucide/astro/icons/layers';
 import Target from '@lucide/astro/icons/target';
 import Code from '@/assets/images/about/philosophy/code.png';
 import { Picture } from 'astro:assets';
-import { Handshake } from '@lucide/astro';
+import {
+  Handshake,
+  Headset,
+  KeyRound,
+  LaptopMinimalCheck,
+} from '@lucide/astro';
 
 const features = [
   {
@@ -40,37 +45,62 @@ const features = [
   <div class='w-full lg:max-w-2xl'>
     <div class='animate-fade-in-up scroll-trigger lg:animate-delay-200'>
       <p class='kicker'>The Advantage</p>
-      <h2 class='heading-1'>Your Strategic Development Partner</h2>
-    </div>
-    <div class='animate-fade-in-up scroll-trigger lg:animate-delay-400 mt-16'>
-      <div class='flex items-center gap-2'>
-        <Handshake class='size-8 mt-1' />
-        <h3 class='heading-3'>A True Partner</h3>
-      </div>
+      <h2 class='heading-1'>A Strategic Partnership</h2>
       <p
-        class='mt-2 ml-10 sm:mt-3 text-lg lg:text-xl/8 text-foreground font-medium max-w-3xl animate-fade-in-up lg:animate-delay-300 scroll-trigger'
+        class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium lg:mx-auto max-w-3xl'
       >
-        Partnering with me means gaining a strategic ally dedicated to your
-        success. My process is built on direct 1-on-1 collaboration, meaning you
-        work with me, the expert, from start to finish. This unified approach
-        eliminates agency breakdowns and ensures your vision is executed with
-        clarity and efficiency
+        When you work with Webexpressions, you're not just hiring a
+        developer—you're gaining a strategic partner who is invested in your
+        success. My approach is built on direct collaboration and a commitment
+        to delivering results that matter to your business.
       </p>
     </div>
-    <div class='animate-fade-in-up scroll-trigger lg:animate-delay-600 mt-8'>
-      <div class='flex items-center gap-2'>
-        <Handshake class='size-8 mt-1' />
-        <h3 class='heading-3'>A Focus on Results</h3>
+    <div
+      class={`relative pl-9 animate-fade-in-up lg:animate-delay-300 scroll-trigger mt-16 sm:mt-20`}
+    >
+      <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
+        <LaptopMinimalCheck
+          class='absolute left-1 top-1 size-5 text-primary'
+          aria-hidden='true'
+        />
+        A Scalable Foundation
       </div>
-      <p
-        class='mt-2 ml-10 sm:mt-3 text-lg lg:text-xl/8 text-foreground font-medium max-w-3xl animate-fade-in-up lg:animate-delay-500 scroll-trigger'
-      >
-        This partner-first model allows me to focus entirely on being
-        results-driven. Every decision is centered on achieving your business
-        goals and delivering a strong return on investment. I use a modern,
-        future-proof tech stack, selecting the right tools like Astro, React, or
-        Svelte to build secure, high-performance solutions that are scalable and
-        built to last.
+      <p class='inline text-base/7 lg:text-lg/7 font-medium'>
+        I don't just build for today; I build for your future. Your project will
+        be built on a solid, modern foundation that can grow and adapt with your
+        business.
+      </p>
+    </div>
+    <div
+      class={`relative pl-9 animate-fade-in-up lg:animate-delay-400 scroll-trigger mt-8`}
+    >
+      <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
+        <KeyRound
+          class='absolute left-1 top-1 size-5 text-primary'
+          aria-hidden='true'
+        />
+        Full Ownership & No Lock-In
+      </div>
+      <p class='inline text-base/7 lg:text-lg/7 font-medium'>
+        You get a site built with standard, best-practice technologies. At the
+        end of our project, you have full ownership of a clean codebase with no
+        proprietary systems holding you hostage.
+      </p>
+    </div>
+    <div
+      class={`relative pl-9 animate-fade-in-up lg:animate-delay-400 scroll-trigger mt-8`}
+    >
+      <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
+        <Headset
+          class='absolute left-1 top-1 size-5 text-primary'
+          aria-hidden='true'
+        />
+        Dedicated Post-Launch Support
+      </div>
+      <p class='inline text-base/7 lg:text-lg/7 font-medium'>
+        My commitment doesn't end at launch. I provide dedicated support to
+        ensure a smooth transition, fix any issues, and empower you to manage
+        your new digital asset confidently.
       </p>
     </div>
   </div>
