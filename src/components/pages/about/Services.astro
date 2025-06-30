@@ -1,0 +1,62 @@
+---
+import { Rocket, Briefcase, Wrench } from '@lucide/astro';
+import Container from '@/components/shared/Container.astro';
+
+const services = [
+  {
+    title: 'Landing Page',
+    description:
+      'Perfect for new businesses, product launches, or a professional online presence to capture leads and make a strong first impression.',
+    icon: Rocket,
+  },
+  {
+    title: 'Business Site',
+    description:
+      'A complete, multi-page website to establish your brand, showcase your work, and drive growth with a professional blog or CMS.',
+    icon: Briefcase,
+  },
+  {
+    title: 'Custom Solution',
+    description:
+      'For complex web applications, mobile apps, or large-scale projects requiring e-commerce, database integration, and custom features.',
+    icon: Wrench,
+  },
+];
+---
+
+<Container>
+  <div class='text-center animate-fade-in-up scroll-trigger'>
+    <p class='kicker'>What I Do</p>
+    <h2 class='heading-1'>Services</h2>
+    <p
+      class='mt-4 text-lg lg:text-xl/8 text-foreground font-medium max-w-3xl mx-auto'
+    >
+      I offer a range of services to meet your unique needs, from simple landing
+      pages to complex web applications.
+    </p>
+  </div>
+  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
+    {
+      services.map((service, index) => (
+        <div
+          class:list={[
+            'p-8 rounded-xl border border-border bg-background-secondary animate-fade-in-up scroll-trigger',
+            `lg:animate-delay-${(index + 1) * 100}`,
+          ]}
+        >
+          <div class='flex items-center gap-x-4'>
+            <div class='flex-shrink-0'>
+              <div class='flex size-12 items-center justify-center rounded-lg bg-primary text-primary-foreground'>
+                <service.icon class='size-6' aria-hidden='true' />
+              </div>
+            </div>
+            <h3 class='text-xl font-bold text-foreground'>{service.title}</h3>
+          </div>
+          <p class='mt-4 text-base/7 text-foreground-secondary'>
+            {service.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</Container>

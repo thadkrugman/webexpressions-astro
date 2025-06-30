@@ -1,0 +1,53 @@
+---
+import Container from '@/components/shared/Container.astro';
+
+const tech = {
+  "Web Development": [
+    "Astro",
+    "React",
+    "Svelte",
+    "Bun",
+    "Hono",
+    "Convex",
+    "Drizzle",
+    "Planet Scale",
+    "Turso",
+    "TailwindCSS",
+    "TailwindUI",
+    "Shadcn",
+    "Clerk",
+    "Stripe",
+    "Shopify",
+  ],
+  "Mobile App Development": ["React Native", "Expo", "Nativewind", "Clerk"],
+};
+---
+
+<Container>
+  <div class="text-center animate-fade-in-up scroll-trigger">
+    <p class="kicker">My Toolkit</p>
+    <h2 class="heading-1">Technology Stack</h2>
+    <p class="mt-4 text-lg lg:text-xl/8 text-foreground font-medium max-w-3xl mx-auto">
+      I use a modern, battle-tested tech stack to build high-quality digital products that are scalable and maintainable.
+    </p>
+  </div>
+
+  <div class="mt-12 space-y-12">
+    {
+      Object.entries(tech).map(([category, tools], categoryIndex) => (
+        <div class:list={["animate-fade-in-up scroll-trigger", `lg:animate-delay-${(categoryIndex + 1) * 100}`]}>
+          <h3 class="text-2xl font-bold text-foreground text-center">{category}</h3>
+          <div class="mt-6 flex flex-wrap justify-center gap-4">
+            {
+              tools.map((tool) => (
+                <div class="px-4 py-2 bg-background-secondary border border-border rounded-full text-foreground font-medium">
+                  {tool}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Container>
