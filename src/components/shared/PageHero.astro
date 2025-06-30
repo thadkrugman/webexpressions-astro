@@ -39,20 +39,12 @@ const {
   isFirstSection={true}
   className='animate-fade-in-up scroll-trigger items-center justify-center'
 >
-  <div class='flex items-center justify-center gap-2'>
-    <div
-      class='relative size-3.25 mt-0.5 bg-accent rounded-full animate-pulse flex-shrink-0'
-      aria-hidden='true'
-    >
-      <div
-        class='absolute inset-0 bg-accent rounded-full animate-ping opacity-75'
-        aria-hidden='true'
-      >
-      </div>
-    </div>
+  <div
+    class='flex items-center justify-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 bg-accent rounded-md'
+  >
     <p
       class={cn(
-        'text-2xl/8 font-bold tracking text-foreground text-center animate-fade-in-up scroll-trigger',
+        'text-xl/8 sm:text-2xl/8 font-bold tracking text-foreground text-center animate-fade-in-up scroll-trigger',
         kickerClassName,
       )}
     >
