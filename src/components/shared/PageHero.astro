@@ -37,14 +37,14 @@ const {
 <Container
   as='header'
   isFirstSection={true}
-  className='animate-fade-in-up scroll-trigger items-center justify-center'
+  className='items-center justify-center animate-fade-in-up scroll-trigger'
 >
   <div
     class='flex items-center justify-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 bg-accent rounded-md'
   >
     <p
       class={cn(
-        'text-xl/8 sm:text-2xl/8 font-bold tracking text-foreground text-center animate-fade-in-up scroll-trigger',
+        'text-xl/8 sm:text-2xl/8 font-bold tracking text-foreground text-center',
         kickerClassName,
       )}
     >
@@ -61,15 +61,13 @@ const {
   </h2>
   <p
     class={cn(
-      'mt-8 text-lg lg:text-xl/8 text-foreground font-medium max-w-2xl text-center animate-fade-in-up animate-delay-200 scroll-trigger',
+      'mt-8 text-lg lg:text-xl/8 text-foreground font-medium max-w-2xl text-center',
       descriptionClassName,
     )}
   >
     {description}
   </p>
-  <div
-    class='flex flex-row mt-12 justify-center items-center animate-fade-in-up animate-delay-300 scroll-trigger'
-  >
+  <div class='flex flex-row mt-12 justify-center items-center'>
     <Button size='xl' href={buttonHref} className={cn(buttonClassName)}>
       {button}{
         buttonIcon && (
