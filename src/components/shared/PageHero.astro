@@ -39,14 +39,26 @@ const {
   isFirstSection={true}
   className='animate-fade-in-up scroll-trigger items-center justify-center'
 >
-  <p
-    class={cn(
-      'text-lg/7 lg:text-[21px]/7 font-bold text-accent-secondary text-center animate-fade-in-up scroll-trigger',
-      kickerClassName,
-    )}
-  >
-    {kicker}
-  </p>
+  <div class='flex items-center justify-center gap-2'>
+    <div
+      class='relative [@media(max-width:439px)]:size-2.5 size-3 mt-0.5 bg-accent rounded-full animate-pulse flex-shrink-0'
+      aria-hidden='true'
+    >
+      <div
+        class='absolute inset-0 bg-accent rounded-full animate-ping opacity-75'
+        aria-hidden='true'
+      >
+      </div>
+    </div>
+    <p
+      class={cn(
+        'text-xl/8 sm:text-2xl/8 font-bold tracking-tight text-foreground text-center animate-fade-in-up scroll-trigger',
+        kickerClassName,
+      )}
+    >
+      {kicker}
+    </p>
+  </div>
   <h2
     class={cn(
       '[@media(max-width:439px)]:text-4xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground text-pretty [@media(max-width:439px)]:leading-12 leading-15 sm:leading-18 md:leading-21 lg:leading-28 mt-5 text-center',
@@ -54,6 +66,16 @@ const {
     )}
   >
     {heading}
+    <span
+      class='inline-flex relative [@media(max-width:439px)]:size-2.5 size-4.5 -ml-2 bg-accent rounded-full animate-pulse flex-shrink-0'
+      aria-hidden='true'
+    >
+      <div
+        class='absolute inset-0 bg-accent rounded-full animate-ping opacity-75'
+        aria-hidden='true'
+      >
+      </div>
+    </span>
   </h2>
   <p
     class={cn(
