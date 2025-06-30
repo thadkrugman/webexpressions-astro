@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import PageHeroLeft from '@/components/shared/PageHeroLeft.astro';
+import PageHero from '@/components/shared/PageHero.astro';
 import MeetTheDeveloper from '@/components/pages/about/MeetTheDeveloper.astro';
 import Philosophy from '@/components/pages/about/Philosophy.astro';
 import Services from '@/components/pages/about/Services.astro';
@@ -21,15 +21,13 @@ const seo = {
 ---
 
 <Layout {...seo}>
-  <PageHeroLeft
+  <PageHero
     kicker='About webexpressions'
     heading='Results-Driven Digital Experiences'
     headingClassName='max-w-3xl'
     description='I combine modern technology with a focus on business goals to build digital solutions that are beautiful, performant, and effective.'
-    button='See My Work'
-    buttonHref='/portfolio'
-    button2='Contact Me'
-    button2Href='/contact'
+    button='Contact Me'
+    buttonHref='/contact'
   />
   <MeetTheDeveloper />
   <Philosophy />
