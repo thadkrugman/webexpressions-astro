@@ -1,42 +1,33 @@
 ---
 import Container from '@/components/shared/Container.astro';
-import MessagesSquare from '@lucide/astro/icons/messages-square';
-import Rocket from '@lucide/astro/icons/rocket';
-import Layers from '@lucide/astro/icons/layers';
-import Target from '@lucide/astro/icons/target';
 import Code from '@/assets/images/about/philosophy/code.png';
 import { Picture } from 'astro:assets';
-import {
-  Handshake,
-  Headset,
-  KeyRound,
-  LaptopMinimalCheck,
-} from '@lucide/astro';
+import { Headset, KeyRound, LaptopMinimalCheck } from '@lucide/astro';
 
 const features = [
   {
-    title: 'Direct 1-on-1 Collaboration',
+    title: 'A Scalable Foundation',
     description:
-      "You'll work directly with me, the expert, from start to finish. This means no project managers or mixed messages. You get clear, efficient communication and a single point of contact dedicated to your project.",
-    icon: MessagesSquare,
+      "I don't just build for today; I build for your future. Your project will be built on a solid, modern foundation that can grow and adapt with your business.",
+    icon: LaptopMinimalCheck,
+    animationClass: 'lg:animate-delay-300',
+    marginTopClass: 'mt-16 sm:mt-20',
   },
   {
-    title: 'Versatile & Modern Development',
+    title: 'Full Ownership & No Lock-In',
     description:
-      'Whether you need a lightning-fast marketing site or a complex web application, I leverage modern technologies and leading frameworks like Astro, React, Svelte, and Expo to deliver secure, SEO-optimized, high-performance solutions tailored to your specific goals.',
-    icon: Rocket,
+      'You get a site built with standard, best-practice technologies. At the end of our project, you have full ownership of a clean codebase with no proprietary systems holding you hostage.',
+    icon: KeyRound,
+    animationClass: 'lg:animate-delay-400',
+    marginTopClass: 'mt-8',
   },
   {
-    title: 'Design & Development, Unified',
+    title: 'Dedicated Post-Launch Support',
     description:
-      'I handle both the visual design and the technical development, ensuring a seamless process from the first sketch to the final line of code. This unified approach leads to a more cohesive product and a more efficient workflow for your project.',
-    icon: Layers,
-  },
-  {
-    title: 'A Focus on Quality & Results',
-    description:
-      "I'm committed to delivering a final product that your customers will love and that drives real success for your business. This focus on quality and results is why I maintain a 100% client satisfaction rate.",
-    icon: Target,
+      "My commitment doesn't end at launch. I provide dedicated support to ensure a smooth transition, fix any issues, and empower you to manage your new digital asset confidently.",
+    icon: Headset,
+    animationClass: 'lg:animate-delay-400',
+    marginTopClass: 'mt-8',
   },
 ];
 ---
@@ -55,54 +46,28 @@ const features = [
         to delivering results that matter to your business.
       </p>
     </div>
-    <div
-      class={`relative pl-9 animate-fade-in-up lg:animate-delay-300 scroll-trigger mt-16 sm:mt-20`}
-    >
-      <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
-        <LaptopMinimalCheck
-          class='absolute left-1 top-1 size-5 text-primary'
-          aria-hidden='true'
-        />
-        A Scalable Foundation
-      </div>
-      <p class='inline text-base/7 lg:text-lg/7 font-medium'>
-        I don't just build for today; I build for your future. Your project will
-        be built on a solid, modern foundation that can grow and adapt with your
-        business.
-      </p>
-    </div>
-    <div
-      class={`relative pl-9 animate-fade-in-up lg:animate-delay-400 scroll-trigger mt-8`}
-    >
-      <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
-        <KeyRound
-          class='absolute left-1 top-1 size-5 text-primary'
-          aria-hidden='true'
-        />
-        Full Ownership & No Lock-In
-      </div>
-      <p class='inline text-base/7 lg:text-lg/7 font-medium'>
-        You get a site built with standard, best-practice technologies. At the
-        end of our project, you have full ownership of a clean codebase with no
-        proprietary systems holding you hostage.
-      </p>
-    </div>
-    <div
-      class={`relative pl-9 animate-fade-in-up lg:animate-delay-400 scroll-trigger mt-8`}
-    >
-      <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
-        <Headset
-          class='absolute left-1 top-1 size-5 text-primary'
-          aria-hidden='true'
-        />
-        Dedicated Post-Launch Support
-      </div>
-      <p class='inline text-base/7 lg:text-lg/7 font-medium'>
-        My commitment doesn't end at launch. I provide dedicated support to
-        ensure a smooth transition, fix any issues, and empower you to manage
-        your new digital asset confidently.
-      </p>
-    </div>
+    {
+      features.map((feature) => (
+        <div
+          class:list={[
+            'relative pl-9 animate-fade-in-up scroll-trigger',
+            feature.animationClass,
+            feature.marginTopClass,
+          ]}
+        >
+          <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
+            <feature.icon
+              class='absolute left-1 top-1 size-5 text-primary'
+              aria-hidden='true'
+            />
+            {feature.title}
+          </div>
+          <p class='inline text-base/7 lg:text-lg/7 font-medium'>
+            {feature.description}
+          </p>
+        </div>
+      ))
+    }
   </div>
   <div
     class='flex flex-col items-start lg:order-first w-full animate-fade-in-right scroll-trigger'
