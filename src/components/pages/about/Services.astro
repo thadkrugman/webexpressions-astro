@@ -1,59 +1,73 @@
 ---
-import { Rocket, Briefcase, Wrench } from '@lucide/astro';
 import Container from '@/components/shared/Container.astro';
+import {
+  Headset,
+  KeyRound,
+  LaptopMinimalCheck,
+  MessageCircle,
+} from '@lucide/astro';
 
-const services = [
+const features = [
   {
-    title: 'Landing Page',
+    title: 'A Scalable Foundation',
     description:
-      'Perfect for new businesses, product launches, or a professional online presence to capture leads and make a strong first impression.',
-    icon: Rocket,
+      "I don't just build for today; I build for your future. Your project will be built on a solid, modern foundation that can grow and adapt with your business.",
+    icon: LaptopMinimalCheck,
   },
   {
-    title: 'Business Site',
+    title: 'Full Ownership & No Lock-In',
     description:
-      'A complete, multi-page website to establish your brand, showcase your work, and drive growth with a professional blog or CMS.',
-    icon: Briefcase,
+      'You get a site built with standard, best-practice technologies. At the end of our project, you have full ownership of a clean codebase with no proprietary systems holding you hostage.',
+    icon: KeyRound,
   },
   {
-    title: 'Custom Solution',
+    title: 'Dedicated Post-Launch Support',
     description:
-      'For complex web applications, mobile apps, or large-scale projects requiring e-commerce, database integration, and custom features.',
-    icon: Wrench,
+      "My commitment doesn't end at launch. I provide dedicated support to ensure a smooth transition, fix any issues, and empower you to manage your new digital asset confidently.",
+    icon: Headset,
+  },
+  {
+    title: 'Transparent Communication',
+    description:
+      'No project managers, no mixed messages. You work directly with me throughout the entire process, ensuring clear communication, quick decisions, and a development experience built around your needs.',
+    icon: MessageCircle,
   },
 ];
 ---
 
-<Container>
-  <div class='text-center animate-fade-in-up scroll-trigger'>
-    <p class='kicker'>What I Do</p>
-    <h2 class='heading-1'>Services</h2>
+<Container as='section'>
+  <div
+    class='max-w-4xl animate-fade-in-up scroll-trigger lg:mx-auto lg:text-center'
+  >
+    <p class='kicker'>Maybe This could list services?</p>
+    <h2 class='heading-1 mt-2'>A Strategic Partnership</h2>
     <p
-      class='mt-4 text-lg lg:text-xl/8 text-foreground font-medium max-w-3xl mx-auto'
+      class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium lg:mx-auto max-w-3xl'
     >
-      I offer a range of services to meet your unique needs, from simple landing
-      pages to complex web applications.
+      When you work with Webexpressions, you're not just hiring a
+      developer—you're gaining a strategic partner who is invested in your
+      success. My approach is built on direct collaboration and a commitment to
+      delivering results that matter to your business.
     </p>
   </div>
-  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
+  <div
+    class='space-y-8 text-foreground grid w-full lg:grid-cols-2 lg:gap-x-8 mt-16 sm:mt-20 text-base/7'
+    aria-label='Key advantages and benefits'
+  >
     {
-      services.map((service, index) => (
+      features.map((feature, index) => (
         <div
-          class:list={[
-            'p-8 rounded-xl border border-border bg-background-secondary animate-fade-in-up scroll-trigger',
-            `lg:animate-delay-${(index + 1) * 100}`,
-          ]}
+          class={`relative pl-9 animate-fade-in-up lg:animate-delay-${Math.min((index + 1) * 100, 400)} scroll-trigger`}
         >
-          <div class='flex items-center gap-x-4'>
-            <div class='flex-shrink-0'>
-              <div class='flex size-12 items-center justify-center rounded-lg bg-primary text-primary-foreground'>
-                <service.icon class='size-6' aria-hidden='true' />
-              </div>
-            </div>
-            <h3 class='text-xl font-bold text-foreground'>{service.title}</h3>
+          <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
+            <feature.icon
+              class='absolute left-1 top-1 size-5 text-primary'
+              aria-hidden='true'
+            />
+            {feature.title}
           </div>
-          <p class='mt-4 text-base/7 text-foreground-secondary'>
-            {service.description}
+          <p class='inline text-base/7 lg:text-lg/7 font-medium'>
+            {feature.description}
           </p>
         </div>
       ))

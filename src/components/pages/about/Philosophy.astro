@@ -1,84 +1,114 @@
 ---
 import Container from '@/components/shared/Container.astro';
-import Code from '@/assets/images/about/philosophy/code.png';
-import { Picture } from 'astro:assets';
-import { Headset, KeyRound, LaptopMinimalCheck } from '@lucide/astro';
-
-const features = [
-  {
-    title: 'A Scalable Foundation',
-    description:
-      "I don't just build for today; I build for your future. Your project will be built on a solid, modern foundation that can grow and adapt with your business.",
-    icon: LaptopMinimalCheck,
-    animationClass: 'lg:animate-delay-300',
-    marginTopClass: 'mt-16 sm:mt-20',
-  },
-  {
-    title: 'Full Ownership & No Lock-In',
-    description:
-      'You get a site built with standard, best-practice technologies. At the end of our project, you have full ownership of a clean codebase with no proprietary systems holding you hostage.',
-    icon: KeyRound,
-    animationClass: 'lg:animate-delay-400',
-    marginTopClass: 'mt-8',
-  },
-  {
-    title: 'Dedicated Post-Launch Support',
-    description:
-      "My commitment doesn't end at launch. I provide dedicated support to ensure a smooth transition, fix any issues, and empower you to manage your new digital asset confidently.",
-    icon: Headset,
-    animationClass: 'lg:animate-delay-400',
-    marginTopClass: 'mt-8',
-  },
-];
 ---
 
-<Container className='lg:flex-row lg:gap-x-12 gap-y-16 sm:gap-y-20 lg:gap-y-0'>
-  <div class='w-full lg:max-w-2xl'>
-    <div class='animate-fade-in-up scroll-trigger lg:animate-delay-200'>
-      <p class='kicker'>The Advantage</p>
-      <h2 class='heading-1 mt-2'>A Strategic Partnership</h2>
-      <p
-        class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium lg:mx-auto max-w-3xl'
-      >
-        When you work with Webexpressions, you're not just hiring a
-        developer—you're gaining a strategic partner who is invested in your
-        success. My approach is built on direct collaboration and a commitment
-        to delivering results that matter to your business.
+<Container
+  as='section'
+  className='relative animate-fade-in-up scroll-trigger overflow-hidden'
+>
+  <div class='max-w-4xl'>
+    <p class='kicker'>Philosophy Option 2</p>
+    <h1 class='heading-1 mt-2'>On a mission to empower remote teams</h1>
+    <p
+      class='mt-6 text-balance text-lg lg:text-xl/8 text-foreground font-medium'
+    >
+      Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu,
+      sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat
+      egestas.
+    </p>
+  </div>
+  <section class='mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16'>
+    <div class='lg:pr-8'>
+      <h2 class='heading-3'>Our mission</h2>
+      <p class='mt-6 text-base/7 text-foreground font-medium'>
+        Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
+        Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent
+        donec est. Odio penatibus risus viverra tellus varius sit neque erat
+        velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
+        risus enim. Mattis mauris semper sed amet vitae sed turpis id.
+      </p>
+      <p class='mt-8 text-base/7 text-foreground font-medium'>
+        Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id
+        et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt
+        ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing
+        egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
       </p>
     </div>
-    {
-      features.map((feature) => (
+    <div class='pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto'>
+      <div
+        class='-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8'
+      >
         <div
-          class:list={[
-            'relative pl-9 animate-fade-in-up scroll-trigger',
-            feature.animationClass,
-            feature.marginTopClass,
-          ]}
+          class='aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10'
         >
-          <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
-            <feature.icon
-              class='absolute left-1 top-1 size-5 text-primary'
-              aria-hidden='true'
-            />
-            {feature.title}
-          </div>
-          <p class='inline text-base/7 lg:text-lg/7 font-medium'>
-            {feature.description}
-          </p>
+          <img
+            alt=''
+            src='https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?&auto=format&fit=crop&crop=center&w=560&h=560&q=90'
+            class='block size-full object-cover'
+          />
         </div>
-      ))
-    }
-  </div>
-  <div
-    class='flex flex-col items-start lg:order-first w-full animate-fade-in-right scroll-trigger'
-  >
-    <div class='flex rounded-xl bg-primary overflow-hidden'>
-      <Picture
-        src={Code}
-        alt='Code'
-        class='w-full h-auto object-cover'
-        sizes='(max-width: 768px) 100vw, 50vw'
-      />
+        <div
+          class='-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 lg:-mt-40'
+        >
+          <img
+            alt=''
+            src='https://images.unsplash.com/photo-1557804506-669a67965ba0?&auto=format&fit=crop&crop=left&w=560&h=560&q=90'
+            class='block size-full object-cover'
+          />
+        </div>
+        <div
+          class='aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10'
+        >
+          <img
+            alt=''
+            src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?&auto=format&fit=crop&crop=left&w=560&h=560&q=90'
+            class='block size-full object-cover'
+          />
+        </div>
+        <div
+          class='-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 lg:-mt-40'
+        >
+          <img
+            alt=''
+            src='https://images.unsplash.com/photo-1598257006458-087169a1f08d?&auto=format&fit=crop&crop=center&w=560&h=560&q=90'
+            class='block size-full object-cover'
+          />
+        </div>
+      </div>
     </div>
-  </div>
+    <div class='max-lg:mt-16 lg:col-span-1'>
+      <p class='text-xl/7 font-bold text-foreground'>The numbers</p>
+      <hr class='mt-6 border-t' />
+      <dl class='mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2'>
+        <div class='flex flex-col gap-y-2 border-b border-dotted pb-4'>
+          <dt class='text-base/7 text-foreground font-medium'>Raised</dt>
+          <dd class='order-first text-6xl font-bold tracking-tight'>
+            $<span>150</span>M
+          </dd>
+        </div>
+        <div class='flex flex-col gap-y-2 border-b border-dotted pb-4'>
+          <dt class='text-base/7 text-foreground font-medium'>Companies</dt>
+          <dd class='order-first text-6xl font-bold tracking-tight'>
+            <span>30</span>K
+          </dd>
+        </div>
+        <div
+          class='flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:pb-4'
+        >
+          <dt class='text-base/7 text-foreground font-medium'>Deals Closed</dt>
+          <dd class='order-first text-6xl font-bold tracking-tight'>
+            <span>1.5</span>M
+          </dd>
+        </div>
+        <div class='flex flex-col gap-y-2'>
+          <dt class='text-base/7 text-foreground font-medium'>
+            Leads Generated
+          </dt>
+          <dd class='order-first text-6xl font-bold tracking-tight'>
+            <span>200</span>M
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 </Container>

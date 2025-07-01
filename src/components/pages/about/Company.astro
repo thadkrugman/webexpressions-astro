@@ -1,0 +1,74 @@
+---
+import Container from '@/components/shared/Container.astro';
+import { Image } from 'astro:assets';
+import ThadProfile from '@/assets/thad-profile.jpg';
+import { Picture } from 'astro:assets';
+---
+
+<Container
+  as='section'
+  className='relative animate-fade-in-up scroll-trigger pt-0 sm:pt-0 lg:pt-0 mt-24 sm:mt-32 lg:mt-36'
+>
+  <div class='mx-auto grid lg:grid-cols-2 w-full'>
+    <img
+      class='h-56 w-full bg-gray-50 object-cover lg:h-full lg:w-full rounded-lg'
+      src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80'
+      alt=''
+    />
+    <div
+      class='lg:pl-10 pb-24 pt-16 sm:pb-32 sm:pt-20 lg:col-start-2 lg:pt-32 w-full'
+    >
+      <div class='mx-auto max-w-2xl lg:mr-0 lg:max-w-lg'>
+        <h2 class='kicker'>The Company</h2>
+        <p class='mt-2 heading-2'>Trusted by thousands of creators worldwide</p>
+        <p class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium'>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+          impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
+          ratione.
+        </p>
+        <dl
+          class='mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mt-16'
+        >
+          <div class='flex flex-col gap-y-3 border-l pl-6'>
+            <dt class='text-sm/6 text-foreground'>Creators on the platform</dt>
+            <dd
+              class='order-first text-3xl font-bold tracking-tight text-foreground'
+            >
+              8,000+
+            </dd>
+          </div>
+          <div class='flex flex-col gap-y-3 border-l pl-6'>
+            <dt class='text-base/7 text-foreground font-medium'>
+              Flat platform fee
+            </dt>
+            <dd
+              class='order-first text-3xl font-bold tracking-tight text-foreground'
+            >
+              3%
+            </dd>
+          </div>
+          <div class='flex flex-col gap-y-3 border-l pl-6'>
+            <dt class='text-base/7 text-foreground font-medium'>
+              Uptime guarantee
+            </dt>
+            <dd
+              class='order-first text-3xl font-bold tracking-tight text-foreground'
+            >
+              99.9%
+            </dd>
+          </div>
+          <div class='flex flex-col gap-y-3 border-l pl-6'>
+            <dt class='text-base/7 text-foreground font-medium'>
+              Paid out to creators
+            </dt>
+            <dd
+              class='order-first text-3xl font-bold tracking-tight text-foreground'
+            >
+              $70M
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</Container>
