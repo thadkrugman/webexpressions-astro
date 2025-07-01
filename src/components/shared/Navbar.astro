@@ -8,7 +8,7 @@ import Layers2 from '@lucide/astro/icons/layers-2';
 ---
 
 <Container
-  as='header'
+  as='nav'
   showTopBorder={true}
   className='flex-row justify-between items-center pt-4 sm:pt-4 lg:pt-6'
 >
@@ -34,7 +34,7 @@ import Layers2 from '@lucide/astro/icons/layers-2';
 
   <!-- Desktop navigation -->
   <div class='hidden lg:flex space-x-12 items-center'>
-    <nav>
+    <div aria-label='Main navigation'>
       <ul class='flex space-x-8 items-center'>
         {
           NAV_ITEMS.map((item) => (
@@ -53,9 +53,11 @@ import Layers2 from '@lucide/astro/icons/layers-2';
           ))
         }
       </ul>
-    </nav>
+    </div>
     <div>
-      <Button size='lg' href='/contact'> Get in Touch </Button>
+      <Button size='lg' href='/contact' aria-label='Get in touch'>
+        Get in Touch
+      </Button>
     </div>
   </div>
 </Container>
@@ -101,7 +103,7 @@ import Layers2 from '@lucide/astro/icons/layers-2';
     <!-- Menu content -->
     <div class='flex flex-col flex-1'>
       <!-- Navigation links -->
-      <nav class='flex-1 px-6'>
+      <div class='flex-1 px-6' aria-label='Main navigation'>
         <ul class='space-y-3'>
           {
             NAV_ITEMS.map((item, index) => (
@@ -127,7 +129,7 @@ import Layers2 from '@lucide/astro/icons/layers-2';
             ))
           }
         </ul>
-      </nav>
+      </div>
 
       <!-- CTA section -->
       <div class='p-6 pb-6 pt-8'>
