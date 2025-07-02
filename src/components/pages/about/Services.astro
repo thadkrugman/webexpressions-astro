@@ -32,45 +32,56 @@ const features = [
       'No project managers, no mixed messages. You work directly with me throughout the entire process, ensuring clear communication, quick decisions, and a development experience built around your needs.',
     icon: MessageCircle,
   },
+  {
+    title: 'Dedicated Post-Launch Support',
+    description:
+      "My commitment doesn't end at launch. I provide dedicated support to ensure a smooth transition, fix any issues, and empower you to manage your new digital asset confidently.",
+    icon: Headset,
+  },
+  {
+    title: 'Transparent Communication',
+    description:
+      'No project managers, no mixed messages. You work directly with me throughout the entire process, ensuring clear communication, quick decisions, and a development experience built around your needs.',
+    icon: MessageCircle,
+  },
 ];
 ---
 
 <Container as='section'>
-  <div
-    class='max-w-4xl animate-fade-in-up scroll-trigger lg:mx-auto lg:text-center'
-  >
-    <p class='kicker'>Maybe This could list services?</p>
-    <h2 class='heading-1 mt-2'>A Strategic Partnership</h2>
+  <div class='mx-auto max-w-2xl lg:mx-0'>
+    <h2 class='kicker'>The Services</h2>
+    <p class='mt-2 heading-1'>No server? No problem.</p>
     <p
-      class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium lg:mx-auto max-w-3xl'
+      class='mt-6
+      text-lg
+      lg:text-xl/8
+      text-foreground
+      font-medium'
     >
-      When you work with Webexpressions, you're not just hiring a
-      developer—you're gaining a strategic partner who is invested in your
-      success. My approach is built on direct collaboration and a commitment to
-      delivering results that matter to your business.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
+      perferendis suscipit eaque, iste dolor cupiditate blanditiis.
     </p>
   </div>
-  <div
-    class='space-y-8 text-foreground grid w-full lg:grid-cols-2 lg:gap-x-8 mt-16 sm:mt-20 text-base/7'
-    aria-label='Key advantages and benefits'
+  <dl
+    class='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-foreground sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16'
   >
     {
       features.map((feature, index) => (
         <div
-          class={`relative pl-9 animate-fade-in-up lg:animate-delay-${Math.min((index + 1) * 100, 400)} scroll-trigger`}
+          class={`relative pl-9 animate-fade-in-up lg:animate-delay-${Math.min((index + 1) * 100, 600)} scroll-trigger`}
         >
-          <div class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
+          <dt class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
             <feature.icon
               class='absolute left-1 top-1 size-5 text-primary'
               aria-hidden='true'
             />
             {feature.title}
-          </div>
-          <p class='inline text-base/7 lg:text-lg/7 font-medium'>
+          </dt>
+          <dd class='inline text-base/7 lg:text-lg/7 font-medium'>
             {feature.description}
-          </p>
+          </dd>
         </div>
       ))
     }
-  </div>
+  </dl>
 </Container>
