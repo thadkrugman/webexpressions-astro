@@ -13,6 +13,7 @@
 
       .st2ae {
         clip-path: url(#clippathts);
+        fill: currentColor;
       }
     </style>
     <clipPath id="clippathts">

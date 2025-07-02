@@ -5,6 +5,7 @@
     <style>
       .st0bb {
         fill-rule: evenodd;
+        fill: currentColor;
       }
     </style>
   </defs>

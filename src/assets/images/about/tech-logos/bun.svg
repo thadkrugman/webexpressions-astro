@@ -4,6 +4,7 @@
     <style>
       .clsnn-1 {
         fill-rule: evenodd;
+        fill: currentColor;
       }
     </style>
   </defs>

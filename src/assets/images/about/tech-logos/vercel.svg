@@ -2,19 +2,20 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
   <defs>
     <style>
-      .cls-1 {
+      .cls-1dd {
         fill: none;
       }
 
-      .cls-2 {
+      .cls-2dd {
         clip-path: url(#clippath);
+        fill: currentColor;
       }
     </style>
     <clipPath id="clippath">
-      <rect class="cls-1" y="2" width="24" height="20.53"/>
+      <rect class="cls-1dd" y="2" width="24" height="20.53"/>
     </clipPath>
   </defs>
-  <g class="cls-2">
+  <g class="cls-2dd">
     <path d="M12,1.74l11.85,20.53H.15L12,1.74Z"/>
   </g>
 </svg>

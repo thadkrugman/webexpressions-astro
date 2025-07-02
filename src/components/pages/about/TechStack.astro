@@ -7,11 +7,11 @@ import SvelteLogo from '@/assets/images/about/tech-logos/svelte.svg';
 import SolidLogo from '@/assets/images/about/tech-logos/solid.svg';
 import ExpoLogo from '@/assets/images/about/tech-logos/expo.svg';
 import TanstackLogo from '@/assets/images/about/tech-logos/tanstack.svg';
-import ViteLogo from '@/assets/images/about/tech-logos/vite.svg';
 import BunLogo from '@/assets/images/about/tech-logos/bun.svg';
 import NodeLogo from '@/assets/images/about/tech-logos/nodejs.svg';
 import TailwindLogo from '@/assets/images/about/tech-logos/tailwindcss.svg';
 import ShadcnLogo from '@/assets/images/about/tech-logos/shadcn-ui.svg';
+import SanityLogo from '@/assets/images/about/tech-logos/sanity.svg';
 import PlanetscaleLogo from '@/assets/images/about/tech-logos/planetscale.svg';
 import DrizzleLogo from '@/assets/images/about/tech-logos/drizzle.svg';
 import ClerkLogo from '@/assets/images/about/tech-logos/clerk.svg';
@@ -23,74 +23,92 @@ const companies = [
   {
     name: 'TypeScript',
     icon: TypeScriptLogo,
+    category: 'Language',
   },
   {
     name: 'Astro',
     icon: AstroLogo,
+    category: 'Framework',
   },
   {
     name: 'React',
     icon: ReactLogo,
+    category: 'Framework',
   },
   {
     name: 'Svelte',
     icon: SvelteLogo,
+    category: 'Framework',
   },
   {
     name: 'Solid',
     icon: SolidLogo,
-  },
-  {
-    name: 'Expo',
-    icon: ExpoLogo,
+    category: 'Framework',
   },
   {
     name: 'TanStack',
     icon: TanstackLogo,
+    category: 'Framework',
   },
   {
-    name: 'Vite',
-    icon: ViteLogo,
+    name: 'Expo',
+    icon: ExpoLogo,
+    category: 'Framework',
   },
   {
     name: 'Bun',
     icon: BunLogo,
+    category: 'Runtime',
   },
   {
     name: 'NodeJS',
     icon: NodeLogo,
+    category: 'Runtime',
   },
   {
     name: 'TailwindCSS',
     icon: TailwindLogo,
+    category: 'CSS Framework',
   },
   {
     name: 'Shadcn UI',
     icon: ShadcnLogo,
+    category: 'UI Framework',
+  },
+  {
+    name: 'Sanity',
+    icon: SanityLogo,
+    category: 'CMS',
   },
   {
     name: 'PlanetScale',
     icon: PlanetscaleLogo,
+    category: 'Database',
   },
   {
     name: 'Drizzle',
     icon: DrizzleLogo,
+    category: 'ORM',
   },
   {
     name: 'Clerk',
     icon: ClerkLogo,
+    category: 'Auth',
   },
   {
     name: 'BetterAuth',
     icon: BetterAuthLogo,
+    category: 'Auth',
   },
   {
     name: 'Shopify',
     icon: ShopifyLogo,
+    category: 'E-commerce',
   },
   {
     name: 'Vercel',
     icon: VercelLogo,
+    category: 'Hosting',
   },
 ];
 ---
@@ -107,17 +125,18 @@ const companies = [
   </div>
   <ul
     role='list'
-    class='mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6'
+    class='mx-auto mt-16 sm:mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6'
   >
     {
       companies.map((company) => (
-        <li>
+        <li class='hover-lift-logo text-primary hover:text-accent'>
           <div class='w-full flex items-center justify-center max-w-20 mx-auto'>
-            <company.icon class='aspect-square' />
+            <company.icon
+              class='aspect-square h-full w-full'
+              aria-label={`${company.name} logo`}
+            />
           </div>
-          <h3 class='mt-4 text-xl/8 font-bold tracking-tight text-foreground'>
-            {company.name}
-          </h3>
+          <h3 class='mt-4 text-xl/8 font-bold'>{company.name}</h3>
         </li>
       ))
     }

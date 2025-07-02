@@ -9,6 +9,7 @@
 
       .st1nn {
         clip-path: url(#clippath);
+        fill: currentColor;
       }
     </style>
     <clipPath id="clippath">

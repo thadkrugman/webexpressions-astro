@@ -5,6 +5,7 @@
     <style>
       .st0gg {
         fill-rule: evenodd;
+        fill: currentColor;
       }
     </style>
   </defs>
