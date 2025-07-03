@@ -68,7 +68,6 @@ const testimonials = [
         {
           testimonials.map((testimonial, index) => (
             <Card
-              className={`animate-fade-in-up lg:animate-delay-${(index + 1) * 100} scroll-trigger`}
               testimonial={testimonial}
               index={index}
               last={index === testimonials.length - 1}
@@ -86,7 +85,6 @@ const testimonials = [
             .slice(0, 2)
             .map((testimonial, index) => (
               <Card
-                className={`animate-fade-in-up lg:animate-delay-${(index + 1) * 100} scroll-trigger`}
                 testimonial={testimonial}
                 index={index}
                 last={index === 1}
@@ -100,7 +98,6 @@ const testimonials = [
             .slice(2, 6)
             .map((testimonial, index) => (
               <Card
-                className={`animate-fade-in-up lg:animate-delay-${(index + 3) * 100} scroll-trigger`}
                 testimonial={testimonial}
                 index={index}
                 last={index === 3}
@@ -118,7 +115,6 @@ const testimonials = [
             .slice(0, 2)
             .map((testimonial, index) => (
               <Card
-                className={`animate-fade-in-up lg:animate-delay-${(index + 1) * 100} scroll-trigger`}
                 testimonial={testimonial}
                 index={index}
                 last={index === 1}
@@ -132,7 +128,6 @@ const testimonials = [
             .slice(2, 5)
             .map((testimonial, index) => (
               <Card
-                className={`animate-fade-in-up lg:animate-delay-${(index + 3) * 100} scroll-trigger`}
                 testimonial={testimonial}
                 index={index}
                 last={index === 2}
@@ -146,7 +141,6 @@ const testimonials = [
             .slice(5)
             .map((testimonial, index) => (
               <Card
-                className={`animate-fade-in-up lg:animate-delay-${(index + 5) * 100} scroll-trigger`}
                 testimonial={testimonial}
                 index={index}
                 last={index === 2}

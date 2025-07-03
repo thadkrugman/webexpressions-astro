@@ -18,7 +18,12 @@ interface Props {
 const { className, testimonial, index, last }: Props = Astro.props;
 ---
 
-<div class={cn('w-full group cursor-default', className)}>
+<div
+  class={cn(
+    'w-full group cursor-default animate-fade-in-up scroll-trigger',
+    className,
+  )}
+>
   <figure
     class={`text-sm/6 border-t border-gray-100 ${index === 0 ? 'border-t-0 pt-0 pb-12' : 'py-12'} ${last ? 'pb-0 sm:pb-0' : ''}`}
   >

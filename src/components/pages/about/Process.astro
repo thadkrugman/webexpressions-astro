@@ -48,12 +48,7 @@ const steps = [
     >
       {
         steps.map((step, index) => (
-          <div
-            class:list={[
-              'flex items-start gap-x-6 animate-fade-in-up scroll-trigger group cursor-default',
-              `lg:animate-delay-${(index + 1) * 100}`,
-            ]}
-          >
+          <div class='flex items-start gap-x-6 animate-fade-in-up scroll-trigger group cursor-default'>
             <div class='flex-shrink-0'>
               <div class='flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold group-hover:bg-accent'>
                 {index + 1}

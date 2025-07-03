@@ -81,7 +81,7 @@ const testimonials = [
     <h2 class='mt-2 heading-1'>What My Clients Are Saying</h2>
   </div>
   <div
-    class='mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-6 sm:gap-8 text-sm/6 text-foreground sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
+    class='mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-6 sm:gap-8 text-sm/6 text-foreground sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4 animate-fade-in-up scroll-trigger'
     role='region'
     aria-label='Client testimonials'
   >
@@ -121,9 +121,7 @@ const testimonials = [
       <div class='space-y-6 sm:space-y-8 xl:row-span-2'>
         {
           testimonials[0][0].map((testimonial, index) => (
-            <div
-              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
-            >
+            <div class={`animate-fade-in-up scroll-trigger`}>
               <Card testimonial={testimonial} />
             </div>
           ))
@@ -133,9 +131,7 @@ const testimonials = [
       <div class='space-y-6 sm:space-y-8 xl:row-start-1'>
         {
           testimonials[0][1].map((testimonial, index) => (
-            <div
-              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 3) * 100, 500)} scroll-trigger`}
-            >
+            <div class={`animate-fade-in-up scroll-trigger`}>
               <Card testimonial={testimonial} />
             </div>
           ))
@@ -147,9 +143,7 @@ const testimonials = [
       <div class='space-y-6 sm:space-y-8 xl:row-start-1'>
         {
           testimonials[1][0].map((testimonial, index) => (
-            <div
-              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 2) * 100, 400)} scroll-trigger`}
-            >
+            <div class={`animate-fade-in-up scroll-trigger`}>
               <Card testimonial={testimonial} />
             </div>
           ))
@@ -159,9 +153,7 @@ const testimonials = [
       <div class='space-y-6 sm:space-y-8 xl:row-span-2'>
         {
           testimonials[1][1].map((testimonial, index) => (
-            <div
-              class={`animate-fade-in-up lg:animate-delay-${Math.min((index + 3) * 100, 600)} scroll-trigger`}
-            >
+            <div class={`animate-fade-in-up scroll-trigger`}>
               <Card testimonial={testimonial} />
             </div>
           ))

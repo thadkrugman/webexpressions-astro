@@ -75,14 +75,14 @@ const projects = [
   </div>
   <!-- grid container -->
   <div
-    class='mt-16 grid grid-cols-1 gap-6 sm:mt-20 lg:grid-cols-6 animate-fade-in-up lg:animate-delay-200 scroll-trigger'
+    class='mt-16 grid grid-cols-1 gap-6 sm:mt-20 lg:grid-cols-6'
     role='region'
     aria-label='Portfolio projects gallery'
   >
     {
       projects.map((project, index) => (
         <div
-          class={`relative group ${project.aspectRatio} rounded-xl w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden sm:hover:scale-[1.03] ease-in-out duration-300 animate-scale-in lg:animate-delay-${Math.min((index + 1) * 100, 500)} scroll-trigger border border-black/[.05] shadow-[0_5px_12px_rgba(0,0,0,0.05)]`}
+          class={`relative group ${project.aspectRatio} rounded-xl w-full col-span-1 row-span-1 ${project.colSpan} overflow-hidden sm:hover:scale-[1.03] ease-in-out duration-300 animate-fade-in-up scroll-trigger border border-black/[.05] shadow-[0_5px_12px_rgba(0,0,0,0.05)]`}
         >
           <a
             href={project.href}
