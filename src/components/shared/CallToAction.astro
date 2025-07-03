@@ -17,9 +17,11 @@ interface Props {
   button: string;
   buttonHref: string;
   buttonClassName?: string;
+  buttonAriaLabel?: string;
   button2: string;
   button2Href: string;
   button2ClassName?: string;
+  button2AriaLabel?: string;
 }
 
 const {
@@ -34,9 +36,11 @@ const {
   button,
   buttonHref,
   buttonClassName,
+  buttonAriaLabel,
   button2,
   button2Href,
   button2ClassName,
+  button2AriaLabel,
 } = Astro.props;
 ---
 
@@ -79,7 +83,7 @@ const {
           variant='secondary'
           href={buttonHref}
           className={cn(buttonClassName)}
-          aria-label={button}
+          aria-label={buttonAriaLabel}
         >
           {button}
         </Button>
@@ -88,7 +92,7 @@ const {
           variant='outline-secondary'
           href={button2Href}
           className={cn(button2ClassName)}
-          aria-label={button2}
+          aria-label={button2AriaLabel}
         >
           {button2}
         </Button>
