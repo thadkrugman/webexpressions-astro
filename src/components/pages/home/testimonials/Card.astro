@@ -1,37 +1,49 @@
 ---
-export interface Props {
-  testimonial: {
-    body: string;
-    author: {
-      name: string;
-    };
+type Testimonial = {
+  body: string;
+  author: {
+    name: string;
   };
+};
+
+interface Props {
+  testimonial: Testimonial;
+  index: number;
+  last: boolean;
 }
 
-const { testimonial } = Astro.props;
+const { testimonial, index, last }: Props = Astro.props;
 ---
 
-<figure class='rounded-lg bg-gray-400/5 p-6'>
-  <blockquote class='text-foreground text-sm/6 font-medium'>
-    <p>{testimonial.body}</p>
-  </blockquote>
-  <figcaption class='mt-6 flex items-center gap-x-4'>
-    <div
-      class='size-9 rounded-full bg-accent-secondary/15 flex items-center justify-center uppercase text-accent-secondary text-xs font-bold tracking-widest'
-    >
-      {
-        (() => {
-          const nameParts = testimonial.author.name.trim().split(' ');
-          if (nameParts.length > 1) {
-            return `${nameParts[0].slice(0, 1)}${nameParts[nameParts.length - 1].slice(0, 1)}`;
-          } else {
-            return testimonial.author.name.slice(0, 2);
-          }
-        })()
-      }
-    </div>
-    <div>
-      <div class='font-bold'>{testimonial.author.name}</div>
-    </div>
-  </figcaption>
-</figure>
+<div class='w-full'>
+  <figure
+    class={`text-sm/6 border-t border-gray-100 ${index === 0 ? 'border-t-0 pt-1 pb-10' : 'py-10'} ${last ? 'pb-0 sm:pb-1' : ''}`}
+  >
+    <blockquote class='text-foreground font-medium text-base/7'>
+      <p>
+        <span class='text-accent font-bold text-2xl/6'>"</span>
+        {testimonial.body}
+        <span class='text-accent font-bold text-2xl/4'>"</span>
+      </p>
+    </blockquote>
+    <figcaption class='mt-6 flex items-center gap-x-4'>
+      <div
+        class='size-9 rounded-full bg-primary flex items-center justify-center uppercase text-primary-foreground text-xs font-bold tracking-widest'
+      >
+        {
+          (() => {
+            const nameParts = testimonial.author.name.trim().split(' ');
+            if (nameParts.length > 1) {
+              return `${nameParts[0].slice(0, 1)}${nameParts[nameParts.length - 1].slice(0, 1)}`;
+            } else {
+              return testimonial.author.name.slice(0, 2);
+            }
+          })()
+        }
+      </div>
+      <div class='font-bold text-foreground'>
+        {testimonial.author.name}
+      </div>
+    </figcaption>
+  </figure>
+</div>

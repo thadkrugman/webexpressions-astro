@@ -1,0 +1,39 @@
+---
+export interface Props {
+  testimonial: {
+    body: string;
+    author: {
+      name: string;
+    };
+  };
+}
+
+const { testimonial } = Astro.props;
+---
+
+<figure
+  class='rounded-lg border border-black/[.04] shadow-[0_5px_12px_rgba(0,0,0,0.05)] p-6'
+>
+  <blockquote class='text-foreground text-sm/6 font-medium'>
+    <p>{testimonial.body}</p>
+  </blockquote>
+  <figcaption class='mt-6 flex items-center gap-x-4'>
+    <div
+      class='size-9 rounded-full bg-accent-secondary/15 flex items-center justify-center uppercase text-accent-secondary text-xs font-bold tracking-widest'
+    >
+      {
+        (() => {
+          const nameParts = testimonial.author.name.trim().split(' ');
+          if (nameParts.length > 1) {
+            return `${nameParts[0].slice(0, 1)}${nameParts[nameParts.length - 1].slice(0, 1)}`;
+          } else {
+            return testimonial.author.name.slice(0, 2);
+          }
+        })()
+      }
+    </div>
+    <div>
+      <div class='font-bold'>{testimonial.author.name}</div>
+    </div>
+  </figcaption>
+</figure>
