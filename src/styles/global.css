@@ -121,7 +121,7 @@
 
   @keyframes fade-in-up {
     from {
-      opacity: 0;
+      opacity: 0.01;
       transform: scale(0.92) translateY(10px);
     }
     to {
@@ -132,7 +132,7 @@
 
   @keyframes fade-in-left {
     from {
-      opacity: 0;
+      opacity: 0.01;
       transform: scale(0.92) translateX(-15px);
     }
     to {
@@ -143,7 +143,7 @@
 
   @keyframes fade-in-right {
     from {
-      opacity: 0;
+      opacity: 0.01;
       transform: scale(0.92) translateX(15px);
     }
     to {
@@ -154,7 +154,7 @@
 
   @keyframes scale-in {
     from {
-      opacity: 0;
+      opacity: 0.01;
       transform: scale(0.95);
     }
     to {
@@ -164,43 +164,43 @@
   }
 
   .animate-fade-in {
-    opacity: 0;
+    opacity: 0.01;
   }
 
   .animate-fade-in.animate {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 0.5s ease-out forwards;
   }
 
   .animate-fade-in-up {
-    opacity: 0;
+    opacity: 0.01;
   }
 
   .animate-fade-in-up.animate {
-    animation: fade-in-up 0.8s ease-out forwards;
+    animation: fade-in-up 0.5s ease-out forwards;
   }
 
   .animate-fade-in-left {
-    opacity: 0;
+    opacity: 0.01;
   }
 
   .animate-fade-in-left.animate {
-    animation: fade-in-left 0.8s ease-out forwards;
+    animation: fade-in-left 0.5s ease-out forwards;
   }
 
   .animate-fade-in-right {
-    opacity: 0;
+    opacity: 0.01;
   }
 
   .animate-fade-in-right.animate {
-    animation: fade-in-right 0.8s ease-out forwards;
+    animation: fade-in-right 0.5s ease-out forwards;
   }
 
   .animate-scale-in {
-    opacity: 0;
+    opacity: 0.01;
   }
 
   .animate-scale-in.animate {
-    animation: scale-in 0.8s ease-out forwards;
+    animation: scale-in 0.5s ease-out forwards;
   }
 
   /* Respect user's motion preferences */
