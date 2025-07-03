@@ -78,14 +78,20 @@ const {
           size='xl'
           variant='secondary'
           href={buttonHref}
-          className={cn(buttonClassName)}>{button}</Button
+          className={cn(buttonClassName)}
+          aria-label={button}
         >
+          {button}
+        </Button>
         <Button
           size='xl'
           variant='outline-secondary'
           href={button2Href}
-          className={cn(button2ClassName)}>{button2}</Button
+          className={cn(button2ClassName)}
+          aria-label={button2}
         >
+          {button2}
+        </Button>
       </div>
     </div>
     <div
