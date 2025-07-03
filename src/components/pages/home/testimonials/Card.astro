@@ -18,7 +18,7 @@ interface Props {
 const { className, testimonial, index, last }: Props = Astro.props;
 ---
 
-<div class={cn('w-full', className)}>
+<div class={cn('w-full group cursor-default', className)}>
   <figure
     class={`text-sm/6 border-t border-gray-100 ${index === 0 ? 'border-t-0 pt-0 pb-12' : 'py-12'} ${last ? 'pb-0 sm:pb-0' : ''}`}
   >
@@ -31,7 +31,7 @@ const { className, testimonial, index, last }: Props = Astro.props;
     </blockquote>
     <figcaption class='mt-6 flex items-center gap-x-4'>
       <div
-        class='size-9 rounded-full bg-primary flex items-center justify-center uppercase text-primary-foreground text-xs font-bold tracking-widest'
+        class='size-9 rounded-full bg-primary flex items-center justify-center uppercase text-primary-foreground text-xs font-bold tracking-widest group-hover:bg-accent'
       >
         {
           (() => {

@@ -68,12 +68,13 @@ const features = [
     {
       features.map((feature, index) => (
         <div
-          class={`relative pl-9 animate-fade-in-up lg:animate-delay-${Math.min((index + 1) * 100, 600)} scroll-trigger`}
+          class={`relative pl-9 animate-fade-in-up lg:animate-delay-${Math.min((index + 1) * 100, 600)} scroll-trigger group cursor-default`}
         >
           <dt class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
             <feature.icon
-              class='absolute left-1 top-1 size-5 text-primary'
+              class='absolute left-1 top-1 size-5 text-primary group-hover:text-accent'
               aria-hidden='true'
+              stroke-width={2.2}
             />
             {feature.title}
           </dt>

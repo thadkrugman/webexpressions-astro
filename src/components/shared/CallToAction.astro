@@ -54,7 +54,7 @@ const {
       <div class='animate-fade-in-up scroll-trigger'>
         <Layers2
           stroke-width={2.1}
-          class='size-12 sm:size-14 mb-5 text-primary-foreground lg:hidden'
+          class='size-12 sm:size-14 mb-5 text-primary-foreground lg:hidden hover:text-accent'
         />
 
         <p class={cn('kicker text-accent', kickerClassName)}>
@@ -89,14 +89,14 @@ const {
       </div>
     </div>
     <div
-      class='hidden lg:flex flex-col flex-1 h-64 items-center justify-center animate-fade-in-up scroll-trigger lg:animate-delay-500'
+      class='hidden lg:flex flex-col flex-1 h-64 items-end justify-center animate-fade-in-up scroll-trigger lg:animate-delay-500 cursor-default'
     >
-      <Layers2
-        stroke-width={2.1}
-        class={cn(
-          'h-full w-auto aspect-square text-primary-foreground hover-lift-logo',
-        )}
-      />
+      <div
+        class='w-fit h-64 text-primary-foreground flex flex-col items-center justify-center hover:text-accent'
+      >
+        <Layers2 stroke-width={2.1} class={cn('h-full w-auto aspect-square')} />
+        <p class='text-4xl font-black mt-6'>webexpressions</p>
+      </div>
     </div>
   </Container>
 </div>
