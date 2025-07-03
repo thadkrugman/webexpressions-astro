@@ -2,12 +2,9 @@
 import Container from '@/components/shared/Container.astro';
 ---
 
-<Container
-  as='section'
-  className='relative animate-fade-in-up scroll-trigger overflow-hidden'
->
-  <div class='max-w-4xl'>
-    <p class='kicker'>Philosophy Option 2</p>
+<Container as='section' className='relative overflow-hidden'>
+  <div class='max-w-4xl animate-fade-in-up scroll-trigger'>
+    <p class='kicker'>Company Values</p>
     <h1 class='heading-1 mt-2'>On a mission to empower remote teams</h1>
     <p
       class='mt-6 text-balance text-lg lg:text-xl/8 text-foreground font-medium'
@@ -17,8 +14,8 @@ import Container from '@/components/shared/Container.astro';
       egestas.
     </p>
   </div>
-  <section class='mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16'>
-    <div class='lg:pr-8'>
+  <div class='mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16'>
+    <div class='lg:pr-8 animate-fade-in-up scroll-trigger lg:animate-delay-100'>
       <h2 class='heading-3'>Our mission</h2>
       <p class='mt-6 text-base/7 text-foreground font-medium'>
         Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
@@ -39,7 +36,7 @@ import Container from '@/components/shared/Container.astro';
         class='-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8'
       >
         <div
-          class='aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10'
+          class='aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 animate-fade-in-up scroll-trigger lg:animate-delay-200'
         >
           <img
             alt=''
@@ -48,7 +45,7 @@ import Container from '@/components/shared/Container.astro';
           />
         </div>
         <div
-          class='-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 lg:-mt-40'
+          class='-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 lg:-mt-40 animate-fade-in-up scroll-trigger lg:animate-delay-300'
         >
           <img
             alt=''
@@ -57,7 +54,7 @@ import Container from '@/components/shared/Container.astro';
           />
         </div>
         <div
-          class='aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10'
+          class='aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 animate-fade-in-up scroll-trigger lg:animate-delay-400'
         >
           <img
             alt=''
@@ -66,7 +63,7 @@ import Container from '@/components/shared/Container.astro';
           />
         </div>
         <div
-          class='-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 lg:-mt-40'
+          class='-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline -outline-offset-1 outline-black/10 lg:-mt-40 animate-fade-in-up scroll-trigger lg:animate-delay-500'
         >
           <img
             alt=''
@@ -76,32 +73,36 @@ import Container from '@/components/shared/Container.astro';
         </div>
       </div>
     </div>
-    <div class='max-lg:mt-16 lg:col-span-1'>
-      <p class='text-xl/7 font-bold text-foreground'>The numbers</p>
-      <hr class='mt-6 border-t' />
+    <div
+      class='max-lg:mt-16 lg:col-span-1 animate-fade-in-up scroll-trigger lg:animate-delay-600'
+    >
+      <p class='text-xl/7 font-extrabold text-foreground'>The numbers</p>
+      <hr class='mt-6 border-t border-gray-100' />
       <dl class='mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2'>
-        <div class='flex flex-col gap-y-2 border-b border-dotted pb-4'>
-          <dt class='text-base/7 text-foreground font-medium'>Raised</dt>
+        <div class='flex flex-col gap-y-2 border-b border-gray-100 pb-4'>
+          <dt class='text-base/7 text-foreground font-semibold'>Raised</dt>
           <dd class='order-first text-6xl font-bold tracking-tight'>
             $<span>150</span>M
           </dd>
         </div>
-        <div class='flex flex-col gap-y-2 border-b border-dotted pb-4'>
-          <dt class='text-base/7 text-foreground font-medium'>Companies</dt>
+        <div class='flex flex-col gap-y-2 border-b border-gray-100 pb-4'>
+          <dt class='text-base/7 text-foreground font-semibold'>Companies</dt>
           <dd class='order-first text-6xl font-bold tracking-tight'>
             <span>30</span>K
           </dd>
         </div>
         <div
-          class='flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:pb-4'
+          class='flex flex-col gap-y-2 max-sm:border-b max-sm:border-gray-100 max-sm:pb-4'
         >
-          <dt class='text-base/7 text-foreground font-medium'>Deals Closed</dt>
+          <dt class='text-base/7 text-foreground font-semibold'>
+            Deals Closed
+          </dt>
           <dd class='order-first text-6xl font-bold tracking-tight'>
             <span>1.5</span>M
           </dd>
         </div>
         <div class='flex flex-col gap-y-2'>
-          <dt class='text-base/7 text-foreground font-medium'>
+          <dt class='text-base/7 text-foreground font-semibold'>
             Leads Generated
           </dt>
           <dd class='order-first text-6xl font-bold tracking-tight'>
@@ -110,5 +111,5 @@ import Container from '@/components/shared/Container.astro';
         </div>
       </dl>
     </div>
-  </section>
+  </div>
 </Container>

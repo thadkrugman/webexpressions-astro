@@ -1,4 +1,6 @@
 ---
+import { cn } from '@/lib/utils';
+
 type Testimonial = {
   body: string;
   author: {
@@ -7,15 +9,16 @@ type Testimonial = {
 };
 
 interface Props {
+  className?: string;
   testimonial: Testimonial;
   index: number;
   last: boolean;
 }
 
-const { testimonial, index, last }: Props = Astro.props;
+const { className, testimonial, index, last }: Props = Astro.props;
 ---
 
-<div class='w-full'>
+<div class={cn('w-full', className)}>
   <figure
     class={`text-sm/6 border-t border-gray-100 ${index === 0 ? 'border-t-0 pt-1 pb-10' : 'py-10'} ${last ? 'pb-0 sm:pb-1' : ''}`}
   >

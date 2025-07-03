@@ -114,7 +114,7 @@ const companies = [
 ---
 
 <Container>
-  <div class='mx-auto max-w-2xl text-center'>
+  <div class='mx-auto max-w-2xl text-center animate-fade-in-up scroll-trigger'>
     <p class='kicker'>Tech Stack</p>
     <h2 class='heading-1 mt-2'>Built for Tomorrow</h2>
     <p class='mt-6 text-lg lg:text-xl/8 text-foreground font-medium'>
@@ -125,11 +125,11 @@ const companies = [
   </div>
   <ul
     role='list'
-    class='mx-auto mt-16 sm:mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6'
+    class='mx-auto mt-16 sm:mt-20 grid max-w-2xl max-[439px]:grid-cols-2 grid-cols-3 gap-x-8 gap-y-16 text-center md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6'
   >
     {
       companies.map((company) => (
-        <li class='hover-lift-logo text-primary hover:text-accent'>
+        <li class='hover-lift-logo text-primary hover:text-accent animate-fade-in-up scroll-trigger'>
           <div class='w-full flex items-center justify-center max-w-20 mx-auto'>
             <company.icon
               class='aspect-square h-full w-full'
