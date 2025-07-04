@@ -1,4 +1,5 @@
 ---
+import AccentDot from '@/components/shared/AccentDot.astro';
 import Container from '@/components/shared/Container.astro';
 
 const stats = [
@@ -37,7 +38,7 @@ const stats = [
           class={`w-full bg-white lg:p-0 animate-fade-in-up scroll-trigger ${index === 0 ? 'max-lg:pb-12 max-lg:border-b lg:border-r border-gray-100' : 'py-10'} ${index === stats.length - 1 ? 'max-lg:pt-10 max-lg:border-t lg:border-l border-gray-100' : ''}`}
         >
           <div class='flex flex-col items-center text-center gap-y-3'>
-            <div class='max-xs:text-4xl text-5xl font-extrabold tracking-tight text-foreground sm:text-5xl'>
+            <div class='heading-1 lg:text-6xl'>
               <span
                 class='stat-number'
                 data-target={stat.numericValue}
@@ -47,17 +48,8 @@ const stats = [
                 0{stat.suffix}
               </span>
             </div>
-            <div class='max-xs:text-sm text-base font-semibold tracking-wide flex items-center gap-x-2'>
-              {/* Animated brand accent dot */}
-              <div
-                class='relative w-2.5 h-2.5 bg-accent rounded-full animate-pulse'
-                aria-hidden='true'
-              >
-                <div
-                  class='absolute inset-0 bg-accent rounded-full animate-ping opacity-75'
-                  aria-hidden='true'
-                />
-              </div>
+            <div class='max-xs:text-base text-lg font-semibold tracking-wide flex items-center gap-x-2'>
+              <AccentDot className='max-xs:size-2.5 size-2.75 mt-0.5' />
               {stat.label}
             </div>
           </div>

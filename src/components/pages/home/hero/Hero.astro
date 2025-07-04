@@ -5,6 +5,7 @@ import PartyPopper from '@lucide/astro/icons/party-popper';
 import MousePointerClick from '@lucide/astro/icons/mouse-pointer-click';
 import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro';
 import Rocket from '@lucide/astro/icons/rocket';
+import AccentDot from '@/components/shared/AccentDot.astro';
 
 const services = [
   'Intuitive Web Design',
@@ -68,15 +69,7 @@ const services = [
             class='flex flex-row gap-2 items-center justify-center lg:justify-start'
             role='listitem'
           >
-            <div
-              class='relative max-xs:size-2.5 size-2.75 mt-0.5 bg-accent rounded-full animate-pulse flex-shrink-0'
-              aria-hidden='true'
-            >
-              <div
-                class='absolute inset-0 bg-accent rounded-full animate-ping opacity-75'
-                aria-hidden='true'
-              />
-            </div>
+            <AccentDot className='max-xs:size-2.5 size-2.75 mt-0.5' />
             <span class='max-xs:text-base text-lg font-semibold'>
               {service}
             </span>

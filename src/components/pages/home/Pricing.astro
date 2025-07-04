@@ -1,4 +1,5 @@
 ---
+import AccentDot from '@/components/shared/AccentDot.astro';
 import Container from '@/components/shared/Container.astro';
 import Button from '@/components/ui/Button.astro';
 
@@ -77,7 +78,8 @@ const plans = [
             class={`pt-16 ${index !== plans.length - 1 ? 'max-lg:pb-16' : ''} lg:px-8 lg:pt-0 xl:px-14 animate-fade-in-up scroll-trigger`}
           >
             <div class='flex items-center justify-between gap-x-4'>
-              <h3 id='tier-basic' class='text-base/7 font-bold text-foreground'>
+              <h3 id='tier-basic' class='text-lg/7 font-bold text-foreground'>
+                <AccentDot className='size-2.75 mr-2 inline-flex' />
                 {plan.name}
               </h3>
               {plan.isMostPopular && (
@@ -87,7 +89,7 @@ const plans = [
               )}
             </div>
             <p class='mt-6 flex items-baseline gap-x-1'>
-              <span class='text-5xl font-bold tracking-tight text-foreground'>
+              <span class='text-5xl font-extrabold tracking-tight text-foreground'>
                 {plan.price}
               </span>
             </p>
