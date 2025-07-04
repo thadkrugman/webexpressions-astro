@@ -87,7 +87,7 @@
   }
 
   .heading-3 {
-    @apply text-pretty text-3xl font-extrabold text-foreground sm:text-4xl;
+    @apply text-pretty text-3xl font-extrabold text-foreground sm:text-4xl tracking-tight;
   }
 
   @media (max-width: 439px) {
