@@ -121,7 +121,7 @@
 
   @keyframes fade-in-right {
     from {
-      visibility: hidden;
+      opacity: 0;
       transform: scale(0.92) translateX(15px);
     }
 
@@ -136,16 +136,15 @@
   }
 
   .animate-fade-in-up.animate {
-    visibility: visible;
     opacity: 0;
+    visibility: visible;
     animation: fade-in-up 0.6s ease-out forwards;
   }
 
   .animate-fade-in-right {
-    visibility: hidden;
+    opacity: 0;
   }
   .animate-fade-in-right.animate {
-    visibility: visible;
     opacity: 0;
     animation: fade-in-right 0.6s ease-out forwards;
   }
