@@ -119,14 +119,37 @@
     }
   }
 
+  @keyframes fade-in-right {
+    from {
+      visibility: hidden;
+
+      transform: scale(0.92) translateX(15px);
+    }
+
+    to {
+      visibility: visible;
+
+      transform: scale(1) translateX(0);
+    }
+  }
+
   .animate-fade-in-up {
-    visibility: hidden; /* Changed from opacity: 0 */
+    visibility: hidden;
   }
 
   .animate-fade-in-up.animate {
-    visibility: visible; /* Show the element */
-    opacity: 0; /* Start animation from opacity 0 */
+    visibility: visible;
+    opacity: 0;
     animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-right {
+    visibility: hidden;
+  }
+  .animate-fade-in-right.animate {
+    visibility: visible;
+    opacity: 0;
+    animation: fade-in-right 0.6s ease-out forwards;
   }
 
   /* Respect user's motion preferences */
