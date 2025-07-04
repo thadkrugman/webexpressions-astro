@@ -1,0 +1,21 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  className?: string;
+  size?: number;
+}
+
+const { className, size = 2.5 }: Props = Astro.props;
+---
+
+<div
+  class={cn(`size-${size} bg-accent rounded-full animate-pulse`, className)}
+  aria-hidden='true'
+>
+  <div
+    class={`size-${size} bg-accent rounded-full animate-ping opacity-75`}
+    aria-hidden='true'
+  >
+  </div>
+</div>

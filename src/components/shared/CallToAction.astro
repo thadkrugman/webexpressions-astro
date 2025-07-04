@@ -70,11 +70,11 @@ const {
         )}
       >
         {heading}
-        {includeBreak && <br class='max-[439px]:hidden' />}
+        {includeBreak && <br class='max-xs:hidden' />}
         {heading2 && heading2}
       </h2>
       <div
-        class='mt-10 flex max-[440px]:flex-col max-[440px]:gap-y-4 min-[440px]:items-center min-[440px]:gap-x-6 lg:mt-12 lg:shrink-0'
+        class='mt-10 flex max-xs:flex-col max-xs:gap-y-4 min-xs:items-center min-xs:gap-x-6 lg:mt-12 lg:shrink-0'
       >
         <Button
           size='xl'
@@ -100,10 +100,14 @@ const {
       class='hidden lg:flex flex-col flex-1 h-64 items-end justify-center animate-fade-in-up scroll-trigger cursor-default'
     >
       <div
-        class='w-fit h-64 text-primary-foreground flex flex-col items-center justify-center hover:text-accent'
+        class='group w-fit h-64 text-primary-foreground flex flex-col items-center justify-center'
       >
         <Layers2 stroke-width={2.1} class={cn('h-full w-auto aspect-square')} />
-        <p class='text-4xl font-black mt-6'>webexpressions</p>
+        <p
+          class='text-4xl font-black mt-6 group-hover:text-accent transition-colors'
+        >
+          webexpressions
+        </p>
       </div>
     </div>
   </Container>

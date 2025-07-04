@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: 'Plus Jakarta Sans Variable', sans-serif;
+  --breakpoint-xs: 440px;
 }
 
 :root {
@@ -122,7 +123,7 @@
   @keyframes fade-in-right {
     from {
       opacity: 0;
-      transform: scale(0.92) translateX(15px);
+      transform: scale(0.92) translateX(20px);
     }
 
     to {
@@ -151,12 +152,15 @@
 
   /* Respect user's motion preferences */
   @media (prefers-reduced-motion: reduce) {
-    .animate-fade-in-up {
+    .animate-fade-in-up,
+    .animate-fade-in-right {
       opacity: 1 !important;
       transform: none !important;
+      visibility: visible !important;
     }
 
-    .animate-fade-in-up.animate {
+    .animate-fade-in-up.animate,
+    .animate-fade-in-right.animate {
       animation: none !important;
     }
 
