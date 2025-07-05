@@ -12,6 +12,7 @@
     "@fontsource-variable/plus-jakarta-sans": "^5.2.6",
     "@lucide/astro": "^0.511.0",
     "@tailwindcss/vite": "^4.1.10",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^5.9.4",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.3.1",
