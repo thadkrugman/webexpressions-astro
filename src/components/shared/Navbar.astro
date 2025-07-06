@@ -10,7 +10,8 @@ import Layers2 from '@lucide/astro/icons/layers-2';
 <Container
   as='nav'
   showTopBorder={true}
-  className='flex-row justify-between items-center pt-4 sm:pt-4 lg:pt-6'
+  className='fixed top-0 left-0 right-0 z-50 bg-background transition-transform duration-300 ease-in-out flex-row justify-between items-center pt-4 sm:pt-4 lg:pt-6'
+  id='main-navbar'
 >
   <a
     href='/'
@@ -61,6 +62,9 @@ import Layers2 from '@lucide/astro/icons/layers-2';
     </div>
   </div>
 </Container>
+
+<!-- Spacer to prevent content jumping under fixed navbar -->
+<div class='h-13 sm:h-13 lg:h-17' aria-hidden='true'></div>
 
 <!-- Mobile menu overlay -->
 <div
@@ -307,4 +311,52 @@ import Layers2 from '@lucide/astro/icons/layers-2';
 
   // Re-initialize on navigation (for SPAs)
   document.addEventListener('astro:page-load', initMobileMenu);
+
+  // Simple navbar hide/show on scroll
+  function initSmartNavbar(): void {
+    const navbar =
+      document.querySelector('nav') || document.getElementById('main-navbar');
+    if (!navbar) return;
+
+    let lastScrollY = window.scrollY;
+
+    function handleScroll(): void {
+      const currentScrollY = window.scrollY;
+
+      // Always show navbar at top of page
+      if (currentScrollY < 1) {
+        navbar?.classList.remove('-translate-y-full');
+        navbar?.classList.add('translate-y-0');
+        // Use original padding
+        navbar?.classList.remove('pb-3');
+      }
+      // Hide navbar when scrolling down
+      else if (currentScrollY > lastScrollY) {
+        navbar?.classList.remove('translate-y-0');
+        navbar?.classList.add('-translate-y-full');
+      }
+      // Show navbar when scrolling up with compact padding
+      else if (currentScrollY < lastScrollY) {
+        navbar?.classList.remove('-translate-y-full');
+        navbar?.classList.add('translate-y-0');
+        // Use compact padding when not at top
+        navbar?.classList.add('pb-3');
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
+
+  // Initialize smart navbar
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSmartNavbar);
+  } else {
+    initSmartNavbar();
+  }
+
+  // Re-initialize on navigation (for SPAs)
+  document.addEventListener('astro:page-load', initSmartNavbar);
 </script>
