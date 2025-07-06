@@ -242,9 +242,9 @@
 
 /* The draggable scrolling handle */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: oklch(70.7% 0.022 261.325);
   border-radius: 6px;
-  border: 0px solid rgba(0, 0, 0, 0.3);
+  border: 0px solid oklch(70.7% 0.022 261.325);
 }
 
 /* The thumb on hover */
@@ -255,5 +255,5 @@
 /* For Firefox */
 html {
   scrollbar-width: auto;
-  scrollbar-color: rgba(0, 0, 0, 0.3) var(--muted);
+  scrollbar-color: oklch(70.7% 0.022 261.325) var(--muted);
 }
