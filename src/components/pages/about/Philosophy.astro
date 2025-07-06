@@ -104,6 +104,7 @@ const images = [
                 alt={image.alt}
                 src={image.src}
                 class={image.imgClass}
+                sizes='(max-width: 639px) 60vw, (max-width: 1023px) 25vw, 600px'
                 width={560}
                 height={560}
               />
@@ -136,7 +137,7 @@ const images = [
               <dt class='text-base/7 text-foreground font-semibold'>
                 {stat.label}
               </dt>
-              <dd class='order-first text-6xl font-bold tracking-tight'>
+              <dd class='order-first text-6xl font-bold tracking-tight text-foreground'>
                 <span>{stat.value}</span>
               </dd>
             </div>

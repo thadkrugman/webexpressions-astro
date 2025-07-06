@@ -1,4 +1,5 @@
 ---
+import AccentDot from '@/components/shared/AccentDot.astro';
 import Container from '@/components/shared/Container.astro';
 import {
   Headset,
@@ -9,40 +10,47 @@ import {
 
 const features = [
   {
-    title: 'A Scalable Foundation',
+    title: 'Custom Web Development',
     description:
-      "I don't just build for today; I build for your future. Your project will be built on a solid, modern foundation that can grow and adapt with your business.",
-    icon: LaptopMinimalCheck,
+      "I build high-performance, custom websites from the ground up. Focusing on speed, scalability, and security, I'll create a site that not only looks stunning but is engineered to meet your specific business goals and built to last.",
+    classNames: 'lg:border-r border-gray-100 lg:pr-10 xl:mr-3',
+    innerClassNames: 'border-b border-gray-100 pb-10',
   },
   {
-    title: 'Full Ownership & No Lock-In',
+    title: 'Mobile App Development',
     description:
-      'You get a site built with standard, best-practice technologies. At the end of our project, you have full ownership of a clean codebase with no proprietary systems holding you hostage.',
-    icon: KeyRound,
+      'Using modern cross-platform technologies like Expo and React Native, I design and develop beautiful mobile apps for both iOS and Android from a single codebase. The result is a native-feeling experience that reaches your entire audience.',
+    classNames: 'lg:pl-10 xl:px-7',
+    innerClassNames: 'border-b border-gray-100 pt-10 lg:pt-0 pb-10',
   },
   {
-    title: 'Dedicated Post-Launch Support',
+    title: 'Headless Architecture',
     description:
-      "My commitment doesn't end at launch. I provide dedicated support to ensure a smooth transition, fix any issues, and empower you to manage your new digital asset confidently.",
-    icon: Headset,
+      'I specialize in modern headless architecture, decoupling your frontend from your backend. This provides ultimate flexibility, better performance, and allows us to use the best-in-class tools for every part of your project, from the CMS to the user interface.',
+    classNames:
+      'lg:max-xl:border-r xl:border-l border-gray-100 lg:max-xl:pr-10 xl:pl-10 xl:ml-3',
+    innerClassNames: 'border-b border-gray-100 pb-10 max-xl:pt-10',
   },
   {
-    title: 'Transparent Communication',
+    title: 'UI/UX Design',
     description:
-      'No project managers, no mixed messages. You work directly with me throughout the entire process, ensuring clear communication, quick decisions, and a development experience built around your needs.',
-    icon: MessageCircle,
+      'A great digital product starts with a thoughtful user experience. I create intuitive, user-centric designs and beautiful interfaces that are not only a joy to use but are strategically crafted to guide users and drive conversions.',
+    classNames: 'xl:border-r border-gray-100 lg:max-xl:pl-10 xl:pr-10 xl:mr-3',
+    innerClassNames: 'max-xl:border-b border-gray-100 pt-10 max-xl:pb-10',
   },
   {
-    title: 'Dedicated Post-Launch Support',
+    title: 'Content & SEO Strategy',
     description:
-      "My commitment doesn't end at launch. I provide dedicated support to ensure a smooth transition, fix any issues, and empower you to manage your new digital asset confidently.",
-    icon: Headset,
+      "Content is king, but strategy is its queen. I help you plan and structure your site's content for maximum impact, ensuring it's optimized for search engines and speaks directly to your target audience, establishing you as an authority in your space.",
+    classNames: 'lg:max-xl:border-r border-gray-100 lg:max-xl:pr-10 xl:px-7',
+    innerClassNames: 'pt-10 max-lg:border-b border-gray-100 max-lg:pb-10',
   },
   {
-    title: 'Transparent Communication',
+    title: 'Performance & Technical Audits',
     description:
-      'No project managers, no mixed messages. You work directly with me throughout the entire process, ensuring clear communication, quick decisions, and a development experience built around your needs.',
-    icon: MessageCircle,
+      "Is your existing site slow, buggy, or underperforming in search? I provide in-depth technical audits to identify bottlenecks, improve Core Web Vitals, and create a clear roadmap for enhancing your site's performance and SEO rankings.",
+    classNames: 'xl:border-l border-gray-100 lg:pl-10 xl:ml-3',
+    innerClassNames: 'pt-10',
   },
 ];
 ---
@@ -50,7 +58,7 @@ const features = [
 <Container as='section'>
   <div class='mx-auto max-w-2xl lg:mx-0 animate-fade-in-up scroll-trigger'>
     <h2 class='kicker'>What I Offer</h2>
-    <p class='mt-2 heading-1'>Crafting High-Performance Digital Experiences</p>
+    <p class='mt-2 heading-1'>Engineering Your Competitive Edge</p>
     <p
       class='mt-6
       text-lg
@@ -64,27 +72,27 @@ const features = [
       cohesive, powerful, and scalable digital product.
     </p>
   </div>
-  <dl
-    class='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-foreground sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16'
+  <div
+    class='mt-16 sm:mt-20 grid grid-cols-1 gap-x-0 lg:grid-cols-2 xl:grid-cols-3'
   >
     {
-      features.map((feature, index) => (
+      features.map((feature) => (
         <div
-          class={`relative pl-9 animate-fade-in-up scroll-trigger group cursor-default`}
+          class={`${feature.classNames} animate-fade-in-up scroll-trigger group cursor-default`}
         >
-          <dt class='inline font-black text-foreground text-base/7 lg:text-lg/7'>
-            <feature.icon
-              class='absolute left-1 top-1 size-5 text-primary group-hover:text-accent'
-              aria-hidden='true'
-              stroke-width={2.2}
-            />
-            {feature.title}
-          </dt>
-          <dd class='inline text-base/7 lg:text-lg/7 font-medium'>
-            {feature.description}
-          </dd>
+          <div class={`${feature.innerClassNames} w-full h-full`}>
+            <div class='flex items-center gap-x-2'>
+              <AccentDot className='size-2.75 mt-0.5' />
+              <h3 class='text-lg lg:text-xl font-extrabold text-foreground tracking-tight'>
+                {feature.title}
+              </h3>
+            </div>
+            <div class='mt-2 ml-4.5 text-base/7 lg:text-lg/7 font-medium'>
+              {feature.description}
+            </div>
+          </div>
         </div>
       ))
     }
-  </dl>
+  </div>
 </Container>
