@@ -1,0 +1,62 @@
+---
+import Container from '@/components/shared/Container.astro';
+import Badge from '@/components/shared/Badge.astro';
+import Button from '@/components/ui/Button.astro';
+---
+
+<Container as='section'>
+  <div class='grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2'>
+    <div>
+      <div class='animate-fade-in-up scroll-trigger'>
+        <p class='kicker'>Machined Kettle</p>
+        <h2 class='mt-2 heading-2'>Rockwood Flooring</h2>
+        <p class='mt-6 text-base/7 lg:text-lg/7 font-medium'>
+          A modern, responsive website for a flooring company. A modern,
+          responsive website for a flooring company. A modern, responsive
+          website for a flooring company. A modern, responsive website for a
+          flooring company.
+        </p>
+      </div>
+
+      <div class='mt-16 animate-fade-in-up scroll-trigger'>
+        <p class='text-xl/7 font-bold text-foreground'>Project Tech Stack</p>
+        <hr
+          class='mt-6 border-t border-gray-100 animate-fade-in-up scroll-trigger'
+        />
+        <div class='mt-6 flex space-x-4'>
+          <Badge>Svelte</Badge>
+          <Badge>SvelteKit</Badge>
+          <Badge>TailwindCSS</Badge>
+          <Badge>Shadcn UI</Badge>
+        </div>
+        <div class='mt-12'>
+          <Button size='xl' href='https://www.rockwoodflooring.com'>
+            View Live Site
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <img
+        src='https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-09-main-detail.jpg'
+        alt='Black kettle with long pour spot and angled body on marble counter next to coffee mug and pour-over system.'
+        class='aspect-square w-full rounded-xl bg-gray-100 object-cover animate-fade-in-up scroll-trigger'
+      />
+      <div
+        class='mt-4 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-6 lg:mt-8 lg:gap-8'
+      >
+        <img
+          src='https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-09-detail-01.jpg'
+          alt='Detail of temperature setting button on kettle bass with digital degree readout.'
+          class='aspect-square w-full rounded-xl bg-gray-100 object-cover animate-fade-in-up scroll-trigger'
+        />
+        <img
+          src='https://tailwindcss.com/plus-assets/img/ecommerce-images/product-feature-09-detail-02.jpg'
+          alt='Kettle spout pouring boiling water into coffee grounds in pour-over mug.'
+          class='aspect-square w-full rounded-xl bg-gray-100 object-cover animate-fade-in-up scroll-trigger'
+        />
+      </div>
+    </div>
+  </div>
+</Container>
