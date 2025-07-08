@@ -8,18 +8,16 @@ interface Props {
 const { className = 'size-2.5' }: Props = Astro.props;
 ---
 
-<div class={cn('isolate inline-flex items-center justify-center', className)}>
+<div
+  class={cn(
+    `isolate inline-flex items-center justify-center bg-accent rounded-full animate-pulse`,
+    className,
+  )}
+  aria-hidden='true'
+>
   <div
-    class={cn(
-      `flex items-center justify-center bg-accent rounded-full animate-pulse w-full h-full`,
-      className,
-    )}
+    class={`bg-accent rounded-full animate-ping opacity-75 w-full h-full`}
     aria-hidden='true'
   >
-    <div
-      class={`bg-accent rounded-full animate-ping opacity-75 w-full h-full`}
-      aria-hidden='true'
-    >
-    </div>
   </div>
 </div>
