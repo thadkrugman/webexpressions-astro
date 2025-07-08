@@ -9,7 +9,10 @@ const { className = 'size-2.5' }: Props = Astro.props;
 ---
 
 <div
-  class={cn(`bg-accent rounded-full animate-pulse`, className)}
+  class={cn(
+    `isolate inline-flex items-center justify-center bg-accent rounded-full animate-pulse`,
+    className,
+  )}
   aria-hidden='true'
 >
   <div

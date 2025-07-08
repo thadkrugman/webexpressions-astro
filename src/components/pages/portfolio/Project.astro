@@ -1,0 +1,117 @@
+---
+import AccentDot from '@/components/shared/AccentDot.astro';
+import Container from '@/components/shared/Container.astro';
+import Badge from '@/components/ui/Badge.astro';
+import Button from '@/components/ui/Button.astro';
+
+import { Picture } from 'astro:assets';
+
+interface Image {
+  src: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  reverse?: boolean;
+  kicker: string;
+  title: string;
+  paragraph1: string;
+  paragraph2: string;
+  builtWith: string[];
+  image: Image;
+  images: Image[];
+  href: string;
+}
+
+const {
+  reverse = false,
+  kicker,
+  title,
+  paragraph1,
+  paragraph2,
+  builtWith,
+  image,
+  images,
+  href,
+} = Astro.props;
+---
+
+<Container as='section'>
+  <div
+    class='grid grid-cols-1 items-center gap-x-8 lg:gap-x-12 gap-y-16 lg:grid-cols-2'
+  >
+    <div>
+      <div class='animate-fade-in-up scroll-trigger'>
+        <p class='kicker'>{kicker}</p>
+        <h2 class='mt-2 heading-1 lg:text-6xl'>{title}</h2>
+        <p class='mt-6 text-base/7 lg:text-lg/7 font-medium'>
+          {paragraph1}
+        </p>
+        <p class='mt-8 text-base/7 lg:text-lg/7 font-medium'>
+          {paragraph2}
+        </p>
+      </div>
+
+      <div class='mt-16 animate-fade-in-up scroll-trigger'>
+        <div class='flex items-center space-x-2'>
+          <AccentDot className='mt-0.5 size-2.75' />
+          <p class='text-xl/7 font-bold text-foreground'>Built With</p>
+        </div>
+        <hr
+          class='mt-5 border-t border-muted animate-fade-in-up scroll-trigger'
+        />
+        <div class='mt-6 flex flex-wrap gap-2'>
+          {
+            builtWith.map((tech) => (
+              <Badge variant='border-outline'>{tech}</Badge>
+            ))
+          }
+        </div>
+        <div class='mt-12'>
+          <Button
+            size='xl'
+            href={href}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            See it in Action
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <div class={`${reverse ? 'lg:order-first' : ''}`}>
+      <div
+        class='rounded-xl aspect-square border shadow-[0_5px_12px_rgba(0,0,0,0.05)] animate-fade-in-up scroll-trigger bg-muted overflow-hidden'
+      >
+        <Picture
+          src={image.src}
+          widths={[320, 450, 600, 800, 1000, 1200]}
+          sizes='(max-width: 1024px) 100vw, 1000px'
+          height={1000}
+          alt={image.alt}
+          class='aspect-square w-full bg-muted object-cover animate-fade-in-up scroll-trigger'
+        />
+      </div>
+      <div
+        class='mt-4 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-6 lg:mt-8 lg:gap-8'
+      >
+        {
+          images.map((image) => (
+            <div class='aspect-square w-full bg-muted object-cover animate-fade-in-up scroll-trigger border shadow-[0_5px_12px_rgba(0,0,0,0.05)] overflow-hidden rounded-xl'>
+              <Picture
+                src={image.src}
+                widths={[320, 450, 600, 800, 1000]}
+                sizes='(max-width: 1024px) 50vw, 500px'
+                width={1000}
+                height={1000}
+                alt={image.alt}
+                class='aspect-square w-full bg-muted object-cover'
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Container>

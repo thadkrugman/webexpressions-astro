@@ -1,0 +1,74 @@
+---
+import Project from '@/components/pages/portfolio/Project.astro';
+import Rw1 from '@/assets/images/portfolio/projects/rw-1.png';
+import Rw2 from '@/assets/images/portfolio/projects/rw-2.png';
+import Rw3 from '@/assets/images/portfolio/projects/rw-3.png';
+import Sc1 from '@/assets/images/portfolio/projects/sc-1.png';
+import Sc2 from '@/assets/images/portfolio/projects/sc-2.png';
+import Sc3 from '@/assets/images/portfolio/projects/sc-3.png';
+
+const projects = [
+  {
+    kicker: 'Marketing Site',
+    title: 'Rockwood Flooring',
+    paragraph1:
+      'I partnered with Rockwood Flooring to design and develop a premium marketing site that establishes their online presence and drives foot traffic to their two local showrooms.',
+    paragraph2:
+      'My focus was on combining an elegant, high-end aesthetic with a strong technical SEO foundation. The result is a lightning-fast site built with SvelteKit that captures the quality of their brand and attracts new, local customers.',
+    builtWith: [
+      'Typescript',
+      'Svelte',
+      'SvelteKit',
+      'TailwindCSS',
+      'Shadcn UI',
+    ],
+    image: {
+      src: Rw1,
+      alt: 'Rockwood Flooring homepage',
+    },
+    images: [
+      {
+        src: Rw2,
+        alt: 'Rockwood Flooring Who We Are section with image of natural lit house with wood floors',
+      },
+      {
+        src: Rw3,
+        alt: 'Rockwood Flooring Financing section with image of dark wood floors and white curtains',
+      },
+    ],
+    href: 'https://www.rockwoodflooring.com',
+  },
+  {
+    kicker: 'Headless E-Commerce',
+    title: 'Spectre Corp',
+    paragraph1:
+      'As my longest-standing client, Spectre Corp entrusted me with the task of redesigning their corporate website into a modern, headless e-commerce platform. The primary business goal was to drive new revenue by allowing customers to purchase their high-precision sensors directly online for the first time.',
+    paragraph2:
+      "My focus was on engineering an exceptionally fast and scalable shopping experience. Using a cutting-edge stack of Astro and the Shopify Storefront API, I built a site with a strong foundation for SEO and a user experience that reflects the precision of Spectre's own products.",
+    builtWith: ['Typescript', 'Astro', 'TailwindCSS', 'Shopify API'],
+    image: {
+      src: Sc1,
+      alt: 'Spectre Corp homepage',
+    },
+    images: [
+      {
+        src: Sc3,
+        alt: 'A dark navy blue section that describes why a customer should buy from Spectre Corp',
+      },
+      {
+        src: Sc2,
+        alt: 'Product listing section from the Spectre Corp website',
+      },
+    ],
+    href: 'https://www.spectrecorp.com',
+  },
+];
+---
+
+<div>
+  {
+    projects.map((project, index) => (
+      <Project {...project} reverse={index % 2 === 1} />
+    ))
+  }
+</div>
