@@ -1,6 +1,6 @@
 ---
 import Container from '@/components/shared/Container.astro';
-import { MapPin, Phone, Mail } from '@lucide/astro';
+import { MapPin, Phone } from '@lucide/astro';
 import Label from '@/components/ui/Label.astro';
 import Input from '@/components/ui/Input.astro';
 import Textarea from '@/components/ui/Textarea.astro';
@@ -8,9 +8,9 @@ import RadioGroup from '@/components/ui/RadioGroup.astro';
 import Button from '@/components/ui/Button.astro';
 
 const budgetOptions = [
-  { value: '3000-6000', label: '$3,000 - $6,000' },
-  { value: '6000-10000', label: '$6,000 - $10,000' },
-  { value: '10000+', label: '$10,000+' },
+  { value: '3,000-6,000', label: '$3,000 - $6,000' },
+  { value: '6,000-10,000', label: '$6,000 - $10,000' },
+  { value: '10,000+', label: '$10,000+' },
 ];
 ---
 
@@ -28,7 +28,7 @@ const budgetOptions = [
         a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada
         et magna.
       </p>
-      <dl class='mt-16 space-y-6 text-base/7 text-foreground font-semibold'>
+      <dl class='mt-10 space-y-6 text-base/7 text-foreground font-semibold'>
         <div class='flex gap-x-4 items-center'>
           <dt class='flex-none'>
             <span class='sr-only'>Telephone</span>
@@ -50,7 +50,11 @@ const budgetOptions = [
         </div>
       </dl>
     </div>
-    <form action='#' method='POST' class='w-full lg:max-w-lg'>
+    <form
+      action='https://formspree.io/f/mdoyypbr'
+      method='POST'
+      class='w-full lg:max-w-lg'
+    >
       <div class='space-y-6'>
         <!-- Full Name -->
         <div>
@@ -58,10 +62,12 @@ const budgetOptions = [
           <div class='mt-2.5'>
             <Input
               type='text'
-              name='full-name'
+              name='Full Name'
               id='full-name'
               autocomplete='name'
               required
+              minlength={2}
+              maxlength={50}
             />
           </div>
         </div>
@@ -72,10 +78,11 @@ const budgetOptions = [
           <div class='mt-2.5'>
             <Input
               type='email'
-              name='email'
+              name='Email Address'
               id='email'
               autocomplete='email'
               required
+              maxlength={100}
             />
           </div>
         </div>
@@ -84,7 +91,13 @@ const budgetOptions = [
         <div>
           <Label for='phone'>Phone Number</Label>
           <div class='mt-2.5'>
-            <Input type='tel' name='phone' id='phone' autocomplete='tel' />
+            <Input
+              type='tel'
+              name='Phone Number'
+              id='phone'
+              autocomplete='tel'
+              placeholder='(555) 123-4567'
+            />
           </div>
         </div>
 
@@ -94,9 +107,10 @@ const budgetOptions = [
           <div class='mt-2.5'>
             <Input
               type='text'
-              name='company'
+              name='Company Name'
               id='company'
               autocomplete='organization'
+              maxlength={100}
             />
           </div>
         </div>
@@ -107,10 +121,11 @@ const budgetOptions = [
           <div class='mt-2.5'>
             <Input
               type='url'
-              name='website'
+              name='Current Website'
               id='website'
               placeholder='https://...'
               autocomplete='url'
+              maxlength={200}
             />
           </div>
         </div>
@@ -119,7 +134,11 @@ const budgetOptions = [
         <div>
           <Label required>Project Budget (Estimated)</Label>
           <div class='mt-2.5'>
-            <RadioGroup name='budget' options={budgetOptions} required />
+            <RadioGroup
+              name='Project Budget'
+              options={budgetOptions}
+              required
+            />
           </div>
         </div>
 
@@ -127,13 +146,21 @@ const budgetOptions = [
         <div>
           <Label for='message' required>How can I help you?</Label>
           <div class='mt-2.5'>
-            <Textarea name='message' id='message' rows={4} required />
+            <Textarea
+              name='Message'
+              id='message'
+              rows={4}
+              required
+              minlength={10}
+              maxlength={1000}
+              placeholder='Tell me about your project...'
+            />
           </div>
         </div>
       </div>
 
       <div class='mt-8 flex justify-end'>
-        <Button type='submit' variant='primary' size='default'>
+        <Button type='submit' size='xl' variant='primary' className='w-full'>
           Send message
         </Button>
       </div>

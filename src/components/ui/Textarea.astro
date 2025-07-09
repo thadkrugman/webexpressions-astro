@@ -10,6 +10,9 @@ interface Props {
   placeholder?: string;
   required?: boolean;
   disabled?: boolean;
+  minlength?: number;
+  maxlength?: number;
+  title?: string;
 }
 
 const {
@@ -21,6 +24,9 @@ const {
   placeholder,
   required = false,
   disabled = false,
+  minlength,
+  maxlength,
+  title,
   ...rest
 }: Props = Astro.props;
 
@@ -36,5 +42,8 @@ const baseStyles = 'block w-full rounded-md bg-white px-3.5 py-2 text-base text-
   placeholder={placeholder}
   required={required}
   disabled={disabled}
+  minlength={minlength}
+  maxlength={maxlength}
+  title={title}
   {...rest}
 ></textarea>

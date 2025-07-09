@@ -11,6 +11,10 @@ interface Props {
   disabled?: boolean;
   autocomplete?: string;
   value?: string;
+  pattern?: string;
+  minlength?: number;
+  maxlength?: number;
+  title?: string;
 }
 
 const {
@@ -23,6 +27,10 @@ const {
   disabled = false,
   autocomplete,
   value,
+  pattern,
+  minlength,
+  maxlength,
+  title,
   ...rest
 }: Props = Astro.props;
 
@@ -39,5 +47,9 @@ const baseStyles = 'block w-full rounded-md bg-white px-3.5 py-2 text-base text-
   disabled={disabled}
   autocomplete={autocomplete}
   value={value}
+  pattern={pattern}
+  minlength={minlength}
+  maxlength={maxlength}
+  title={title}
   {...rest}
 />
