@@ -12,6 +12,12 @@ import Ms3 from '@/assets/images/portfolio/projects/ms-3.png';
 import Pe1 from '@/assets/images/portfolio/projects/pe-1.jpg';
 import Pe2 from '@/assets/images/portfolio/projects/pe-2.png';
 import Pe3 from '@/assets/images/portfolio/projects/pe-3.png';
+import Alm1 from '@/assets/images/portfolio/projects/alm-1.png';
+import Alm2 from '@/assets/images/portfolio/projects/alm-2.png';
+import Alm3 from '@/assets/images/portfolio/projects/alm-3.png';
+import Pb1 from '@/assets/images/portfolio/projects/pb-1.png';
+import Pb2 from '@/assets/images/portfolio/projects/pb-2.png';
+import Pb3 from '@/assets/images/portfolio/projects/pb-3.png';
 
 const projects = [
   //  Rockwood Flooring
@@ -19,9 +25,9 @@ const projects = [
     kicker: 'Marketing',
     title: 'Rockwood Flooring',
     paragraph1:
-      'I partnered with Rockwood Flooring to design and develop a premium marketing site that establishes their online presence and drives foot traffic to their two local showrooms.',
+      'I partnered with Rockwood Flooring to translate the tactile, premium quality of their physical showrooms into an elegant digital experience. The goal was to establish a powerful online presence that drives new foot traffic to their two local stores.',
     paragraph2:
-      'My focus was on combining an elegant, high-end aesthetic with a strong technical SEO foundation. The result is a lightning-fast site built with SvelteKit that captures the quality of their brand and attracts new, local customers.',
+      "Built with SvelteKit for lightning-fast performance, the site's foundation is rooted in technical SEO to attract qualified local customers. The result is a website that not only looks beautiful but feels as solid and well-crafted as the flooring they sell.",
     builtWith: [
       'Typescript',
       'Svelte',
@@ -73,7 +79,7 @@ const projects = [
   },
   //  MS Auto Detailing
   {
-    kicker: 'Service Based',
+    kicker: 'Marketing',
     title: 'MS Auto Detailing',
     paragraph1:
       'MS Auto Detailing, a local service business, needed a sharp and modern website to serve as their online hub. The goal was to clearly present their services and provide a simple, effective way for customers to get in touch.',
@@ -120,6 +126,56 @@ const projects = [
       },
     ],
     href: 'https://www.polaris-edu.com/',
+  },
+  //  ALM Junk Removal
+  {
+    kicker: 'Marketing',
+    title: 'ALM Junk Removal',
+    paragraph1:
+      'For a local service business like ALM Junk Removal, a professional website is essential for building customer trust and generating leads. They needed a straightforward and reliable online presence that clearly outlines their services, coverage areas, and makes it incredibly easy for potential clients to request a quote.',
+    paragraph2:
+      'The design challenge was to create a clean, modern aesthetic that also fits the hands-on, industrial nature of their business. I developed a site with a strong, practical layout and bold typography that feels both professional and dependable. The result is a credible digital storefront that effectively converts visitors into customers.',
+    builtWith: ['TypeScript', 'React', 'TailwindCSS', 'Vercel'],
+    image: {
+      src: Alm1,
+      alt: 'ALM Junk Removal desktop homepage',
+    },
+    images: [
+      {
+        src: Alm2,
+        alt: 'ALM Junk Removal mobile homepage',
+      },
+      {
+        src: Alm3,
+        alt: 'ALM Junk Removal mobile contact form',
+      },
+    ],
+    href: 'https://alm-junk-removal.vercel.app/',
+  },
+  //  Parking Break LLC
+  {
+    kicker: 'Marketing',
+    title: 'Parking Break LLC',
+    paragraph1:
+      'Parking Break LLC, a local Cleveland parking provider, required a digital presence as clean and efficient as their service. The goal was to provide customers with essential information—such as lot locations, rates, and payment options—in a minimal, frictionless, and easy-to-navigate format.',
+    paragraph2:
+      'The design approach was rooted in minimalism, using bold typography to deliver information with clarity and impact. To ground the brand in its city, I integrated high-contrast imagery of iconic Cleveland landmarks, creating a site that is both visually striking and incredibly straightforward for users on the go.',
+    builtWith: ['TypeScript', 'React', 'TailwindCSS', 'Vercel'],
+    image: {
+      src: Pb1,
+      alt: 'Parking Break LLC desktop homepage',
+    },
+    images: [
+      {
+        src: Pb2,
+        alt: 'Parking Break LLC who we are mobile section',
+      },
+      {
+        src: Pb3,
+        alt: 'Parking Break LLC why us mobile section',
+      },
+    ],
+    href: 'https://parkingbreakllc.com/',
   },
 ];
 ---
