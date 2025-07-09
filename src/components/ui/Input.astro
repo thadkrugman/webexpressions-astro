@@ -1,0 +1,43 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  className?: string;
+  type?: 'text' | 'email' | 'tel' | 'url' | 'password' | 'search' | 'number';
+  name: string;
+  id: string;
+  placeholder?: string;
+  required?: boolean;
+  disabled?: boolean;
+  autocomplete?: string;
+  value?: string;
+}
+
+const {
+  className = '',
+  type = 'text',
+  name,
+  id,
+  placeholder,
+  required = false,
+  disabled = false,
+  autocomplete,
+  value,
+  ...rest
+}: Props = Astro.props;
+
+const baseStyles = 'block w-full rounded-md bg-white px-3.5 py-2 text-base text-foreground outline -outline-offset-1 outline-border placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-accent disabled:cursor-not-allowed disabled:opacity-50';
+---
+
+<input
+  class={cn(baseStyles, className)}
+  type={type}
+  name={name}
+  id={id}
+  placeholder={placeholder}
+  required={required}
+  disabled={disabled}
+  autocomplete={autocomplete}
+  value={value}
+  {...rest}
+/>

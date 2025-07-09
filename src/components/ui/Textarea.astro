@@ -1,0 +1,40 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  className?: string;
+  name: string;
+  id: string;
+  rows?: number;
+  cols?: number;
+  placeholder?: string;
+  required?: boolean;
+  disabled?: boolean;
+}
+
+const {
+  className = '',
+  name,
+  id,
+  rows = 4,
+  cols,
+  placeholder,
+  required = false,
+  disabled = false,
+  ...rest
+}: Props = Astro.props;
+
+const baseStyles = 'block w-full rounded-md bg-white px-3.5 py-2 text-base text-foreground outline -outline-offset-1 outline-border placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-accent disabled:cursor-not-allowed disabled:opacity-50 resize-vertical';
+---
+
+<textarea
+  class={cn(baseStyles, className)}
+  name={name}
+  id={id}
+  rows={rows}
+  cols={cols}
+  placeholder={placeholder}
+  required={required}
+  disabled={disabled}
+  {...rest}
+></textarea>
