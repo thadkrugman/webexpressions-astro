@@ -6,10 +6,17 @@ import Rw3 from '@/assets/images/portfolio/projects/rw-3.png';
 import Sc1 from '@/assets/images/portfolio/projects/sc-1.png';
 import Sc2 from '@/assets/images/portfolio/projects/sc-2.png';
 import Sc3 from '@/assets/images/portfolio/projects/sc-3.png';
+import Ms1 from '@/assets/images/portfolio/projects/ms-1.png';
+import Ms2 from '@/assets/images/portfolio/projects/ms-2.png';
+import Ms3 from '@/assets/images/portfolio/projects/ms-3.png';
+import Pe1 from '@/assets/images/portfolio/projects/pe-1.jpg';
+import Pe2 from '@/assets/images/portfolio/projects/pe-2.png';
+import Pe3 from '@/assets/images/portfolio/projects/pe-3.png';
 
 const projects = [
+  //  Rockwood Flooring
   {
-    kicker: 'Marketing Site',
+    kicker: 'Marketing',
     title: 'Rockwood Flooring',
     paragraph1:
       'I partnered with Rockwood Flooring to design and develop a premium marketing site that establishes their online presence and drives foot traffic to their two local showrooms.',
@@ -21,6 +28,7 @@ const projects = [
       'SvelteKit',
       'TailwindCSS',
       'Shadcn UI',
+      'Vercel',
     ],
     image: {
       src: Rw1,
@@ -38,6 +46,7 @@ const projects = [
     ],
     href: 'https://www.rockwoodflooring.com',
   },
+  //  Spectre Corp
   {
     kicker: 'Headless E-Commerce',
     title: 'Spectre Corp',
@@ -45,7 +54,7 @@ const projects = [
       'As my longest-standing client, Spectre Corp entrusted me with the task of redesigning their corporate website into a modern, headless e-commerce platform. The primary business goal was to drive new revenue by allowing customers to purchase their high-precision sensors directly online for the first time.',
     paragraph2:
       "My focus was on engineering an exceptionally fast and scalable shopping experience. Using a cutting-edge stack of Astro and the Shopify Storefront API, I built a site with a strong foundation for SEO and a user experience that reflects the precision of Spectre's own products.",
-    builtWith: ['Typescript', 'Astro', 'TailwindCSS', 'Shopify API'],
+    builtWith: ['Typescript', 'Astro', 'TailwindCSS', 'Shopify API', 'Vercel'],
     image: {
       src: Sc1,
       alt: 'Spectre Corp homepage',
@@ -53,14 +62,64 @@ const projects = [
     images: [
       {
         src: Sc2,
-        alt: 'A dark navy blue section that describes why a customer should buy from Spectre Corp',
+        alt: 'Shop by category section from the Spectre Corp website',
       },
       {
         src: Sc3,
-        alt: 'Product listing section from the Spectre Corp website',
+        alt: 'Mobile menu open with dark navy blue section in the background',
       },
     ],
     href: 'https://www.spectrecorp.com',
+  },
+  //  MS Auto Detailing
+  {
+    kicker: 'Service Based',
+    title: 'MS Auto Detailing',
+    paragraph1:
+      'MS Auto Detailing, a local service business, needed a sharp and modern website to serve as their online hub. The goal was to clearly present their services and provide a simple, effective way for customers to get in touch.',
+    paragraph2:
+      'Focusing on a bold, black-and-white aesthetic, I developed the site using Next.js to ensure a fast and reliable user experience. The result is a straightforward, high-impact digital presence that effectively communicates their offerings and helps them connect with new clients.',
+    builtWith: ['Typescript', 'React', 'Next.js', 'TailwindCSS', 'Vercel'],
+    image: {
+      src: Ms1,
+      alt: 'MS Auto Detailing homepage',
+    },
+    images: [
+      {
+        src: Ms2,
+        alt: 'Services section from the MS Auto Detailing website',
+      },
+      {
+        src: Ms3,
+        alt: 'Black mobile menu with gray text',
+      },
+    ],
+    href: 'https://ms-auto-detailing.vercel.app/',
+  },
+  //  Polaris Education
+  {
+    kicker: 'Web Application',
+    title: 'Polaris Education',
+    paragraph1:
+      'Founded by educators, Polaris Education needed a partner to build a comprehensive SaaS platform to help schools proactively support their students. The goal was to empower educators by turning complex student data into clear, actionable intervention plans.',
+    paragraph2:
+      'I engineered the entire frontend for this data-heavy, 50+ page application using React and Tailwind CSS. The core of my work involved using the Recharts library to build a suite of intuitive dashboards that make complex student data easy to understand and act upon.',
+    builtWith: ['JavaScript', 'React', 'TailwindCSS', 'Recharts'],
+    image: {
+      src: Pe1,
+      alt: 'Polaris Education web application dashboard',
+    },
+    images: [
+      {
+        src: Pe2,
+        alt: 'Mobile view of the Polaris Education website homepage',
+      },
+      {
+        src: Pe3,
+        alt: 'Mobile menu with cyan colored icons and gray text',
+      },
+    ],
+    href: 'https://www.polaris-edu.com/',
   },
 ];
 ---
