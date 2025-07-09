@@ -1,5 +1,20 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import ContactSection from '@/components/pages/contact/ContactSection.astro';
+
+// TODO: Update SEO
+const seo = {
+  title: 'About Web Expressions | My Philosophy & Process',
+  description:
+    'Learn about my philosophy on web development, commitment to client success, and how I can help you achieve your business goals through a strategic partnership.',
+  ogTitle: 'The Philosophy Behind webexpressions | About Thad Krugman',
+  ogDescription:
+    'Discover the story behind webexpressions. I focus on building scalable, high-performance web solutions with a commitment to transparency and long-term support.',
+  keywords:
+    'about webexpressions, web development philosophy, Thad, web developer, business-focused development, client partnership, digital strategy',
+};
 ---
 
-<Layout> Contact </Layout>
+<Layout {...seo}>
+  <ContactSection />
+</Layout>
