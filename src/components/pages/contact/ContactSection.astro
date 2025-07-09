@@ -14,19 +14,23 @@ const budgetOptions = [
 ];
 ---
 
-<Container as='section' className='items-center justify-center flex-1'>
+<Container
+  as='section'
+  isFirstSection={true}
+  className='items-center justify-center flex-1 pb-4 sm:pb-12 lg:pb-16'
+>
   <div
     class='flex flex-col lg:flex-row gap-y-16 sm:max-lg:gap-y-20 lg:gap-x-20 lg:justify-between w-full'
   >
     <div class='w-full lg:max-w-lg'>
       <p class='kicker'>Get in Touch</p>
-      <h2 class='mt-2 heading-1'>Get in touch</h2>
+      <h2 class='mt-2 heading-1'>Let's Work Together</h2>
       <p
         class='mt-6 text-lg lg:text-xl/8 font-medium text-foreground text-pretty'
       >
-        Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie
-        a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada
-        et magna.
+        I'm always excited to hear about new ideas and potential projects.
+        Whether you have a quick question or a detailed project brief, I'm here
+        to help.
       </p>
       <dl class='mt-10 space-y-6 text-base/7 text-foreground font-semibold'>
         <div class='flex gap-x-4 items-center'>
@@ -161,7 +165,7 @@ const budgetOptions = [
 
       <div class='mt-8 flex justify-end'>
         <Button type='submit' size='xl' variant='primary' className='w-full'>
-          Send message
+          Launch Your Project
         </Button>
       </div>
     </form>
