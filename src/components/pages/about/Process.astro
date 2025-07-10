@@ -39,13 +39,11 @@ const steps = [
 
   <div class='relative mt-16 sm:mt-20'>
     <div
-      class='absolute left-0 lg:left-1/2 top-0 -ml-px h-full w-0.5 bg-muted'
+      class='hidden lg:block absolute left-1/2 top-0 -ml-px h-full w-0.5 bg-muted'
       aria-hidden='true'
     >
     </div>
-    <div
-      class='grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-12 pl-4 lg:pl-0'
-    >
+    <div class='grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-20'>
       {
         steps.map((step, index) => (
           <div class='flex items-start gap-x-6 animate-fade-in-up scroll-trigger group cursor-default'>

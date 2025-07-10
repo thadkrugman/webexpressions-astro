@@ -1,0 +1,5 @@
+# Allow all friendly crawlers full access to the site.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.webexpressions.io/sitemap-index.xml

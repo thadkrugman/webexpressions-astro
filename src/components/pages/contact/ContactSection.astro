@@ -1,6 +1,6 @@
 ---
 import Container from '@/components/shared/Container.astro';
-import { MapPin, Phone } from '@lucide/astro';
+import { MapPin, Phone, Clock, Rocket } from '@lucide/astro';
 import Label from '@/components/ui/Label.astro';
 import Input from '@/components/ui/Input.astro';
 import Textarea from '@/components/ui/Textarea.astro';
@@ -50,7 +50,14 @@ const budgetOptions = [
             <span class='sr-only'>Address</span>
             <MapPin class='size-6 text-foreground' stroke-width={2.3} />
           </dt>
-          <dd>Lorain, OH</dd>
+          <dd>Lorain, Ohio</dd>
+        </div>
+        <div class='flex gap-x-4 items-center'>
+          <dt class='flex-none'>
+            <span class='sr-only'>Business Hours</span>
+            <Clock class='size-5.5 text-foreground' stroke-width={2.3} />
+          </dt>
+          <dd>Monday - Friday, 9:00 AM - 5:00 PM ET</dd>
         </div>
       </dl>
     </div>
@@ -164,8 +171,17 @@ const budgetOptions = [
       </div>
 
       <div class='mt-8 flex justify-end'>
-        <Button type='submit' size='xl' variant='primary' className='w-full'>
+        <Button
+          type='submit'
+          size='xl'
+          variant='primary'
+          className='w-full group'
+        >
           Launch Your Project
+          <Rocket
+            class='size-4 ml-2 group-hover:-translate-y-10 group-hover:translate-x-10 transition-transform duration-500'
+            stroke-width={3}
+          />
         </Button>
       </div>
     </form>

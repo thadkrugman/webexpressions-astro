@@ -37,6 +37,7 @@ const {
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name='generator' content={Astro.generator} />
     
     {/* Primary SEO Meta Tags */}
@@ -52,7 +53,7 @@ const {
     <meta property='og:description' content={ogDescription} />
     <meta property='og:image' content={ogImage} />
     <meta property='og:url' content={canonicalURL} />
-    <meta property='og:site_name' content='WebExpressions' />
+    <meta property='og:site_name' content='webexpressions' />
     <meta property='og:locale' content='en_US' />
     
     {/* Twitter Card */}
@@ -60,30 +61,47 @@ const {
     <meta name='twitter:title' content={ogTitle} />
     <meta name='twitter:description' content={ogDescription} />
     <meta name='twitter:image' content={ogImage} />
-    <meta name='twitter:creator' content='@webexpressions' />
+    <meta name='twitter:creator' content='@thadkrugman' />
     
     {/* Additional Meta Tags for Business */}
-    <meta name='author' content='Thad - WebExpressions' />
+    <meta name='author' content='Thad Krugman - webexpressions' />
     <meta name='theme-color' content='#ffffff' />
-    <meta name='msapplication-TileColor' content='#84cc16' />
+    <meta name='msapplication-TileColor' content='#a3e635' />
     <meta name='format-detection' content='telephone=no' />
-    
+
     {/* Business Schema.org structured data */}
     <script type='application/ld+json'>
       {
         JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "WebExpressions",
+          "name": "webexpressions",
           "description": "Professional web development and design services specializing in modern, high-performance websites and web applications.",
-          "url": "https://webexpressions.dev",
+          "url": "https://www.webexpressions.io",
           "founder": {
             "@type": "Person",
-            "name": "Thad",
+            "name": "Thad Krugman",
             "jobTitle": "Web Developer & Designer"
           },
           "serviceType": ["Web Development", "Web Design", "React Development", "Astro Development", "Svelte Development", "Mobile App Development"],
-          "areaServed": "Worldwide",
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Lorain"
+            },
+            {
+              "@type": "City",
+              "name": "Cleveland"
+            },
+            {
+              "@type": "State",
+              "name": "Ohio"
+            },
+            {
+              "@type": "Country",
+              "name": "US"
+            }
+          ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Web Development Services",
@@ -116,9 +134,10 @@ const {
           },
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "50+",
-            "bestRating": "5"
+            "ratingValue": "5",
+            "ratingCount": "6",
+            "bestRating": "5",
+            "worstRating": "1"
           }
         })
       }

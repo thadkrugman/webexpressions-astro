@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button.astro';
 import Menu from '@lucide/astro/icons/menu';
 import X from '@lucide/astro/icons/x';
 import Layers2 from '@lucide/astro/icons/layers-2';
+import Phone from '@lucide/astro/icons/phone';
 ---
 
 <Container
@@ -18,20 +19,28 @@ import Layers2 from '@lucide/astro/icons/layers-2';
     class='hover-lift-logo transition-all duration-300'
     aria-label='Home'
   >
-    <Layers2 stroke-width={2.1} class='size-9 lg:size-11 text-foreground' />
+    <Layers2 stroke-width={2.2} class='size-8 lg:size-10 text-foreground' />
   </a>
 
   <!-- Mobile menu button -->
-  <button
-    id='mobile-menu-button'
-    class='lg:hidden flex items-center justify-center text-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-0 focus:ring-offset-0'
-    aria-expanded='false'
-    aria-label='Toggle navigation menu'
-    aria-controls='mobile-menu'
-  >
-    <Menu id='menu-icon' class='size-8' stroke-width={2.5} />
-    <X id='close-icon' class='size-8 hidden' stroke-width={2.5} />
-  </button>
+  <div class='flex items-center gap-x-6 lg:hidden'>
+    <a
+      type='tel'
+      href='tel:+14402225817'
+      class='text-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-0 focus:ring-offset-0'
+    >
+      <Phone class='size-6' stroke-width={2.7} />
+    </a>
+    <button
+      id='mobile-menu-button'
+      class='lg:hidden flex items-center justify-center text-foreground hover:text-primary transition-all duration-300 focus:outline-none focus:ring-0 focus:ring-offset-0'
+      aria-expanded='false'
+      aria-label='Toggle navigation menu'
+      aria-controls='mobile-menu'
+    >
+      <Menu id='menu-icon' class='size-8' stroke-width={2.5} />
+    </button>
+  </div>
 
   <!-- Desktop navigation -->
   <div class='hidden lg:flex space-x-12 items-center'>
@@ -94,7 +103,7 @@ import Layers2 from '@lucide/astro/icons/layers-2';
         class='hover:opacity-75 hover:scale-105 transition-all duration-300'
         aria-label='Home'
       >
-        <Layers2 stroke-width={2.1} class='size-9 text-foreground' />
+        <Layers2 stroke-width={2.2} class='size-9 text-foreground' />
       </a>
       <button
         id='mobile-menu-close'
@@ -158,7 +167,6 @@ import Layers2 from '@lucide/astro/icons/layers-2';
     const menuPanel = document.getElementById('mobile-menu-panel');
     const backdrop = document.getElementById('mobile-menu-backdrop');
     const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
     const menuLinks = mobileMenu?.querySelectorAll('nav a');
 
     if (!menuButton || !mobileMenu || !menuPanel || !backdrop) return;
@@ -203,10 +211,6 @@ import Layers2 from '@lucide/astro/icons/layers-2';
       mobileMenu!.classList.remove('hidden');
       menuButton!.setAttribute('aria-expanded', 'true');
 
-      // Show icons
-      menuIcon?.classList.add('hidden');
-      closeIcon?.classList.remove('hidden');
-
       // Trigger animations
       requestAnimationFrame(() => {
         backdrop!.classList.remove('opacity-0');
@@ -235,10 +239,6 @@ import Layers2 from '@lucide/astro/icons/layers-2';
     function closeMenu() {
       isOpen = false;
       menuButton!.setAttribute('aria-expanded', 'false');
-
-      // Show icons
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
 
       // Trigger close animations
       backdrop!.classList.remove('opacity-100');
