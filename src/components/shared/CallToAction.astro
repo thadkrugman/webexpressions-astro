@@ -2,7 +2,7 @@
 import Container from '@/components/shared/Container.astro';
 import Button from '@/components/ui/Button.astro';
 import { cn } from '@/lib/utils';
-import { Layers2 } from '@lucide/astro';
+import { SquareMousePointer } from '@lucide/astro';
 
 interface Props {
   wrapperClassName?: string;
@@ -55,7 +55,7 @@ const {
     )}
   >
     <div class='flex-shrink-0 animate-fade-in-up scroll-trigger'>
-      <Layers2
+      <SquareMousePointer
         stroke-width={2.2}
         class='size-12 sm:size-14 mb-5 text-primary-foreground lg:hidden hover:text-accent'
       />
@@ -100,14 +100,13 @@ const {
       class='hidden lg:flex flex-col flex-1 h-64 items-end justify-center animate-fade-in-up scroll-trigger cursor-default'
     >
       <div
-        class='group w-fit h-64 text-primary-foreground flex flex-col items-center justify-center'
+        class='w-fit h-64 text-primary-foreground flex flex-col items-center justify-center'
       >
-        <Layers2 stroke-width={2.2} class={cn('h-full w-auto aspect-square')} />
-        <p
-          class='text-4xl font-black mt-6 group-hover:text-accent transition-colors'
-        >
-          webexpressions
-        </p>
+        <SquareMousePointer
+          stroke-width={2.2}
+          class={cn('h-full w-auto aspect-square')}
+        />
+        <p class='text-4xl font-black mt-6'>webexpressions</p>
       </div>
     </div>
   </Container>
