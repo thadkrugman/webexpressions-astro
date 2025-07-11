@@ -21,6 +21,7 @@ interface Props {
   image: Image;
   images: Image[];
   href: string;
+  id: string;
 }
 
 const {
@@ -33,10 +34,11 @@ const {
   image,
   images,
   href,
+  id,
 } = Astro.props;
 ---
 
-<Container as='section'>
+<Container as='section' id={id}>
   <div
     class='grid grid-cols-1 items-center gap-x-8 lg:gap-x-12 gap-y-16 lg:grid-cols-2'
   >

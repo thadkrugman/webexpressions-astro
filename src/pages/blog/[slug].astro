@@ -30,7 +30,12 @@ const seo = {
 ---
 
 <Layout {...seo}>
-  <Container as='article' isFirstSection={true} includeBottomPadding={true}>
+  <Container
+    as='article'
+    isFirstSection={true}
+    includeBottomPadding={true}
+    className='flex-1'
+  >
     <!-- Article Header -->
     <header class='max-w-3xl animate-fade-in-up scroll-trigger mx-auto'>
       <p class='kicker'>{post.data.category}</p>
@@ -78,9 +83,9 @@ const seo = {
 
     <!-- Article Content -->
     <div
-      class='mt-16 lg:mt-20 max-w-3xl mx-auto animate-fade-in-up scroll-trigger'
+      class='mt-16 lg:mt-20 max-w-3xl mx-auto animate-fade-in-up scroll-trigger flex-1 min-w-0 flex flex-col'
     >
-      <div class='prose prose-lg prose-gray max-w-none'>
+      <div class='prose prose-lg prose-gray'>
         <Content />
       </div>
     </div>
@@ -91,6 +96,9 @@ const seo = {
   /* Custom prose styles to match your design system */
   .prose {
     color: var(--color-foreground);
+    /* Prevent flex item from enforcing its intrinsic width */
+    min-width: 0;
+    max-width: 100%;
   }
 
   .prose h1 {
@@ -183,18 +191,29 @@ const seo = {
     color: var(--color-accent-secondary);
   }
 
+  /* Corrected styles for code block scrolling */
   .prose pre {
+    /* Ensure padding stays inside element so it doesn't exceed container width */
+    width: 100%;
+    box-sizing: border-box;
+    display: block; /* Use block to avoid grid's min-content expansion */
+    /* Allow the element to shrink inside flexible containers */
+    min-width: 0;
     background-color: var(--color-muted);
     padding: 1.5rem;
     border-radius: 0.75rem;
-    overflow-x: auto;
-    overflow-y: hidden;
     margin: 2.5rem 0;
-    max-width: 100%;
-    white-space: pre;
-    word-wrap: normal;
+    overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) transparent;
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+    color: var(--color-foreground);
+    white-space: pre;
+    font-size: 0.875rem;
   }
 
   .prose pre::-webkit-scrollbar {
@@ -208,12 +227,6 @@ const seo = {
   .prose pre::-webkit-scrollbar-thumb {
     background-color: var(--color-accent);
     border-radius: 4px;
-  }
-
-  .prose pre code {
-    background-color: transparent;
-    padding: 0;
-    color: var(--color-foreground);
   }
 
   .prose a {
