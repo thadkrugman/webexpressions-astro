@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/components/shared/Container.astro';
 import { Picture } from 'astro:assets';
+import Thad from '@/assets/images/blog/thad.jpg';
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 
@@ -47,7 +48,7 @@ const seo = {
       <!-- Author & Date Info -->
       <div class='mt-8 flex items-center gap-x-4'>
         <Picture
-          src='/src/assets/images/blog/thad.jpg'
+          src={Thad}
           alt='Thad Krugman'
           widths={[40, 80, 120]}
           sizes='40px'
