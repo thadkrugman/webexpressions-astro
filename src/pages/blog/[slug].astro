@@ -34,7 +34,7 @@ const seo = {
     as='article'
     isFirstSection={true}
     includeBottomPadding={true}
-    className='flex-1 min-w-0'
+    className='flex-1 min-w-0 overflow-y-hidden'
   >
     <!-- Article Header -->
     <header class='max-w-3xl animate-fade-in-up scroll-trigger mx-auto'>
@@ -82,9 +82,7 @@ const seo = {
     </header>
 
     <!-- Article Content -->
-    <div
-      class='prose prose-lg prose-gray mt-10 lg:mt-14 animate-fade-in-up scroll-trigger'
-    >
+    <div class='prose prose-lg prose-gray mt-10 lg:mt-14 overflow-y-hidden'>
       <Content />
     </div>
   </Container>
@@ -170,12 +168,12 @@ const seo = {
   }
 
   .prose li {
-    @apply relative mt-8 text-pretty font-medium text-base/7 lg:text-lg/8 list-none pl-4.5 lg:pl-5;
+    @apply relative mt-8 text-pretty font-medium text-base/7 lg:text-lg/8 list-none pl-5.75 lg:pl-6;
   }
 
   .prose li::before {
     content: '';
-    @apply absolute top-0 left-0 size-2.5 lg:size-2.75 bg-[var(--color-accent)] rounded-full inline-flex mt-2.5 lg:mt-2.75;
+    @apply absolute top-0 left-0 size-2.75 lg:size-3 bg-[var(--color-accent)] rounded-full inline-flex mt-2.75 lg:mt-3;
   }
 
   .prose blockquote {
