@@ -1,7 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/components/shared/Container.astro';
-import Badge from '@/components/ui/Badge.astro';
 import { Picture } from 'astro:assets';
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
@@ -86,14 +85,14 @@ const seo = {
   </Container>
 </Layout>
 
-<style>
+<style is:global>
   /* Custom prose styles to match your design system */
   .prose {
     color: var(--color-foreground);
   }
 
   .prose h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     color: var(--color-foreground);
@@ -102,7 +101,7 @@ const seo = {
   }
 
   .prose h2 {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     color: var(--color-foreground);
@@ -111,7 +110,7 @@ const seo = {
   }
 
   .prose h3 {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     color: var(--color-foreground);
@@ -132,7 +131,7 @@ const seo = {
     line-height: 1.75rem;
     color: var(--color-foreground);
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .prose strong {
@@ -151,12 +150,12 @@ const seo = {
     line-height: 1.75rem;
     color: var(--color-foreground);
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding-left: 1.5rem;
   }
 
   .prose li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .prose blockquote {
@@ -184,9 +183,28 @@ const seo = {
   .prose pre {
     background-color: var(--color-muted);
     padding: 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     overflow-x: auto;
-    margin: 2rem 0;
+    overflow-y: hidden;
+    margin: 2.5rem 0;
+    max-width: 100%;
+    white-space: pre;
+    word-wrap: normal;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) transparent;
+  }
+
+  .prose pre::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .prose pre::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .prose pre::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 4px;
   }
 
   .prose pre code {
@@ -210,25 +228,56 @@ const seo = {
     margin: 3rem 0;
   }
 
+  /* Add spacing between sections */
+  .prose > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .prose > h1 + *,
+  .prose > h2 + *,
+  .prose > h3 + *,
+  .prose > h4 + * {
+    margin-top: 1rem;
+  }
+
   /* Responsive typography */
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     .prose h1 {
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
 
     .prose h2 {
-      font-size: 3rem;
+      font-size: 2rem;
     }
 
     .prose h3 {
-      font-size: 2.25rem;
+      font-size: 1.75rem;
+    }
+
+    .prose p {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .prose h1 {
+      font-size: 3rem;
+    }
+
+    .prose h2 {
+      font-size: 2.5rem;
+    }
+
+    .prose h3 {
+      font-size: 2rem;
     }
 
     .prose p,
     .prose ul,
     .prose ol {
       font-size: 1.125rem;
-      line-height: 1.75rem;
+      line-height: 1.875rem;
     }
   }
 </style>
