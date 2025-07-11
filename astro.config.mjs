@@ -5,11 +5,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
   site: 'https://www.webexpressions.io',
-  integrations: [sitemap()],
+  integrations: [sitemap(), mdx()],
 });
