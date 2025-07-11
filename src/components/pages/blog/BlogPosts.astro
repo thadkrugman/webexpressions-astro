@@ -13,7 +13,7 @@ const sortedPosts = allPosts.sort(
 ---
 
 <Container as='section' id='blog-posts' includeBottomPadding={true}>
-  <div class='grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3'>
+  <div class='grid grid-cols-1 gap-x-8 xl:gap-x-10 gap-y-16 lg:grid-cols-3'>
     {
       sortedPosts.length === 0 && (
         <div class='col-span-full text-center py-12'>
