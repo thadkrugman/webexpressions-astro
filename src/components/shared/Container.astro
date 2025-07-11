@@ -16,6 +16,7 @@ interface Props {
   as?: HTMLTag;
   id?: string;
   isFirstSection?: boolean;
+  includeBottomPadding?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   as = 'div',
   id,
   isFirstSection = false,
+  includeBottomPadding = false,
   ...rest
 } = Astro.props;
 const Element = as;
@@ -32,6 +34,7 @@ const Element = as;
   class={cn(
     'flex flex-col px-6 sm:px-8 lg:px-10 xl:px-12 max-w-2xl lg:max-w-7xl mx-auto w-full',
     isFirstSection ? 'pt-16 sm:pt-32 lg:pt-36' : 'pt-24 sm:pt-32 lg:pt-36',
+    includeBottomPadding ? 'pb-4 sm:pb-12 lg:pb-16' : '',
     className,
   )}
   {...rest}

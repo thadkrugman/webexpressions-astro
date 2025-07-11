@@ -17,7 +17,8 @@ const budgetOptions = [
 <Container
   as='section'
   isFirstSection={true}
-  className='items-center justify-center flex-1 pb-4 sm:pb-12 lg:pb-16'
+  includeBottomPadding={true}
+  className='items-center justify-center flex-1'
 >
   <div
     class='flex flex-col lg:flex-row gap-y-16 sm:max-lg:gap-y-20 lg:gap-x-20 lg:justify-between w-full'
@@ -39,9 +40,8 @@ const budgetOptions = [
             <Phone class='size-5.5 text-foreground' stroke-width={2.3} />
           </dt>
           <dd>
-            <a
-              class='text-foreground hover:text-accent-secondary'
-              href='tel:+14402225817'>+1 (440) 222-5817</a
+            <a class='text-foreground hover:text-accent' href='tel:+14402225817'
+              >+1 (440) 222-5817</a
             >
           </dd>
         </div>

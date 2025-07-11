@@ -6,6 +6,7 @@ import MousePointerClick from '@lucide/astro/icons/mouse-pointer-click';
 import ProjectShowcase from '@/components/pages/home/hero/ProjectShowcase.astro';
 import Rocket from '@lucide/astro/icons/rocket';
 import AccentDot from '@/components/shared/AccentDot.astro';
+import Badge from '@/components/ui/Badge.astro';
 
 const services = [
   'Intuitive Web Design',
@@ -30,12 +31,10 @@ const services = [
     scroll-trigger'
   >
     <div class='flex flex-row rounded-full border items-center p-1 max-w-full'>
-      <div
-        class='flex bg-foreground px-3 py-1.5 rounded-full items-center gap-2 flex-shrink-0'
-      >
-        <span class='text-background text-xs font-bold'>New</span>
+      <Badge>
+        <span>New</span>
         <PartyPopper class='size-3.5 text-background' />
-      </div>
+      </Badge>
       <div class='px-3 items-center flex min-w-0 flex-1'>
         <p class='text-sm font-semibold line-clamp-1 max-[440px]:text-xs'>
           Accepting New Clients for {new Date().getFullYear()}
