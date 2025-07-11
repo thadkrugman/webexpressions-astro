@@ -100,7 +100,7 @@ const seo = {
   }
 
   .prose h1 {
-    @apply text-5xl font-extrabold tracking-tight text-[var(--color-foreground)] sm:text-6xl lg:text-7xl mt-16;
+    @apply text-5xl font-extrabold tracking-tight text-[var(--color-foreground)] sm:text-6xl lg:text-7xl mt-16 lg:mt-20;
   }
 
   @media (max-width: 439px) {
@@ -110,7 +110,7 @@ const seo = {
   }
 
   .prose h2 {
-    @apply text-pretty text-3xl font-extrabold tracking-tight text-[var(--color-foreground)] sm:text-4xl lg:text-5xl mt-12;
+    @apply text-pretty text-3xl font-extrabold tracking-tight text-[var(--color-foreground)] sm:text-4xl lg:text-5xl mt-16 lg:mt-20;
   }
 
   @media (max-width: 439px) {
@@ -120,7 +120,7 @@ const seo = {
   }
 
   .prose h3 {
-    @apply text-pretty text-2xl font-extrabold text-[var(--color-foreground)] sm:text-3xl tracking-tight mt-10;
+    @apply text-pretty text-2xl font-extrabold text-[var(--color-foreground)] sm:text-3xl tracking-tight mt-14;
   }
 
   @media (max-width: 439px) {
@@ -130,7 +130,7 @@ const seo = {
   }
 
   .prose h4 {
-    @apply text-pretty text-xl font-extrabold text-[var(--color-foreground)] sm:text-2xl tracking-tight mt-8;
+    @apply text-pretty text-xl font-extrabold text-[var(--color-foreground)] sm:text-2xl tracking-tight mt-12;
   }
 
   @media (max-width: 439px) {
@@ -139,15 +139,16 @@ const seo = {
     }
   }
 
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4 {
-    @apply -mb-2;
+  .prose p {
+    @apply text-base/7 lg:text-lg/8 text-pretty font-medium mt-8;
   }
 
-  .prose p {
-    @apply text-base/7 lg:text-lg/8 text-pretty font-medium mt-6;
+  .prose :is(h1, h2) + p {
+    @apply mt-6;
+  }
+
+  .prose :is(h3, h4) + p {
+    @apply mt-4;
   }
 
   .prose strong {
@@ -162,16 +163,19 @@ const seo = {
 
   .prose ul,
   .prose ol {
-    @apply mt-3;
     font-size: 1rem;
     line-height: 1.75rem;
     color: var(--color-foreground);
     font-weight: 500;
-    padding-left: 1.5rem;
   }
 
   .prose li {
-    @apply mt-3 text-pretty font-medium text-sm/6 lg:text-base/7;
+    @apply relative mt-8 text-pretty font-medium text-base/7 lg:text-lg/8 list-none pl-4.5 lg:pl-5;
+  }
+
+  .prose li::before {
+    content: '';
+    @apply absolute top-0 left-0 size-2.5 lg:size-2.75 bg-[var(--color-accent)] rounded-full inline-flex mt-2.5 lg:mt-2.75;
   }
 
   .prose blockquote {
@@ -204,7 +208,7 @@ const seo = {
   }
 
   .prose pre {
-    @apply w-full p-6 mt-6;
+    @apply w-full p-6 mt-12 mb-4;
     background-color: var(--color-muted);
     border-radius: 0.75rem;
     white-space: pre-wrap;
@@ -252,9 +256,4 @@ const seo = {
     border-top: 1px solid var(--color-muted);
     margin: 3rem 0;
   }
-
-  /* Add spacing between sections */
-  /* .prose > * + * {
-    @apply mt-8;
-  } */
 </style>
