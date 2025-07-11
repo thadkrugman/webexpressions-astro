@@ -14,4 +14,9 @@ export default defineConfig({
   },
   site: 'https://www.webexpressions.io',
   integrations: [sitemap(), mdx()],
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark',
+    },
+  },
 });
