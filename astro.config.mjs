@@ -10,13 +10,13 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
-  site: 'https://www.webexpressions.io',
+  site: 'https://webexpressions.dev',
   integrations: [sitemap(), mdx()],
   markdown: {
     shikiConfig: {
-      theme: 'github-dark',
-    },
-  },
+      theme: 'github-dark'
+    }
+  }
 });

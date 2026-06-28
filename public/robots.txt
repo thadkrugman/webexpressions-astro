@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.webexpressions.io/sitemap-index.xml
+Sitemap: https://webexpressions.dev/sitemap-index.xml
