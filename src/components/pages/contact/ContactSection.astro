@@ -62,6 +62,7 @@ const budgetOptions = [
       </dl>
     </div>
     <form
+      id='contact-form'
       action='https://formspree.io/f/mdoyypbr'
       method='POST'
       class='w-full lg:max-w-lg'
@@ -131,10 +132,10 @@ const budgetOptions = [
           <Label for='website'>Current Website</Label>
           <div class='mt-2.5'>
             <Input
-              type='url'
+              type='text'
               name='Current Website'
               id='website'
-              placeholder='https://...'
+              placeholder='yourwebsite.com'
               autocomplete='url'
               maxlength={200}
             />
@@ -186,4 +187,14 @@ const budgetOptions = [
       </div>
     </form>
   </div>
+  <script>
+  const form = document.getElementById('contact-form')
+  form?.addEventListener('submit', () => {
+    const input = document.getElementById('website') as HTMLInputElement
+    const val = input.value.trim()
+    if (val && !/^https?:\/\//i.test(val)) {
+      input.value = `https://${val}`
+    }
+  })
+</script>
 </Container>
