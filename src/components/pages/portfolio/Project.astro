@@ -84,7 +84,7 @@ const {
 
     <div class={`${reverse ? 'lg:order-first' : ''}`}>
       <div
-        class='rounded-xl aspect-[16/10] border border-black/[.05] shadow-[0_5px_12px_rgba(0,0,0,0.05)] animate-fade-in-up scroll-trigger bg-muted overflow-hidden'
+        class='rounded-xl aspect-16/10 border border-black/5 shadow-[0_5px_12px_rgba(0,0,0,0.05)] animate-fade-in-up scroll-trigger bg-muted overflow-hidden'
       >
         <Picture
           src={image.src}
@@ -100,15 +100,15 @@ const {
       >
         {
           images.map((image) => (
-            <div class='aspect-[10/16] w-full bg-muted object-cover animate-fade-in-up scroll-trigger border border-black/[.05] shadow-[0_5px_12px_rgba(0,0,0,0.05)] overflow-hidden rounded-xl'>
+            <div class='aspect-10/16 w-full bg-muted object-cover animate-fade-in-up scroll-trigger border border-black/5 shadow-[0_5px_12px_rgba(0,0,0,0.05)] overflow-hidden rounded-xl'>
               <Picture
                 src={image.src}
                 widths={[320, 450, 600, 800, 1000]}
                 sizes='(max-width: 1024px) 50vw, 500px'
                 width={1000}
-                height={1000}
+                height={1600}
                 alt={image.alt}
-                class='h-full bg-muted object-cover'
+                class='h-full bg-muted object-contain'
               />
             </div>
           ))
