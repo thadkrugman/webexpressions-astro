@@ -8,193 +8,193 @@ import RadioGroup from '@/components/ui/RadioGroup.astro';
 import Button from '@/components/ui/Button.astro';
 
 const budgetOptions = [
-  { value: '3,000-6,000', label: '$3,000 - $6,000' },
-  { value: '6,000-10,000', label: '$6,000 - $10,000' },
-  { value: '10,000+', label: '$10,000+' },
+	{ value: '$3,200', label: '$3,200' },
+	{ value: '$7,500', label: '$7,500' },
+	{ value: '$10,000+', label: '$10,000+' }
 ];
 ---
 
 <Container
-  as='section'
-  isFirstSection={true}
-  includeBottomPadding={true}
-  className='items-center justify-center flex-1'
+	as="section"
+	isFirstSection={true}
+	includeBottomPadding={true}
+	className="flex-1 items-center justify-center"
 >
-  <div
-    class='flex flex-col lg:flex-row gap-y-16 sm:max-lg:gap-y-20 lg:gap-x-20 lg:justify-between w-full'
-  >
-    <div class='w-full lg:max-w-lg'>
-      <p class='kicker'>Get in Touch</p>
-      <h2 class='mt-2 heading-1'>Let's Work Together</h2>
-      <p
-        class='mt-6 text-lg lg:text-xl/8 font-medium text-foreground text-pretty'
-      >
-        I'm always excited to hear about new ideas and potential projects.
-        Whether you have a quick question or a detailed project brief, I'm here
-        to help.
-      </p>
-      <dl class='mt-10 space-y-6 text-base/7 text-foreground font-semibold'>
-        <div class='flex gap-x-4 items-center'>
-          <dt class='flex-none'>
-            <span class='sr-only'>Telephone</span>
-            <Phone class='size-5.5 text-foreground' stroke-width={2.3} />
-          </dt>
-          <dd>
-            <a class='text-foreground hover:text-accent' href='tel:+14402225817'
-              >+1 (440) 222-5817</a
-            >
-          </dd>
-        </div>
-        <div class='flex gap-x-4 items-center'>
-          <dt class='flex-none'>
-            <span class='sr-only'>Address</span>
-            <MapPin class='size-6 text-foreground' stroke-width={2.3} />
-          </dt>
-          <dd>Lorain, Ohio</dd>
-        </div>
-        <div class='flex gap-x-4 items-center'>
-          <dt class='flex-none'>
-            <span class='sr-only'>Business Hours</span>
-            <Clock class='size-5.5 text-foreground' stroke-width={2.3} />
-          </dt>
-          <dd>Monday - Friday, 9:00 AM - 5:00 PM ET</dd>
-        </div>
-      </dl>
-    </div>
-    <form
-      id='contact-form'
-      action='https://formspree.io/f/mdoyypbr'
-      method='POST'
-      class='w-full lg:max-w-lg'
-    >
-      <div class='space-y-6'>
-        <!-- Full Name -->
-        <div>
-          <Label for='full-name' required>Full Name</Label>
-          <div class='mt-2.5'>
-            <Input
-              type='text'
-              name='Full Name'
-              id='full-name'
-              autocomplete='name'
-              required
-              minlength={2}
-              maxlength={50}
-            />
-          </div>
-        </div>
+	<div
+		class="flex w-full flex-col gap-y-16 sm:max-lg:gap-y-20 lg:flex-row lg:justify-between lg:gap-x-20"
+	>
+		<div class="w-full lg:max-w-lg">
+			<p class="kicker">Get in Touch</p>
+			<h2 class="heading-1 mt-2">Let's Work Together</h2>
+			<p
+				class="text-foreground mt-6 text-lg font-medium text-pretty lg:text-xl/8"
+			>
+				I'm always excited to hear about new ideas and potential projects.
+				Whether you have a quick question or a detailed project brief, I'm here
+				to help.
+			</p>
+			<dl class="text-foreground mt-10 space-y-6 text-base/7 font-semibold">
+				<div class="flex items-center gap-x-4">
+					<dt class="flex-none">
+						<span class="sr-only">Telephone</span>
+						<Phone class="text-foreground size-5.5" stroke-width={2.3} />
+					</dt>
+					<dd>
+						<a class="text-foreground hover:text-accent" href="tel:+14402225817"
+							>+1 (440) 222-5817</a
+						>
+					</dd>
+				</div>
+				<div class="flex items-center gap-x-4">
+					<dt class="flex-none">
+						<span class="sr-only">Address</span>
+						<MapPin class="text-foreground size-6" stroke-width={2.3} />
+					</dt>
+					<dd>Lorain, Ohio</dd>
+				</div>
+				<div class="flex items-center gap-x-4">
+					<dt class="flex-none">
+						<span class="sr-only">Business Hours</span>
+						<Clock class="text-foreground size-5.5" stroke-width={2.3} />
+					</dt>
+					<dd>Monday - Friday, 9:00 AM - 5:00 PM ET</dd>
+				</div>
+			</dl>
+		</div>
+		<form
+			id="contact-form"
+			action="https://formspree.io/f/mdoyypbr"
+			method="POST"
+			class="w-full lg:max-w-lg"
+		>
+			<div class="space-y-6">
+				<!-- Full Name -->
+				<div>
+					<Label for="full-name" required>Full Name</Label>
+					<div class="mt-2.5">
+						<Input
+							type="text"
+							name="Full Name"
+							id="full-name"
+							autocomplete="name"
+							required
+							minlength={2}
+							maxlength={50}
+						/>
+					</div>
+				</div>
 
-        <!-- Email Address -->
-        <div>
-          <Label for='email' required>Email Address</Label>
-          <div class='mt-2.5'>
-            <Input
-              type='email'
-              name='Email Address'
-              id='email'
-              autocomplete='email'
-              required
-              maxlength={100}
-            />
-          </div>
-        </div>
+				<!-- Email Address -->
+				<div>
+					<Label for="email" required>Email Address</Label>
+					<div class="mt-2.5">
+						<Input
+							type="email"
+							name="Email Address"
+							id="email"
+							autocomplete="email"
+							required
+							maxlength={100}
+						/>
+					</div>
+				</div>
 
-        <!-- Phone Number -->
-        <div>
-          <Label for='phone'>Phone Number</Label>
-          <div class='mt-2.5'>
-            <Input
-              type='tel'
-              name='Phone Number'
-              id='phone'
-              autocomplete='tel'
-              placeholder='(555) 123-4567'
-            />
-          </div>
-        </div>
+				<!-- Phone Number -->
+				<div>
+					<Label for="phone">Phone Number</Label>
+					<div class="mt-2.5">
+						<Input
+							type="tel"
+							name="Phone Number"
+							id="phone"
+							autocomplete="tel"
+							placeholder="(555) 123-4567"
+						/>
+					</div>
+				</div>
 
-        <!-- Company Name -->
-        <div>
-          <Label for='company'>Company Name</Label>
-          <div class='mt-2.5'>
-            <Input
-              type='text'
-              name='Company Name'
-              id='company'
-              autocomplete='organization'
-              maxlength={100}
-            />
-          </div>
-        </div>
+				<!-- Company Name -->
+				<div>
+					<Label for="company">Company Name</Label>
+					<div class="mt-2.5">
+						<Input
+							type="text"
+							name="Company Name"
+							id="company"
+							autocomplete="organization"
+							maxlength={100}
+						/>
+					</div>
+				</div>
 
-        <!-- Current Website -->
-        <div>
-          <Label for='website'>Current Website</Label>
-          <div class='mt-2.5'>
-            <Input
-              type='text'
-              name='Current Website'
-              id='website'
-              placeholder='yourwebsite.com'
-              autocomplete='url'
-              maxlength={200}
-            />
-          </div>
-        </div>
+				<!-- Current Website -->
+				<div>
+					<Label for="website">Current Website</Label>
+					<div class="mt-2.5">
+						<Input
+							type="text"
+							name="Current Website"
+							id="website"
+							placeholder="yourwebsite.com"
+							autocomplete="url"
+							maxlength={200}
+						/>
+					</div>
+				</div>
 
-        <!-- Project Budget -->
-        <div>
-          <Label required>Project Budget (Estimated)</Label>
-          <div class='mt-2.5'>
-            <RadioGroup
-              name='Project Budget'
-              options={budgetOptions}
-              required
-            />
-          </div>
-        </div>
+				<!-- Project Budget -->
+				<div>
+					<Label required>Project Budget (Estimated)</Label>
+					<div class="mt-2.5">
+						<RadioGroup
+							name="Project Budget"
+							options={budgetOptions}
+							required
+						/>
+					</div>
+				</div>
 
-        <!-- Message -->
-        <div>
-          <Label for='message' required>How can I help you?</Label>
-          <div class='mt-2.5'>
-            <Textarea
-              name='Message'
-              id='message'
-              rows={4}
-              required
-              minlength={10}
-              maxlength={1000}
-              placeholder='Tell me about your project...'
-            />
-          </div>
-        </div>
-      </div>
+				<!-- Message -->
+				<div>
+					<Label for="message" required>How can I help you?</Label>
+					<div class="mt-2.5">
+						<Textarea
+							name="Message"
+							id="message"
+							rows={4}
+							required
+							minlength={10}
+							maxlength={1000}
+							placeholder="Tell me about your project..."
+						/>
+					</div>
+				</div>
+			</div>
 
-      <div class='mt-8 flex justify-end'>
-        <Button
-          type='submit'
-          size='xl'
-          variant='primary'
-          className='w-full group'
-        >
-          Launch Your Project
-          <Rocket
-            class='size-4 ml-2 group-hover:-translate-y-10 group-hover:translate-x-10 transition-transform duration-500'
-            stroke-width={3}
-          />
-        </Button>
-      </div>
-    </form>
-  </div>
-  <script>
-  const form = document.getElementById('contact-form')
-  form?.addEventListener('submit', () => {
-    const input = document.getElementById('website') as HTMLInputElement
-    const val = input.value.trim()
-    if (val && !/^https?:\/\//i.test(val)) {
-      input.value = `https://${val}`
-    }
-  })
-</script>
+			<div class="mt-8 flex justify-end">
+				<Button
+					type="submit"
+					size="xl"
+					variant="primary"
+					className="group w-full"
+				>
+					Launch Your Project
+					<Rocket
+						class="ml-2 size-4 transition-transform duration-500 group-hover:translate-x-10 group-hover:-translate-y-10"
+						stroke-width={3}
+					/>
+				</Button>
+			</div>
+		</form>
+	</div>
+	<script>
+		const form = document.getElementById('contact-form');
+		form?.addEventListener('submit', () => {
+			const input = document.getElementById('website') as HTMLInputElement;
+			const val = input.value.trim();
+			if (val && !/^https?:\/\//i.test(val)) {
+				input.value = `https://${val}`;
+			}
+		});
+	</script>
 </Container>
